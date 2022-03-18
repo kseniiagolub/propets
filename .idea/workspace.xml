@@ -1,16 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="853970a5-6978-4dba-85a7-17cc42f3441d" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/propets.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/png/animals.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/main/section_info/Animals.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/png/dog1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/main/section_info/Section_info.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/main/section_info/Section_info.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/main/section_tagline/Section_tagline.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/main/section_tagline/Section_tagline.js" afterDir="false" />
-    </list>
+    <list default="true" id="853970a5-6978-4dba-85a7-17cc42f3441d" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -57,7 +48,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1647608884683</updated>
-      <workItem from="1647608886479" duration="285000" />
+      <workItem from="1647608886479" duration="774000" />
     </task>
     <servers />
   </component>
