@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/tempalte.iml" filepath="$PROJECT_DIR$/.idea/tempalte.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/propetsproject.iml" filepath="$PROJECT_DIR$/.idea/propetsproject.iml" />
     </modules>
   </component>
 </project>
