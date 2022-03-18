@@ -3,7 +3,7 @@ import animals_img from '../../../assets/png/animals.png'
 
 const Animals = () => {
     return (
-        <div>
+        <div className={`col-6 d-flex justify-content-center`}>
             <img src={animals_img}/>
         </div>
     );
