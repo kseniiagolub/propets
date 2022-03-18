@@ -1,5 +1,5 @@
 import React from 'react';
-import style from '../../../css_moduls/section_coming.module.css'
+import style from '../../../css_moduls/css_start/section_coming.module.css'
 
 const AboutComing = () => {
     return (
