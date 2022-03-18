@@ -1,25 +1,8 @@
-.logoHeader {
-    filter: invert(59%) sepia(15%) saturate(652%) hue-rotate(106deg) brightness(90%) contrast(91%);
-}
-
-.btnFacebook{
-    background-color: var(--bs-dark-blue);
-    color: var(--bs-white);
-    border: var(--bs-blue) 1px solid;
-    border-radius: 17px;
-    max-width: 210px;
-    height: 34px;
-    font-size: 12px;
-    letter-spacing: 0px;
-    text-align: left;
-    font-family: Montserrat;
-}
-
-.btnFacebookFirstLetter {
-    background-color: var(--bs-white);
-    color: var(--bs-dark-blue);
-    width: 27px;
-    height: 27px;
-    border-radius: 17px;
-    text-align: center;
+.box{
+    width: 650px;
+    height: 390px;
+    background: var(--bs-white) 0% 0% no-repeat padding-box;
+    box-shadow: 0px 3px 6px var(--bs-grey);
+    opacity: 1;
+    border: red 1px solid;
 }

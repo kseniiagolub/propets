@@ -1,0 +1,28 @@
+.agreeText {
+    font-size: 10px;
+    color: var(--bs-ligth-grey);
+}
+
+.agreeText > a{
+    color: inherit;
+}
+
+.btnCancel {
+    width: 105px;
+    height: 34px;
+    background-color: transparent;
+    border: var(--bs-light-green) 1px solid;
+    border-radius: 17px;
+    color: var(--bs-green);
+    font-size: 12px;
+}
+
+.btnSubmit {
+    width: 148px;
+    height: 34px;
+    background-color: var(--bs-green);
+    border: var(--bs-light-green) 1px solid;
+    border-radius: 17px;
+    color: var(--bs-white);
+    font-size: 12px;
+}

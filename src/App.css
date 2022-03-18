@@ -4,9 +4,12 @@
   --bs-dark-green: rgba(102, 152, 133, 1);
   --bs-white: rgba(255, 255, 255, 1);
   --bs-grey: rgba(0, 0, 0, 0.16);
+  --bs-ligth-grey: rgba(186, 186, 186, 1);
   --bs-black: rgba(57, 57, 57, 1);
   --bs-red: rgba(255, 111, 97, 1);
   --bs-yellow: rgba(255, 225, 139, 1);
+  --bs-blue: rgba(80, 103, 179, 1);
+  --bs-dark-blue: rgba(69, 96, 166, 1)
 }
 
 .App {
