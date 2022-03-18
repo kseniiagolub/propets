@@ -8,7 +8,6 @@ const SectionTagline = () => {
                     <p>Our fluffy space for lovers, admirers, dads and</p>
                     <p>moms of our four-legged, winged, tailed guys.</p>
             </div>
-            <h1>test text</h1>
         </section>
     );
 };
