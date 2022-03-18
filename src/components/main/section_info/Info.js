@@ -3,7 +3,7 @@ import style from '../../../css_moduls/section_info.module.css'
 
 const Info = () => {
     return (
-        <div className={`col-6 pt-5`}>
+        <div className={`pt-5`}>
             <h2 className={`${style.sizeH2} pb-4`}>Here is collected everything that your pet needs:</h2>
             <ul>
                 <li className={`${style.sizeLi}`}>professional veterinarian tips </li>
