@@ -6,6 +6,7 @@ const SectionInfo = () => {
         <section className={'container-fluid'}>
             <div className={'row justify-content-center'}>
                 <Animals/>
+
             </div>
         </section>
     );
