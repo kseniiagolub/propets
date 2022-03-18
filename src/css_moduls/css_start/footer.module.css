@@ -1,0 +1,7 @@
+.footerLogo {
+    width: 200px;
+}
+
+footer {
+    background-color: var(--bs-dark-green);
+}

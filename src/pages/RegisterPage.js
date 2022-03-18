@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React from 'react';
 import Header from "../components/header/Header";
 import Main from "../components/main/Main";
@@ -8,10 +9,10 @@ const RegisterPage = () => {
         <div>
             <Header/>
             <Main/>
-
-            {/*<Registration/>*/}
         </div>
     );
 };
 
 export default RegisterPage;
+=======
+>>>>>>> 5968b5f0b3a4207fe2a3f2de3fc5dc436c47581d

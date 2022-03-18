@@ -1,5 +1,5 @@
 import React from 'react';
-import style from "../../../css_moduls/section_welcome.module.css";
+import style from "../../../css_moduls/css_start/section_welcome.module.css";
 import Main_title from "./Main_title";
 import Registration_links from "./Registration_links";
 import Dog_img from "./Dog_img";

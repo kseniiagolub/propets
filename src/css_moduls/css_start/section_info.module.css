@@ -1,3 +1,7 @@
+.heightSection {
+    height: 450px;
+}
+
 .sizeH2 {
     font-size: 24px;
     color: var(--bs-green);
