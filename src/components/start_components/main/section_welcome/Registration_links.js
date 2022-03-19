@@ -1,6 +1,6 @@
 import React from 'react';
-import style from '../../../css_moduls/css_start/section_welcome.module.css'
-import search from '../../../assets/png/search.png'
+import style from '../../../../css_moduls/start_css/section_welcome.module.css'
+import search from '../../../../assets/png/search.png'
 
 const RegistrationLinks = () => {
     return (

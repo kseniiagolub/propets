@@ -2,7 +2,7 @@ import React from 'react';
 import Comming from "./Comming";
 import About_coming from "./About_coming";
 import Logo from "./Logo";
-import style from '../../../css_moduls/css_start/section_coming.module.css'
+import style from '../../../../css_moduls/start_css/section_coming.module.css'
 
 const SectionComing = () => {
     return (

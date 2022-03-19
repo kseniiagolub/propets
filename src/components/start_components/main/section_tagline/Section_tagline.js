@@ -1,5 +1,5 @@
 import React from 'react';
-import style from '../../../css_moduls/css_start/section_tagline.module.css'
+import style from '../../../../css_moduls/start_css/section_tagline.module.css'
 
 const SectionTagline = () => {
     return (

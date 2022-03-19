@@ -2,7 +2,7 @@ import React from 'react';
 import Footer_logo from "./Footer_logo";
 import Social from "./Social";
 import Links from "./Links";
-import style from '../../css_moduls/css_start/footer.module.css'
+import style from '../../../css_moduls/start_css/footer.module.css'
 
 const Footer = () => {
     return (

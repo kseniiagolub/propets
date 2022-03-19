@@ -1,7 +1,7 @@
 import React from 'react';
-import facebook from "../../assets/svg/facebook.svg";
-import instagram from "../../assets/svg/instagram.svg";
-import style from "../../css_moduls/css_start/footer.module.css"
+import facebook from "../../../assets/svg/facebook.svg";
+import instagram from "../../../assets/svg/instagram.svg";
+import style from "../../../css_moduls/start_css/footer.module.css"
 
 
 const Social = () => {

@@ -1,11 +1,11 @@
 import React from 'react';
-import lost from "../../assets/png/lost.png";
-import found from "../../assets/png/found.png";
-import vetHelp from "../../assets/png/vetHelp.png";
-import hotels from "../../assets/png/hotels.png";
-import walking from "../../assets/png/walking.png";
-import fostering from "../../assets/png/fostering.png";
-import style from '../../css_moduls/css_start/footer.module.css'
+import lost from "../../../assets/png/lost.png";
+import found from "../../../assets/png/found.png";
+import vetHelp from "../../../assets/png/vetHelp.png";
+import hotels from "../../../assets/png/hotels.png";
+import walking from "../../../assets/png/walking.png";
+import fostering from "../../../assets/png/fostering.png";
+import style from '../../../css_moduls/start_css/footer.module.css'
 
 const Links = () => {
     return (

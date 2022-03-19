@@ -1,6 +1,6 @@
 import React from 'react';
-import love from '../../../assets/png/love.png'
-import style from '../../../css_moduls/css_start/section_coming.module.css'
+import love from '../../../../assets/png/love.png'
+import style from '../../../../css_moduls/start_css/section_coming.module.css'
 
 const Logo = () => {
     return (
