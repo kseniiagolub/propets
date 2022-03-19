@@ -5,7 +5,6 @@
 .title{
     font-size: 16px;
     color: var(--bs-dark-green);
-    padding: 1%;
 }
 .btnFacebook{
     background-color: var(--bs-dark-blue);

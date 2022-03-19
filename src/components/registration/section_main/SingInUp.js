@@ -3,7 +3,7 @@ import style from '../../../css_moduls/registration_css/registration.main.module
 
 const SingInUp = () => {
     return (
-        <div>
+        <div className={`mb-4`}>
             <button className={`${style.btn} ${style.active}`}>Sign up</button>
             <button className={`${style.btn}`}>Sign in</button>
         </div>

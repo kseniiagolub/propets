@@ -5,13 +5,13 @@ import style from '../../../css_moduls/registration_css/registration.footer.modu
 
 const RegistrationFooter = () => {
     return (
-        <div className={`container-fluid`}>
-            <hr/>
-            <div className={'row'}>
+        <>
+            <hr className={`m-0`}/>
+            <div className={`${style.heightFooter} row align-items-center`}>
                 <AgreePersonalData/>
                 <Footer_btn/>
             </div>
-        </div>
+        </>
     );
 };
 

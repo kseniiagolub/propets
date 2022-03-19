@@ -3,8 +3,8 @@ import style from "../../../css_moduls/registration_css/registration.main.module
 
 const SignInForm = () => {
     return (
-        <div className={'container-fluid'}>
-            <div className={'row d-flex flex-column justify-content-between h-100'}>
+        <>
+            <div className={`${style.heightForm} row d-flex flex-column justify-content-center mb-4`}>
                 <div className={'col-6'}>
                     <div>
                         <label className={'col-3 text-end'} htmlFor="email">Email:</label>
@@ -16,11 +16,11 @@ const SignInForm = () => {
                         <input className={'col-8'} type="password" placeholder="*****************" name="psw" required/>
                     </div>
                 </div>
-                <div className={`${style.forgotPwd} col-6 text-center`}>
-                    <a href={'#'}>Forgot password?</a>
-                </div>
             </div>
-        </div>
+            <div className={`${style.forgotPwd} col-6 text-center`}>
+                <a href={'#'}>Forgot password?</a>
+            </div>
+        </>
     );
 };
 

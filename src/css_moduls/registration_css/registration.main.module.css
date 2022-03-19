@@ -38,3 +38,7 @@ input {
     font-size: 10px;
     color: var(--bs-ligth-grey);
 }
+
+.heightForm {
+    height: 140px;
+}

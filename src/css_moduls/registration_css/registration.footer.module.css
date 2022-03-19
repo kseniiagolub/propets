@@ -39,3 +39,7 @@
 hr {
     border: var(--bs-ligth-grey) 1px solid;
 }
+
+.heightFooter {
+    height: 60px;
+}

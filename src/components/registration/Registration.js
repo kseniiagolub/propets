@@ -9,16 +9,13 @@ import Registration_footer from "./section_footer/Registration_footer";
 
 const Registration = () => {
     return (
-        <section className={'container-fluid'}>
-            <div className={`${style.box} row justify-content-center`}>
+        <section className={`${style.box} container-fluid pt-3`}>
                 <Section_header_logo/>
                 <Section_header_welcome/>
                 <SingInUp/>
-                {/*<SignUpForm/>*/}
-                <SignInForm/>
+                <SignUpForm/>
+                {/*<SignInForm/>*/}
                 <Registration_footer/>
-
-            </div>
         </section>
     );
 };

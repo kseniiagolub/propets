@@ -5,11 +5,9 @@ import style from '../../../css_moduls/registration_css/section_header.module.cs
 
 const SectionHeaderWelcome = () => {
     return (
-        <div className={'container-fluid'}>
-            <div className={'row'}>
-                <h2 className={`m-0 col-7 ${style.title}`}><span className={'fw-bold'}>Welcome! </span>Please sign in / sign up to continue or</h2>
+        <div className={'d-flex align-items-center mb-3'}>
+                <h2 className={`col-7 m-0 ${style.title}`}><span className={'fw-bold'}>Welcome! </span>Please sign in / sign up to continue or</h2>
                 <Section_header_enter_facebook/>
-            </div>
         </div>
     );
 };
