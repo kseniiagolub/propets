@@ -1,5 +1,5 @@
 import React from 'react';
-import style from '../../../css_moduls/registration_css_moduls/registration.main.module.css';
+import style from '../../../css_moduls/registration_css/registration.main.module.css';
 
 const SingInUp = () => {
     return (

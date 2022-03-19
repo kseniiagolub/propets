@@ -1,9 +1,11 @@
 .agreeText {
     font-size: 10px;
     color: var(--bs-ligth-grey);
+    width: 294px;
+    height: 33px;
 }
 
-.agreeText > a{
+.agreeText > a {
     color: inherit;
 }
 
@@ -25,4 +27,15 @@
     border-radius: 17px;
     color: var(--bs-white);
     font-size: 12px;
+    display: flex;
+    align-items: center;
+}
+
+.paw {
+    width: 16px;
+    height: 16px;
+}
+
+hr {
+    border: var(--bs-ligth-grey) 1px solid;
 }

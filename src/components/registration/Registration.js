@@ -1,7 +1,7 @@
 import React from 'react';
 import Section_header_logo from "./section_header/Section_header_logo";
 import Section_header_welcome from "./section_header/Section_header_welcome";
-import style from '../../css_moduls/registration_css_moduls/registration.module.css';
+import style from '../../css_moduls/registration_css/registration.module.css';
 import SingInUp from "./section_main/SingInUp";
 import SignUpForm from "./section_main/SignUpForm";
 import SignInForm from "./section_main/SignInForm";
@@ -14,8 +14,8 @@ const Registration = () => {
                 <Section_header_logo/>
                 <Section_header_welcome/>
                 <SingInUp/>
-                <SignUpForm/>
-                {/*<SignInForm/>*/}
+                {/*<SignUpForm/>*/}
+                <SignInForm/>
                 <Registration_footer/>
 
             </div>
