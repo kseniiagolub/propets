@@ -10,7 +10,7 @@ const SectionComing = () => {
             <div className={`row justify-content-center align-items-center pb-2 pt-2`}>
                 <div className={'d-flex col-10 align-items-center'}>
                     <Comming/>
-                    <div className={`row align-items-center col-8 justify-content-end`}>
+                    <div className={`row align-items-center col-7 justify-content-between`}>
                         <About_coming/>
                         <Logo/>
                     </div>

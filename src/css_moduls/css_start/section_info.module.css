@@ -7,6 +7,17 @@
     color: var(--bs-green);
 }
 
+.sizeUl {
+    width: 450px;
+}
+
 .sizeLi {
     font-size: 18px;
+}
+
+@media screen and (max-width: 450px) {
+
+    .sizeUl {
+        width: 360px;
+    }
 }

@@ -1,18 +1,18 @@
 import React from 'react';
 import facebook from "../../assets/svg/facebook.svg";
 import instagram from "../../assets/svg/instagram.svg";
+import style from "../../css_moduls/css_start/footer.module.css"
 
 
 const Social = () => {
     return (
-        <div>
-            <div>
-                <img src={facebook} alt='facebook'/>
-                <img src={instagram} alt='instagram'/>
+        <div className={`${style.widthSocial}`}>
+            <div className={`mb-3`}>
+                <img className={`m-2`} src={facebook} alt='facebook'/>
+                <img className={`m-2`} src={instagram} alt='instagram'/>
             </div>
             <div>
-                <p>1600 Amphitheatre Pkwy</p>
-                <p>Mountain View, CA 94043, USA</p>
+                <p>1600 Amphitheatre Pkwy Mountain View, CA 94043, USA</p>
             </div>
         </div>
     );

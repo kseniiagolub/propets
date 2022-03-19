@@ -1,7 +1,35 @@
+.heightFooter {
+    min-height: 190px;
+}
+
 .footerLogo {
     width: 200px;
 }
 
 footer {
     background-color: var(--bs-dark-green);
+}
+
+.imgSize {
+    width: 16px;
+    height: 16px;
+}
+
+.heightBlock {
+    height: 70px;
+    margin-right: 10px;
+}
+
+.widthSocial {
+    width: 222px;
+}
+
+.justifyContent {
+    justify-content: space-between;
+}
+
+@media screen and (max-width: 500px) {
+    .justifyContent {
+        justify-content: center;
+    }
 }

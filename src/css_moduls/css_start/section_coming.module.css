@@ -1,3 +1,7 @@
+.widthInfo {
+    width: 53%;
+}
+
 .colorSection {
     background-color: var(--bs-red);
 }
@@ -23,4 +27,21 @@
 .textStyle {
     color: var(--bs-white);
     font-size: 16px;
+}
+
+@media screen and (max-width: 992px) {
+    .aboutStyle {
+        font-size: 32px;
+    }
+}
+
+@media screen and (max-width: 450px) {
+
+    .logoLove {
+        display: none;
+    }
+
+    .widthInfo {
+        width: 100%;
+    }
 }

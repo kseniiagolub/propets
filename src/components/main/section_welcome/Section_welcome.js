@@ -9,7 +9,7 @@ const SectionWelcome = () => {
     return (
         <section className={'container-fluid'}>
             <div className={'row justify-content-center'}>
-                <div className={'col-10 d-flex justify-content-between'}>
+                <div className={`${style.justifyContent} col-10 d-flex flex-wrap mb-5`}>
                     <div className={`${style.welcomeTextSize}`}>
                         <Main_title/>
                         <Registration_links/>

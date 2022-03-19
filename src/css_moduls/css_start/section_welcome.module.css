@@ -28,21 +28,21 @@ dogImg {
 
 .btnLostPet {
     background-color: var(--bs-yellow);
-    top: 450px;
-    width: 29%;
+    top: 420px;
+    width: 32%;
 }
 
 .btnFoundPet {
     background-color: var(--bs-green);
-    top: 543px;
-    width: 24%;
+    top: 513px;
+    width: 27%;
 }
 
 .search {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 74%;
+    width: 72%;
     margin-left: auto;
 }
 
@@ -52,7 +52,7 @@ dogImg {
 }
 
 .btnFoundPet span {
-    margin-left: 16%;
+    margin-left: 20%;
 }
 
 .search img {
@@ -69,4 +69,20 @@ dogImg {
 
 .pJoin {
     margin-bottom: 26px;
+}
+
+.justifyContent {
+    justify-content: space-between;
+}
+
+@media screen and (max-width: 992px) {
+
+    .btnLostPet,
+    .btnFoundPet {
+        display: none;
+    }
+
+    .justifyContent {
+        justify-content: center;
+    }
 }
