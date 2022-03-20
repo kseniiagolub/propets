@@ -9,27 +9,27 @@ import style from '../../../css_moduls/start_css/footer.module.css'
 
 const Links = () => {
     return (
-        <div>
-            <div className={`row g-2`}>
-                <div className={`col-2 d-flex flex-column justify-content-between`}>
+        <div className={`${style.widthLinks}`}>
+            <div className={`${style.heightLinks} row g-2`}>
+                <div className={`col-1 d-flex flex-column justify-content-between`}>
                     <img className={`${style.imgSize}`} src={lost} alt='lost'/>
                     <img className={`${style.imgSize}`} src={found} alt='found'/>
                     <img className={`${style.imgSize}`} src={vetHelp} alt='vetHelp'/>
                 </div>
-                <div className={`col-4 d-flex flex-column`}>
-                    <span>Lost</span>
-                    <span>Found</span>
-                    <span>VetHelp</span>
+                <div className={`col-5 d-flex flex-column justify-content-between m-0 ps-2`}>
+                    <a href={'#'}><span className={`${style.colorWhite}`}>Lost</span></a>
+                    <a href={'#'}><span className={`${style.colorWhite}`}>Found</span></a>
+                    <a href={'#'}><span className={`${style.colorWhite}`}>VetHelp</span></a>
                 </div>
-                <div className={`col-2 d-flex flex-column justify-content-between`}>
+                <div className={`col-1 d-flex flex-column justify-content-between`}>
                     <img className={`${style.imgSize}`} src={hotels} alt='hotels'/>
                     <img className={`${style.imgSize}`} src={walking} alt='walking'/>
                     <img className={`${style.imgSize}`} src={fostering} alt='fostering'/>
                 </div>
-                <div className={`col-4 d-flex flex-column`}>
-                    <span>Hotels</span>
-                    <span>Walking</span>
-                    <span>Fostering</span>
+                <div className={`col-5 d-flex flex-column justify-content-between m-0 ps-2`}>
+                    <a href={'#'}><span className={`${style.colorWhite}`}>Hotels</span></a>
+                    <a href={'#'}><span className={`${style.colorWhite}`}>Walking</span></a>
+                    <a href={'#'}><span className={`${style.colorWhite}`}>Fostering</span></a>
                 </div>
             </div>
         </div>

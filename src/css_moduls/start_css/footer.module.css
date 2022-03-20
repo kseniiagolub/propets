@@ -20,12 +20,28 @@ footer {
     margin-right: 10px;
 }
 
+.heightLinks {
+    height: 80px;
+}
+
 .widthSocial {
     width: 222px;
 }
 
+.widthLinks {
+    min-width: 210px;
+}
+
 .justifyContent {
     justify-content: space-between;
+}
+
+.colorWhite {
+    color: var(--bs-white);
+}
+
+.heightLinks a {
+    text-decoration: none;
 }
 
 @media screen and (max-width: 500px) {

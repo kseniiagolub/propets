@@ -7,10 +7,10 @@ import Registration from "../components/registration/Registration";
 const StartPage = () => {
     return (
         <div>
-            {/*<Header/>*/}
-            {/*<Main/>*/}
-            {/*<Footer/>*/}
-            <Registration/>
+            <Header/>
+            <Main/>
+            <Footer/>
+            {/*<Registration/>*/}
         </div>
     );
 };
