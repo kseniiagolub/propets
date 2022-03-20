@@ -1,0 +1,67 @@
+.header {
+    height: 70px;
+    background-color: var(--bs-white);
+}
+
+.logoHeader {
+    filter: invert(59%) sepia(4%) saturate(2660%) hue-rotate(106deg) brightness(94%) contrast(79%);
+}
+
+.btnHeader {
+    width: 148px;
+    height: 34px;
+    background-color: var(--bs-green);
+    border: var(--bs-light-green) 1px solid;
+    border-radius: 17px;
+    color: var(--bs-white);
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+}
+
+.iconBtn {
+    width: 16px;
+    height: 16px;
+    filter: invert(100%) sepia(13%) saturate(75%) hue-rotate(74deg) brightness(118%) contrast(100%);
+}
+
+.mainGreenBack {
+    background-color: var(--bs-green);
+}
+
+.promoImg {
+    margin: 3%;
+    width: 195px;
+    height: 219px;
+}
+
+.promoImgSmall {
+    margin: 3%;
+    width: 195px;
+    height: 98px;
+}
+
+.dropdownBtn {
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    font-size: 20px;
+    color: #818181;
+    display: block;
+    border: none;
+    background: none;
+    width:100%;
+    text-align: left;
+    cursor: pointer;
+    outline: none;
+}
+
+.dropdownContainer {
+    display: none;
+    background-color: #262626;
+    padding-left: 8px;
+}
+
+.active {
+    background-color: green;
+    color: white;
+}
