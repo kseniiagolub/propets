@@ -5,19 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cb9a94ab-ec86-4b5a-a4dc-9fa84d7aac15" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/home/home_main/services_home_main/Hotels.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/home/home_main/NewsWallHome.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/home/home_main/NewsWallHome.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/start_components/footer/Links.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/start_components/footer/Links.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/start_components/footer/Social.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/start_components/footer/Social.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/start_components/main/section_welcome/Registration_links.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/start_components/main/section_welcome/Registration_links.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/css_moduls/home_css/home.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/css_moduls/home_css/home.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/css_moduls/start_css/footer.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/css_moduls/start_css/footer.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/css_moduls/start_css/header.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/css_moduls/start_css/header.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/css_moduls/start_css/section_coming.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/css_moduls/start_css/section_coming.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/css_moduls/start_css/section_info.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/css_moduls/start_css/section_info.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/css_moduls/start_css/section_welcome.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/css_moduls/start_css/section_welcome.module.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,7 +48,7 @@
       <updated>1647890212882</updated>
       <workItem from="1647890214530" duration="5745000" />
       <workItem from="1647940173687" duration="875000" />
-      <workItem from="1647947411903" duration="9822000" />
+      <workItem from="1647947411903" duration="11051000" />
     </task>
     <servers />
   </component>
