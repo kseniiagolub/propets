@@ -7,7 +7,7 @@ const HomeHeader = () => {
     return (
         <header className={`${style.header} container-fluid`}>
             <div className={'row justify-content-center align-items-center h-100'}>
-                <div className={'col-10 d-flex justify-content-between'}>
+                <div className={'col-9 d-flex justify-content-between'}>
                     <LogoHomeHeader/>
                     <BtnHomeHeader/>
                 </div>
