@@ -4,7 +4,8 @@ import homeImg from '../../../assets/png/home.png';
 import lostImg from '../../../assets/png/lost_black.png';
 import foundImg from '../../../assets/png/paw_black.png';
 import starImg from '../../../assets/png/star.png';
-import avatar from '../../../assets/png/avatar.jpg'
+import avatar from '../../../assets/png/avatar.jpg';
+import logout from '../../../assets/png/logout.png';
 import ElementList from "./ElementList";
 import DropMenu from "./DropMenu";
 
@@ -28,7 +29,8 @@ const NavHome = () => {
                         <a className={`${style.aColor} m-0`}>Anton Golub</a>
                     </div>
                 </div>
-                <a className={`${style.btnLogout} col-4 mb-3`}>logout</a>
+                <a className={`${style.btnLogout} col-4 mb-3`} href={'#'}>
+                    <img className={`${style.iconBtn}`} src={logout}/>Logout</a>
                 <div className={`${style.gorizontLine}`}/>
             </div>
         </div>
