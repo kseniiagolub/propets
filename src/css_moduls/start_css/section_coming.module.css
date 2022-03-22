@@ -9,6 +9,7 @@
 .pLove {
     color: var(--bs-white);
     font-size: 16px;
+    font-weight: 600;
     position: relative;
     width: 50px;
     left: 40px;
@@ -22,11 +23,13 @@
 .aboutStyle {
     color: var(--bs-white);
     font-size: 56px;
+    font-weight: 500;
 }
 
 .textStyle {
     color: var(--bs-white);
     font-size: 16px;
+    font-weight: 600;
 }
 
 @media screen and (max-width: 992px) {

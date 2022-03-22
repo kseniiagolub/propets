@@ -9,10 +9,11 @@ dogImg {
 
 .pText {
     font-size: 56px;
+    font-weight: 500;
 }
 
 .welcomeTextSize {
-    max-width: 485px;
+    width: 486px;
     padding-top: 60px;
 }
 
@@ -51,6 +52,11 @@ dogImg {
     font-size: 32px;
 }
 
+.btnSpanWhite{
+    color: var(--bs-white);
+    font-size: 32px;
+}
+
 .btnFoundPet span {
     margin-left: 20%;
 }
@@ -65,6 +71,12 @@ dogImg {
     text-transform: uppercase;
     text-decoration: underline;
     color: var(--bs-green);
+    font-weight: 700;
+}
+
+.pJoin {
+    margin-bottom: 26px;
+    font-size: 16px;
 }
 
 .justifyContent {

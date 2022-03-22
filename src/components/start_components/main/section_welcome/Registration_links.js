@@ -16,7 +16,7 @@ const RegistrationLinks = () => {
                 </div>
             </button>
             <button className={`${style.btnFoundPet}`} onClick={() => push('/authorization')}>
-                <span className={`${style.btnSpan}`}>I found a pet!</span>
+                <span className={`${style.btnSpanWhite}`}>I found a pet!</span>
             </button>
         </>
     );

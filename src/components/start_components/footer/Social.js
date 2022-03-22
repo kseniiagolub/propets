@@ -12,7 +12,7 @@ const Social = () => {
                 <a href={'#'}><img className={`m-2`} src={instagram} alt='instagram'/></a>
             </div>
             <div>
-                <p className={`${style.colorWhite}`}>1600 Amphitheatre Pkwy Mountain View, CA 94043, USA</p>
+                <p className={`${style.colorWhite} ${style.smallerText}`}>1600 Amphitheatre Pkwy Mountain View, CA 94043, USA</p>
             </div>
         </div>
     );
