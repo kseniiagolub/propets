@@ -5,20 +5,43 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cb9a94ab-ec86-4b5a-a4dc-9fa84d7aac15" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/store/reducers/changeComponentAuth.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/store/reducers/registration.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/png/animals.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/png/animals.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/png/dog.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/png/dog.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/home/Home.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/home/Home.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/home/LostFoundBtn.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/home/home_header/LostFoundBtn.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/home/home_header/HomeHeader.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/home/home_header/HomeHeader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/home/home_main/MainHome.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/home/home_main/MainHome.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/home/home_main/NavHome.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/home/home_main/NavHome.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/home/home_main/NewsWallHome.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/home/home_main/NewsWallHome.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/home/home_main/PromoHome.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/home/home_main/PromoHome.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/registration/Registration.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/registration/Registration.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/registration/section_main/SignInForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/registration/section_main/SignInForm.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/registration/section_main/SignUpForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/registration/section_main/SignUpForm.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/registration/section_main/SingInUp.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/registration/section_main/SingInUp.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/start_components/main/section_welcome/Join_text.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/start_components/main/section_welcome/Join_text.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/css_moduls/home_css/home.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/css_moduls/home_css/home.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/css_moduls/registration_css/registration.main.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/css_moduls/registration_css/registration.main.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/css_moduls/start_css/header.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/css_moduls/start_css/header.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/css_moduls/start_css/section_coming.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/css_moduls/start_css/section_coming.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/css_moduls/start_css/section_welcome.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/css_moduls/start_css/section_welcome.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/HomePage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/HomePage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/StartPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/StartPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/reducers/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/reducers/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -32,12 +55,21 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/components/home/home_header" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\jukon\WebstormProjects\propets\src\components\home\home_main" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\jukon\WebstormProjects\propets\src\components\home\home_header" />
+    </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">

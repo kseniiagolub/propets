@@ -13,8 +13,6 @@ const Registration = () => {
                 <Section_header_logo/>
                 <Section_header_welcome/>
                 <SingInUp/>
-                <SignUpForm/>
-                {/*<SignInForm/>*/}
                 <Registration_footer/>
         </section>
     );

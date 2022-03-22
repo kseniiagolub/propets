@@ -4,8 +4,8 @@ import {Link} from "react-router-dom";
 
 const JoinText = () => {
     return (
-        <div className={'col-10'}>
-            <p className={`${style.pJoin}`}>I'm okay, just want to <Link to='/authorization' className={`${style.join}`}>join</Link> the pawsome community</p>
+        <div className={'col-10 mt-4 mb-4'}>
+            <p className={`m-0`}>I'm okay, just want to <Link to='/authorization' className={`${style.join}`}>join</Link> the pawsome community</p>
         </div>
     );
 };

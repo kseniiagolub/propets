@@ -5,10 +5,10 @@ import MainHome from "./home_main/MainHome";
 
 const Home = () => {
     return (
-        <div>
+        <>
             <HomeHeader/>
             <MainHome/>
-        </div>
+        </>
     );
 };
 

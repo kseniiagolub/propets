@@ -67,10 +67,6 @@ dogImg {
     color: var(--bs-green);
 }
 
-.pJoin {
-    margin-bottom: 26px;
-}
-
 .justifyContent {
     justify-content: space-between;
 }
