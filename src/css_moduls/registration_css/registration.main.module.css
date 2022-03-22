@@ -1,4 +1,4 @@
-.btn {
+.buttonsStyle button {
     width: 311px;
     height: 34px;
     background-color: var(--bs-green);
@@ -8,8 +8,8 @@
 }
 
 .active {
-    background-color: var(--bs-green);
-    opacity: 1;
+    background-color: var(--bs-green) !important;
+    opacity: 1 !important;
 }
 label {
     font-size: 12px;
@@ -39,6 +39,10 @@ input {
     color: var(--bs-ligth-grey);
 }
 
-.heightForm {
-    height: 140px;
+.heightFormRegister {
+    height: 163px;
+}
+
+.heightFormAuth {
+    height: 114px;
 }

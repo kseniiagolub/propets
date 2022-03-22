@@ -4,7 +4,7 @@ import style from "../../../css_moduls/registration_css/registration.main.module
 const SignInForm = () => {
     return (
         <>
-            <div className={`${style.heightForm} row d-flex flex-column justify-content-center mb-4`}>
+            <div className={`${style.heightFormAuth} row d-flex flex-column justify-content-center mb-4`}>
                 <div className={'col-6'}>
                     <div>
                         <label className={'col-3 text-end'} htmlFor="email">Email:</label>
@@ -17,7 +17,7 @@ const SignInForm = () => {
                     </div>
                 </div>
             </div>
-            <div className={`${style.forgotPwd} col-6 text-center`}>
+            <div className={`${style.forgotPwd} col-6 text-center mb-2`}>
                 <a href={'#'}>Forgot password?</a>
             </div>
         </>

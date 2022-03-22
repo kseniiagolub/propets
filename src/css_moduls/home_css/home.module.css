@@ -1,6 +1,13 @@
-.header {
-    height: 70px;
-    background-color: var(--bs-white);
+nav {
+    margin-bottom: 100px;
+}
+
+.heightHeader {
+    height: 7vh;
+}
+
+.heightMain {
+    height: 93vh;
 }
 
 .logoHeader {
@@ -29,16 +36,8 @@
     background-color: var(--bs-green);
 }
 
-.promoImg {
-    margin: 3%;
-    width: 195px;
-    height: 219px;
-}
-
-.promoImgSmall {
-    margin: 3%;
-    width: 195px;
-    height: 98px;
+.mainWhiteBack {
+    background-color: var(--bs-white);
 }
 
 .navBtn {
@@ -50,14 +49,49 @@
     color: var(--bs-white);
 }
 
-.dropdownContainer {
-    display: none;
-    background-color: #262626;
-    padding-left: 8px;
+.gorizontLine {
+    border: 1px var(--bs-white) solid;
+    opacity: 0.3;
+    width: 90%;
 }
 
-.active {
+.dropdownContainer {
+    display: none;
+}
 
+.widthImg {
+    width: 19px;
+}
+
+.imgUser {
+    width: 35px;
+    height: 35px;
+    overflow: hidden;
+    border: 1px var(--bs-white) solid;
+    border-radius: 50%;
+}
+
+.imgUser img {
+    display: block;
+    width:100%;
+    border-radius: 50%;
+}
+
+.btnLogout {
+    display: inline-block;
+    width: 50%;
+    padding: 8px;
+    color: #fff;
+    text-align: center;
+    outline: none;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.aColor {
+    color: var(--bs-white);
+    text-decoration: none;
+    cursor: pointer;
 }
 
 .titleBold{

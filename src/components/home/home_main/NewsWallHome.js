@@ -1,10 +1,9 @@
 import React from 'react';
-import Hotels from "./services_home_main/Hotels";
+import style from '../../../css_moduls/home_css/home.module.css';
 
 const NewsWallHome = () => {
     return (
-        <div className={`d-flex flex-column col-5 justify-content-center align-items-center`}>
-            <Hotels/>
+        <div className={`${style.mainWhiteBack} d-flex flex-column col-7 justify-content-center align-items-center`}>
             <div>post 1</div>
             <div>post 2</div>
             <div>post 3</div>

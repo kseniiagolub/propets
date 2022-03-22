@@ -37,12 +37,14 @@
         font-size: 32px;
     }
 }
-
-@media screen and (max-width: 450px) {
-
+@media screen and (max-width: 650px) {
     .logoLove {
         display: none;
     }
+}
+
+
+@media screen and (max-width: 450px) {
 
     .widthInfo {
         width: 100%;

@@ -1,7 +1,7 @@
 import React from 'react';
-import lost_black from '../../assets/png/lost_black.png';
-import found from '../../assets/png/found.png';
-import style from '../../css_moduls/home_css/lost_found_btn.module.css';
+import lost_black from '../../../assets/png/lost_black.png';
+import found from '../../../assets/png/found.png';
+import style from '../../../css_moduls/home_css/lost_found_btn.module.css';
 
 const LostFoundBtn = () => {
     return (
