@@ -44,6 +44,15 @@ footer {
     text-decoration: none;
 }
 
+.smallerText{
+    font-size: 12px;
+}
+
+.smallText{
+    font-size: 16px;
+    font-weight: 500;
+}
+
 @media screen and (max-width: 500px) {
     .justifyContent {
         justify-content: center;

@@ -17,9 +17,9 @@ const Links = () => {
                     <img className={`${style.imgSize}`} src={vetHelp} alt='vetHelp'/>
                 </div>
                 <div className={`col-5 d-flex flex-column justify-content-between m-0 ps-2`}>
-                    <a href={'#'}><span className={`${style.colorWhite}`}>Lost</span></a>
-                    <a href={'#'}><span className={`${style.colorWhite}`}>Found</span></a>
-                    <a href={'#'}><span className={`${style.colorWhite}`}>VetHelp</span></a>
+                    <a href={'#'}><span className={`${style.colorWhite} ${style.smallText}`}>Lost</span></a>
+                    <a href={'#'}><span className={`${style.colorWhite} ${style.smallText}`}>Found</span></a>
+                    <a href={'#'}><span className={`${style.colorWhite} ${style.smallText}`}>VetHelp</span></a>
                 </div>
                 <div className={`col-1 d-flex flex-column justify-content-between`}>
                     <img className={`${style.imgSize}`} src={hotels} alt='hotels'/>
@@ -27,9 +27,9 @@ const Links = () => {
                     <img className={`${style.imgSize}`} src={fostering} alt='fostering'/>
                 </div>
                 <div className={`col-5 d-flex flex-column justify-content-between m-0 ps-2`}>
-                    <a href={'#'}><span className={`${style.colorWhite}`}>Hotels</span></a>
-                    <a href={'#'}><span className={`${style.colorWhite}`}>Walking</span></a>
-                    <a href={'#'}><span className={`${style.colorWhite}`}>Fostering</span></a>
+                    <a href={'#'}><span className={`${style.colorWhite} ${style.smallText}`}>Hotels</span></a>
+                    <a href={'#'}><span className={`${style.colorWhite} ${style.smallText}`}>Walking</span></a>
+                    <a href={'#'}><span className={`${style.colorWhite} ${style.smallText}`}>Fostering</span></a>
                 </div>
             </div>
         </div>

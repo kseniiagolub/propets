@@ -11,6 +11,7 @@
     opacity: 1;
     background-color: var(--bs-dark-green);
     color: var(--bs-white);
+    font-size: 16px;
 }
 
 .btnSign:hover {
