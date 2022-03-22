@@ -67,7 +67,7 @@ nav {
     width: 35px;
     height: 35px;
     overflow: hidden;
-    background: #fff;
+    border: 1px var(--bs-white) solid;
     border-radius: 50%;
 }
 
