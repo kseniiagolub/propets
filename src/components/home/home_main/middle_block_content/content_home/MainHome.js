@@ -1,8 +1,8 @@
 import React from 'react';
-import NavHome from "./NavHome";
+import NavHome from "../../left_block_nav/NavHome";
 import NewsWallHome from "./NewsWallHome";
-import PromoHome from "./PromoHome";
-import style from '../../../css_moduls/home_css/home.module.css';
+import PromoHome from "../../right_block_promo/PromoHome";
+import style from '../../../../../css_moduls/home_css/home.module.css';
 
 const MainHome = () => {
     return (

@@ -13,6 +13,7 @@ function App() {
             <Route exact path={'/home'} component={HomePage}/>
             <Route exact path={'/authorization'} component={RegisterPage}/>
         </Switch>
+
         <Home/>
     </>
   );

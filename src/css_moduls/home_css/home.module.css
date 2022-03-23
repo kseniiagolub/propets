@@ -32,6 +32,11 @@ nav {
     filter: invert(100%) sepia(13%) saturate(75%) hue-rotate(74deg) brightness(118%) contrast(100%);
 }
 
+.iconBtnBlack {
+    width: 16px;
+    height: 16px;
+}
+
 .mainGreenBack {
     background-color: var(--bs-green);
 }
@@ -151,8 +156,10 @@ nav {
 .dropdownContentGreen {
     display: none;
     position: absolute;
+    justify-content: space-evenly;
     background-color: var(--bs-dark-green);
-    min-width: 160px;
+    min-width: 130px;
+    min-height: 70px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
 }
