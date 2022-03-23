@@ -1,10 +1,10 @@
 import React, {useState} from 'react';
-import style from "../../../css_moduls/home_css/home.module.css";
-import megafonImg from "../../../assets/png/megafon.png";
-import hotelsImg from "../../../assets/png/hotels.png";
-import walkingImg from "../../../assets/png/walking.png";
-import fosteringImg from "../../../assets/png/fostering.png";
-import vetHelpImg from "../../../assets/png/vetHelp.png";
+import style from "../../../../css_moduls/home_css/home.module.css";
+import megafonImg from "../../../../assets/png/megafon.png";
+import hotelsImg from "../../../../assets/png/hotels.png";
+import walkingImg from "../../../../assets/png/walking.png";
+import fosteringImg from "../../../../assets/png/fostering.png";
+import vetHelpImg from "../../../../assets/png/vetHelp.png";
 
 const DropMenu = () => {
 

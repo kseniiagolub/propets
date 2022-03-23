@@ -1,8 +1,8 @@
 import React from 'react';
-import style from '../../../css_moduls/home_css/home.module.css';
-import img_dental_care from '../../../assets/png/dental_care.png';
-import img_pet_hotel from '../../../assets/png/pet_hotel.png';
-import img_pet_hotel_2 from '../../../assets/png/pet_hotel_2.png';
+import style from '../../../../css_moduls/home_css/home.module.css';
+import img_dental_care from '../../../../assets/png/dental_care.png';
+import img_pet_hotel from '../../../../assets/png/pet_hotel.png';
+import img_pet_hotel_2 from '../../../../assets/png/pet_hotel_2.png';
 
 const PromoHome = () => {
     return (

@@ -1,4 +1,4 @@
-dogImg {
+.dogImg {
     max-width: 100%;
 }
 
@@ -81,6 +81,10 @@ dogImg {
 
 .justifyContent {
     justify-content: space-between;
+}
+
+.marginBottom {
+    margin-bottom: 68px;
 }
 
 @media screen and (max-width: 992px) {

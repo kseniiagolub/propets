@@ -8,12 +8,11 @@ import Home from "./components/home/Home";
 function App() {
   return (
     <>
-        {/*<Switch>*/}
-        {/*    <Route exact path={'/'} component={StartPage}/>*/}
-        {/*    <Route exact path={'/home'} component={HomePage}/>*/}
-        {/*    <Route exact path={'/authorization'} component={RegisterPage}/>*/}
-        {/*</Switch>*/}
-        <Home/>
+        <Switch>
+            <Route exact path={'/'} component={StartPage}/>
+            <Route exact path={'/home'} component={HomePage}/>
+            <Route exact path={'/authorization'} component={RegisterPage}/>
+        </Switch>
     </>
   );
 }

@@ -1,11 +1,11 @@
 import React, {useState} from 'react';
-import style from '../../../css_moduls/home_css/home.module.css';
-import homeImg from '../../../assets/png/home.png';
-import lostImg from '../../../assets/png/lost_black.png';
-import foundImg from '../../../assets/png/paw_black.png';
-import starImg from '../../../assets/png/star.png';
-import avatar from '../../../assets/png/avatar.jpg';
-import logout from '../../../assets/png/logout.png';
+import style from '../../../../css_moduls/home_css/home.module.css';
+import homeImg from '../../../../assets/png/home.png';
+import lostImg from '../../../../assets/png/lost_black.png';
+import foundImg from '../../../../assets/png/paw_black.png';
+import starImg from '../../../../assets/png/star.png';
+import avatar from '../../../../assets/png/avatar.jpg';
+import logout from '../../../../assets/png/logout.png';
 import ElementList from "./ElementList";
 import DropMenu from "./DropMenu";
 

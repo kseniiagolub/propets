@@ -1,8 +1,8 @@
 import React from 'react';
-import style from '../../../css_moduls/home_css/home.module.css';
-import dog_avatar from '../../../assets/png/dog_avatar_small.png';
-import dog from '../../../assets/png/gold_dog.png';
-import star from '../../../assets/png/star.png';
+import style from '../../../../../css_moduls/home_css/home.module.css';
+import dog_avatar from '../../../../../assets/png/dog_avatar_small.png';
+import dog from '../../../../../assets/png/gold_dog.png';
+import star from '../../../../../assets/png/star.png';
 
 const PostCard = () => {
     return (
