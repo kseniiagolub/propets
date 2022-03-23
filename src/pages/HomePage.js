@@ -1,12 +1,12 @@
 import React from 'react';
-import {Redirect} from "react-router-dom";
-import Home from "../components/home/Home";
+import HomeHeader from "../components/home/home_header/HomeHeader";
+import MainHome from "../components/home/home_main/middle_block_content/content_home/MainHome";
 
 const HomePage = () => {
     return (
         <>
-            {/*<Redirect to='/authorization'/>*/}
-            <Home/>
+            <HomeHeader/>
+            <MainHome/>
         </>
     );
 };

@@ -8,15 +8,16 @@ import avatar from '../../../../assets/png/avatar.jpg';
 import logout from '../../../../assets/png/logout.png';
 import ElementList from "./ElementList";
 import DropMenu from "./DropMenu";
+import {NavLink} from "react-router-dom";
 
 const NavHome = () => {
 
     return (
         <div className={`${style.mainGreenBack} col-2 mt-3`}>
             <nav className={'d-flex flex-column'}>
-                <ElementList img={homeImg} name='Home'/>
-                <ElementList img={lostImg} name='Lost'/>
-                <ElementList img={foundImg} name='Found'/>
+                <NavLink className={`${style.navBtn} d-flex mb-2`} to='/main/home'><ElementList img={homeImg} name='Home'/></NavLink>
+                <NavLink className={`${style.navBtn} d-flex mb-2`} to='/main/lost'><ElementList img={lostImg} name='Lost'/></NavLink>
+                <NavLink className={`${style.navBtn} d-flex mb-2`} to='/main/found'><ElementList img={foundImg} name='Found'/></NavLink>
                 <DropMenu/>
                 <ElementList img={starImg} name='Favorites'/>
             </nav>

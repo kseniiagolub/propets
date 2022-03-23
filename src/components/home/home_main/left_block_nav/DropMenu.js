@@ -5,6 +5,7 @@ import hotelsImg from "../../../../assets/png/hotels.png";
 import walkingImg from "../../../../assets/png/walking.png";
 import fosteringImg from "../../../../assets/png/fostering.png";
 import vetHelpImg from "../../../../assets/png/vetHelp.png";
+import {NavLink} from "react-router-dom";
 
 const DropMenu = () => {
 
@@ -13,29 +14,29 @@ const DropMenu = () => {
 
     return (
         <>
-            <button className={`${style.navBtn} d-flex mb-2`} onClick={() => setDropdown(!dropdown)}>
+            <button className={`${style.navBtn} d-flex mb-2 p-0`} onClick={() => setDropdown(!dropdown)}>
                 <div>
                     <img className={`${style.iconBtn} me-2`} src={megafonImg} alt={'Services'}/>
                     <span>Services</span>
                 </div>
             </button>
             <div className={`${style.dropdownContainer} ${disp} d-flex flex-column`}>
-                <button className={`${style.navBtn} d-flex mb-2`}>
-                    <div className={`d-flex`}>
-                        <div className={`${style.widthImg} me-2`}>
-                            <img src={hotelsImg} alt={'Hotels'}/>
+                <NavLink className={`${style.navBtn} d-flex mb-2`} to='/main/hotels'>
+                        <div className={`d-flex`}>
+                            <div className={`${style.widthImg} me-2`}>
+                                <img src={hotelsImg} alt={'Hotels'}/>
+                            </div>
+                            <span>Hotels</span>
                         </div>
-                        <span>Hotels</span>
-                    </div>
-                </button>
-                <button className={`${style.navBtn} d-flex mb-2`}>
-                    <div className={`d-flex`}>
-                        <div className={`${style.widthImg} me-2`}>
-                            <img src={walkingImg} alt={'Walking'}/>
+                </NavLink>
+                <NavLink className={`${style.navBtn} d-flex mb-2`} to='/main/walking'>
+                        <div className={`d-flex`}>
+                            <div className={`${style.widthImg} me-2`}>
+                                <img src={walkingImg} alt={'Walking'}/>
+                            </div>
+                            <span>Walking</span>
                         </div>
-                        <span>Walking</span>
-                    </div>
-                </button>
+                </NavLink>
                 <button className={`${style.navBtn} d-flex mb-2`}>
                     <div className={`d-flex`}>
                         <div className={`${style.widthImg} me-2`}>

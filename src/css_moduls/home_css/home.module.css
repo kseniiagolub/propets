@@ -2,6 +2,10 @@ nav {
     margin-bottom: 100px;
 }
 
+nav a {
+    text-decoration: none;
+}
+
 .heightHeader {
     height: 7vh;
 }
