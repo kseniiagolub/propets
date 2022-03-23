@@ -132,10 +132,27 @@ nav {
 .avatarImg {
     height: 43px;
     width: 43px;
+    border: 1px var(--bs-white) solid;
+    border-radius: 50%;
 }
 
 .starBtn {
     height: 16px;
     width: 16px;
     filter: invert(79%) sepia(0%) saturate(77%) hue-rotate(209deg) brightness(98%) contrast(83%);
+}
+
+.dotsBtn {
+    height: 19px;
+    width: 21px;
+    filter: invert(79%) sepia(0%) saturate(77%) hue-rotate(209deg) brightness(98%) contrast(83%);
+}
+
+.dropdownContentGreen {
+    display: none;
+    position: absolute;
+    background-color: var(--bs-dark-green);
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
 }

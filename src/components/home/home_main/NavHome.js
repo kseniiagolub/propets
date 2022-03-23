@@ -24,13 +24,13 @@ const NavHome = () => {
             <div>
                 <div className={`${style.gorizontLine} mb-3`}/>
                 <div className={`d-flex align-items-center mb-5`}>
-                    <div className={`${style.imgUser} me-2`}><img src={avatar}/></div>
+                    <div className={`${style.imgUser} me-2`}><img src={avatar} alt={'avatar'}/></div>
                     <div className={`d-flex flex-wrap w-25`}>
                         <a className={`${style.aColor} m-0`}>Anton Golub</a>
                     </div>
                 </div>
                 <a className={`${style.btnLogout} col-4 mb-3`} href={'#'}>
-                    <img className={`${style.iconBtn}`} src={logout}/>Logout</a>
+                    <img className={`${style.iconBtn}`} src={logout} alt={'logout'}/>Logout</a>
                 <div className={`${style.gorizontLine}`}/>
             </div>
         </div>
