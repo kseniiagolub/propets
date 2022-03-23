@@ -8,6 +8,9 @@ import Lost from "../content_lost/Lost"
 import Found from "../content_found/Found"
 import Hotels from "../content_hotels/Hotels"
 import Walking from "../content_walking/Walking"
+import Favorites from "../content_favorites/Favorites";
+import Fostering from "../content_fostering/Fostering";
+import VetHelp from "../content_vethelp/VetHelp";
 
 const MainHome = () => {
     return (
@@ -21,6 +24,9 @@ const MainHome = () => {
                         <Route exact path={'/main/found'} component={Found}/>
                         <Route exact path={'/main/hotels'} component={Hotels}/>
                         <Route exact path={`/main/walking`} component={Walking}/>
+                        <Route exact path={'/main/fostering'} component={Fostering}/>
+                        <Route exact path={'/main/vethelp'} component={VetHelp}/>
+                        <Route exact path={'/main/favorites'} component={Favorites}/>
                     </Switch>
                     <PromoHome/>
                 </div>

@@ -19,7 +19,7 @@ const NavHome = () => {
                 <NavLink className={`${style.navBtn} d-flex mb-2 align-items-center`} to='/main/lost'><ElementList img={lostImg} name='Lost'/></NavLink>
                 <NavLink className={`${style.navBtn} d-flex mb-2 align-items-center`} to='/main/found'><ElementList img={foundImg} name='Found'/></NavLink>
                 <DropMenu/>
-                <ElementList img={starImg} name='Favorites'/>
+                <NavLink className={`${style.navBtn} d-flex mb-2 align-items-center`} to={'/main/favorites'}><ElementList img={starImg} name='Favorites'/></NavLink>
             </nav>
 
             <div>

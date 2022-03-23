@@ -37,22 +37,22 @@ const DropMenu = () => {
                             <span>Walking</span>
                         </div>
                 </NavLink>
-                <button className={`${style.navBtn} d-flex mb-2`}>
+                <NavLink className={`${style.navBtn} d-flex mb-2`} to={'/main/fostering'}>
                     <div className={`d-flex`}>
                         <div className={`${style.widthImg} me-2`}>
                             <img src={fosteringImg} alt={'Fostering'}/>
                         </div>
                         <span>Fostering</span>
                     </div>
-                </button>
-                <button className={`${style.navBtn} d-flex mb-2`}>
+                </NavLink>
+                <NavLink className={`${style.navBtn} d-flex mb-2`} to={'/main/vethelp'}>
                     <div className={`d-flex`}>
                         <div className={`${style.widthImg} me-2`}>
                             <img src={vetHelpImg} alt={'VetHelp'}/>
                         </div>
                         <span>VetHelp</span>
                     </div>
-                </button>
+                </NavLink>
             </div>
         </>
     );
