@@ -1,10 +1,15 @@
-import React from 'react';
+import React, {useState} from 'react';
 import style from "../../../css_moduls/registration_css/registration.main.module.css";
 import AgreePersonalData from "../section_footer/AgreePersonalData";
-import Footer_btn from "../section_footer/Footer_UpBtn";
 import FooterInBtn from "../section_footer/Footer_InBtn";
+import {useDispatch} from "react-redux";
 
 const SignInForm = () => {
+
+    const dispatch = useDispatch()
+    const [email, setEmail] = useState()
+    const [password, setPassword] = useState()
+
     return (
         <>
             <div className={`${style.heightFormAuth} row d-flex flex-column justify-content-center mb-4`}>
@@ -12,11 +17,14 @@ const SignInForm = () => {
                     <div>
                         <label className={'col-3 text-end'} htmlFor="email">Email:</label>
                         <input className={'col-8'} type="email" placeholder="helenjohnson@gmail.com" name="email"
-                               required/>
+                               onChange={(e => setEmail(e.target.value))} required
+                               onBlur={() => dispatch({type: 'SET_USER_EMAIL_AUTH', payload: email})}/>
                     </div>
                     <div>
                         <label className={'col-3 text-end'} htmlFor="psw">Password:</label>
-                        <input className={'col-8'} type="password" placeholder="*****************" name="psw" required/>
+                        <input className={'col-8'} type="password" placeholder="*****************" name="psw"
+                               onChange={(e => setPassword(e.target.value))} required
+                               onBlur={() => dispatch({type: 'SET_USER_PASSWORD_AUTH', payload: password})}/>
                     </div>
                 </div>
             </div>

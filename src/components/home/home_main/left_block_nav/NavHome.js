@@ -9,8 +9,11 @@ import logout from '../../../../assets/png/logout.png';
 import ElementList from "./ElementList";
 import DropMenu from "./DropMenu";
 import {NavLink} from "react-router-dom";
+import {useDispatch} from "react-redux";
 
 const NavHome = () => {
+
+    const dispatch = useDispatch()
 
     return (
         <div className={`${style.mainGreenBack} col-2 mt-3`}>
@@ -30,7 +33,13 @@ const NavHome = () => {
                         <a className={`${style.aColor} m-0`}>Anton Golub</a>
                     </div>
                 </div>
-                <a className={`${style.btnLogout} col-4 mb-3`} href={'#'}>
+                <a className={`${style.btnLogout} col-4 mb-3`} onClick={() => dispatch({
+                    type: 'SET_USER', payload: {
+                        email: null,
+                        id: null,
+                        token: null
+                    }
+                })}>
                     <img className={`${style.iconBtn}`} src={logout} alt={'logout'}/>Logout</a>
                 <div className={`${style.gorizontLine}`}/>
             </div>

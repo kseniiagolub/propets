@@ -12,6 +12,13 @@ const SignUpForm = () => {
     const [passwordFirst, setPasswordFirst] = useState()
     const [passwordSecond, setPasswordSecond] = useState()
 
+    const compare = (passwordFirst, passwordSecond) => {
+        if(passwordFirst !== passwordSecond) {
+            alert('log')
+        }
+        dispatch({type: 'SET_USER_PASSWORD', payload: passwordSecond})
+    }
+
     return (
         <>
             <div className={`${style.heightFormRegister} ${style.marginUpForm} row align-items-center`}>
@@ -31,14 +38,13 @@ const SignUpForm = () => {
                     <div>
                         <label className={'col-3 text-end'} htmlFor="psw">Password:</label>
                         <input className={'col-8'} type="password" placeholder="*****************" name="psw"
-                               onChange={(e => setPasswordFirst(e.target.value))} required
-                               onBlur={() => dispatch({type: 'SET_USER_PASSWORD', payload: passwordFirst})}/>
+                               onChange={(e => setPasswordFirst(e.target.value))} required/>
                     </div>
                     <div>
                         <label className={'col-3 text-end'} htmlFor="psw">Password:</label>
                         <input className={'col-8'} type="password" placeholder="*****************" name="psw"
                                onChange={(e => setPasswordSecond(e.target.value))} required
-                               onBlur={() => dispatch({type: 'SET_USER_PASSWORD_SECOND', payload: passwordSecond})}/>
+                               onBlur={() => compare(passwordFirst, passwordSecond)}/>
                     </div>
                 </div>
                 <div className={`${style.textPwd} col-6 d-flex flex-column justify-content-center`}>
