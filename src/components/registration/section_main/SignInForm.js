@@ -1,5 +1,8 @@
 import React from 'react';
 import style from "../../../css_moduls/registration_css/registration.main.module.css";
+import AgreePersonalData from "../section_footer/AgreePersonalData";
+import Footer_btn from "../section_footer/Footer_UpBtn";
+import FooterInBtn from "../section_footer/Footer_InBtn";
 
 const SignInForm = () => {
     return (
@@ -17,8 +20,13 @@ const SignInForm = () => {
                     </div>
                 </div>
             </div>
-            <div className={`${style.forgotPwd} col-6 text-center mb-2`}>
+            <div className={`${style.forgotPwd} ${style.marginInForm} col-6 text-center`}>
                 <a href={'#'}>Forgot password?</a>
+            </div>
+            <hr className={`m-0`}/>
+            <div className={`${style.heightFooter} row align-items-center`}>
+                <AgreePersonalData/>
+                <FooterInBtn/>
             </div>
         </>
     );

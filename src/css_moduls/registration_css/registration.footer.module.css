@@ -3,6 +3,7 @@
     color: var(--bs-ligth-grey);
     width: 294px;
     height: 33px;
+    margin: 0;
 }
 
 .agreeText > a {

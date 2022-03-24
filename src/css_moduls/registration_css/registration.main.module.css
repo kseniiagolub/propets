@@ -46,3 +46,15 @@ input {
 .heightFormAuth {
     height: 114px;
 }
+
+.heightFooter {
+    height: 70px;
+}
+
+.marginInForm {
+    margin-bottom: 10px;
+}
+
+.marginUpForm {
+    margin-bottom: 9px;
+}
