@@ -1,9 +1,7 @@
 import user from "./user";
-import registration from "./registration";
-import changeComponentAuth from "./changeComponentAuth";
+import registration from "./registration"
 
 export default {
     user,
     registration,
-    changeComponentAuth,
 }

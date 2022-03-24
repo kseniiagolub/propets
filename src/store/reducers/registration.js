@@ -5,15 +5,6 @@ const initialState = {
     passwordSecond: null
 }
 
-// const passCompare = (passwordFirst, passwordSecond) => {
-//     if (passwordFirst === passwordSecond || passwordSecond === passwordFirst) {
-//         dispatch({type: 'SET_USER_PASSWORD', payload: passwordFirst})
-//     } else {
-//         alert('Passwords do not match')
-//         dispatch({type: 'SET_USER_PASSWORD', payload: null})
-//     }
-// }
-
 
 export default (state = initialState, {type, payload}) => {
     switch (type) {

@@ -9,7 +9,7 @@ const SingInUp = () => {
 
     const signInUp = (state) => {
         if(state === true) {
-            return <SignUpForm/>
+            return <SignUpForm />
         } else {
             return <SignInForm/>
         }
