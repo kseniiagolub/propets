@@ -18,6 +18,11 @@
     border-radius: 17px;
     color: var(--bs-green);
     font-size: 12px;
+    text-decoration: none;
+}
+
+.btnCancel:hover {
+    color: var(--bs-green);
 }
 
 .btnSubmit {
