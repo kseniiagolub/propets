@@ -8,21 +8,44 @@ import avatar from '../../../../assets/png/avatar.jpg';
 import logout from '../../../../assets/png/logout.png';
 import ElementList from "./ElementList";
 import DropMenu from "./DropMenu";
-import {NavLink} from "react-router-dom";
+import {NavLink, useHistory} from "react-router-dom";
 import {useDispatch} from "react-redux";
+import {getAuth, signOut} from "firebase/auth";
 
 const NavHome = () => {
 
     const dispatch = useDispatch()
+    const {push} = useHistory()
 
+    const logOut = () => {
+        const auth = getAuth();
+        signOut(auth)
+            .then(() => {
+                dispatch({
+                    type: 'SET_USER', payload: {
+                        email: null,
+                        id: null,
+                        token: null
+                    }
+                })
+                push('/')
+            }).catch((error) => {
+            console.log(error.message)
+        });
+
+    };
     return (
         <div className={`${style.mainGreenBack} col-2 mt-3`}>
             <nav className={'d-flex flex-column'}>
-                <NavLink className={`${style.navBtn} d-flex mb-2 align-items-center`} to='/main/home'><ElementList img={homeImg} name='Home'/></NavLink>
-                <NavLink className={`${style.navBtn} d-flex mb-2 align-items-center`} to='/main/lost'><ElementList img={lostImg} name='Lost'/></NavLink>
-                <NavLink className={`${style.navBtn} d-flex mb-2 align-items-center`} to='/main/found'><ElementList img={foundImg} name='Found'/></NavLink>
+                <NavLink className={`${style.navBtn} d-flex mb-2 align-items-center`} to='/main/home'><ElementList
+                    img={homeImg} name='Home'/></NavLink>
+                <NavLink className={`${style.navBtn} d-flex mb-2 align-items-center`} to='/main/lost'><ElementList
+                    img={lostImg} name='Lost'/></NavLink>
+                <NavLink className={`${style.navBtn} d-flex mb-2 align-items-center`} to='/main/found'><ElementList
+                    img={foundImg} name='Found'/></NavLink>
                 <DropMenu/>
-                <NavLink className={`${style.navBtn} d-flex mb-2 align-items-center`} to={'/main/favorites'}><ElementList img={starImg} name='Favorites'/></NavLink>
+                <NavLink className={`${style.navBtn} d-flex mb-2 align-items-center`}
+                         to={'/main/favorites'}><ElementList img={starImg} name='Favorites'/></NavLink>
             </nav>
 
             <div>
@@ -33,13 +56,14 @@ const NavHome = () => {
                         <a className={`${style.aColor} m-0`}>Anton Golub</a>
                     </div>
                 </div>
-                <a className={`${style.btnLogout} col-4 mb-3`} onClick={() => dispatch({
-                    type: 'SET_USER', payload: {
-                        email: null,
-                        id: null,
-                        token: null
-                    }
-                })}>
+                {/*<a className={`${style.btnLogout} col-4 mb-3`} onClick={() => dispatch({*/}
+                {/*    type: 'SET_USER', payload: {*/}
+                {/*        email: null,*/}
+                {/*        id: null,*/}
+                {/*        token: null*/}
+                {/*    }*/}
+                {/*})}>*/}
+                <a className={`${style.btnLogout} col-4 mb-3`} onClick={() => logOut()}>
                     <img className={`${style.iconBtn}`} src={logout} alt={'logout'}/>Logout</a>
                 <div className={`${style.gorizontLine}`}/>
             </div>

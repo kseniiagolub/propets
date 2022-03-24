@@ -14,6 +14,7 @@ const SectionHeaderEnterFacebook = () => {
     const signInWithFacebook = () => {
         signInWithPopup(auth, provider)
             .then((result) => {
+                console.log(result)
                 const user = result.user
                 dispatch({
                     type: 'SET_USER', payload: {
