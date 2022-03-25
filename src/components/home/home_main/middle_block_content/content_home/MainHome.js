@@ -19,14 +19,14 @@ const MainHome = () => {
                 <div className={`${style.heightMain} col-10 d-flex`}>
                     <NavHome/>
                     <Switch>
-                        <Route exact path={'/main/home'} component={NewsWallHome}/>
-                        <Route exact path={'/main/lost'} component={Lost}/>
-                        <Route exact path={'/main/found'} component={Found}/>
-                        <Route exact path={'/main/hotels'} component={Hotels}/>
-                        <Route exact path={`/main/walking`} component={Walking}/>
-                        <Route exact path={'/main/fostering'} component={Fostering}/>
-                        <Route exact path={'/main/vethelp'} component={VetHelp}/>
-                        <Route exact path={'/main/favorites'} component={Favorites}/>
+                        <Route exact path={'/home'} component={NewsWallHome}/>
+                        <Route exact path={'/lost'} component={Lost}/>
+                        <Route exact path={'/found'} component={Found}/>
+                        <Route exact path={'/hotels'} component={Hotels}/>
+                        <Route exact path={`/walking`} component={Walking}/>
+                        <Route exact path={'/fostering'} component={Fostering}/>
+                        <Route exact path={'/vethelp'} component={VetHelp}/>
+                        <Route exact path={'/favorites'} component={Favorites}/>
                     </Switch>
                     <PromoHome/>
                 </div>

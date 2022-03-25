@@ -27,6 +27,7 @@
 }
 
 .close {
+    cursor: pointer;
     width: 32px;
     height: 32px;
     filter: invert(82%) sepia(0%) saturate(0%) hue-rotate(273deg) brightness(93%) contrast(86%);

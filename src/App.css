@@ -1,23 +1,23 @@
 :root {
-  --bs-green: rgba(132, 182, 163, 1);
-  --bs-light-green: rgba(141, 191, 172, 1);
-  --bs-dark-green: rgba(102, 152, 133, 1);
-  --bs-white: rgba(255, 255, 255, 1);
-  --bs-grey: rgba(0, 0, 0, 0.16);
-  --bs-ligth-grey: rgba(186, 186, 186, 1);
-  --bs-black: rgba(57, 57, 57, 1);
-  --bs-red: rgba(255, 111, 97, 1);
-  --bs-yellow: rgba(255, 225, 139, 1);
-  --bs-ligth-yellow: rgba(255, 231, 141, 1);
-  --bs-blue: rgba(80, 103, 179, 1);
-  --bs-dark-blue: rgba(69, 96, 166, 1)
+    --bs-green: rgba(132, 182, 163, 1);
+    --bs-light-green: rgba(141, 191, 172, 1);
+    --bs-dark-green: rgba(102, 152, 133, 1);
+    --bs-white: rgba(255, 255, 255, 1);
+    --bs-grey: rgba(0, 0, 0, 0.16);
+    --bs-ligth-grey: rgba(186, 186, 186, 1);
+    --bs-black: rgba(57, 57, 57, 1);
+    --bs-red: rgba(255, 111, 97, 1);
+    --bs-yellow: rgba(255, 225, 139, 1);
+    --bs-ligth-yellow: rgba(255, 231, 141, 1);
+    --bs-blue: rgba(80, 103, 179, 1);
+    --bs-dark-blue: rgba(69, 96, 166, 1)
 }
 
 @font-face {
-  font-family: "Montserrat";
-  font-style: normal;
-  font-weight: 700;
-  src: url("./assets/fonts/static/Montserrat-Bold.ttf") format("truetype");
+    font-family: "Montserrat";
+    font-style: normal;
+    font-weight: 700;
+    src: url("./assets/fonts/static/Montserrat-Bold.ttf") format("truetype");
 }
 
 @font-face {
@@ -38,41 +38,26 @@ body {
     font-family: "Montserrat", "Arial", sans-serif;
 }
 
-.App {
-  text-align: center;
+/* ======================== modal ========================*/
+
+.modal__wrapper {
+    position: fixed;
+    padding-top: 100px;
+    bottom: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, .2);
+    backdrop-filter: blur(10px);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.modal__wrapper.open {
+    height: 100%;
+    display: block;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.modal__wrapper.close {
+    height: 0;
+    display: none;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
 
-.App-link {
-  color: #61dafb;
-}
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}

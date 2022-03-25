@@ -21,7 +21,7 @@ const DropMenu = () => {
                 </div>
             </button>
             <div className={`${style.dropdownContainer} ${disp} d-flex flex-column`}>
-                <NavLink className={`${style.navBtn} d-flex mb-2`} to='/main/hotels'>
+                <NavLink className={`${style.navBtn} d-flex mb-2`} to='/hotels'>
                         <div className={`d-flex`}>
                             <div className={`${style.widthImg} me-2`}>
                                 <img src={hotelsImg} alt={'Hotels'}/>
@@ -29,7 +29,7 @@ const DropMenu = () => {
                             <span>Hotels</span>
                         </div>
                 </NavLink>
-                <NavLink className={`${style.navBtn} d-flex mb-2`} to='/main/walking'>
+                <NavLink className={`${style.navBtn} d-flex mb-2`} to='/walking'>
                         <div className={`d-flex`}>
                             <div className={`${style.widthImg} me-2`}>
                                 <img src={walkingImg} alt={'Walking'}/>
@@ -37,7 +37,7 @@ const DropMenu = () => {
                             <span>Walking</span>
                         </div>
                 </NavLink>
-                <NavLink className={`${style.navBtn} d-flex mb-2`} to={'/main/fostering'}>
+                <NavLink className={`${style.navBtn} d-flex mb-2`} to={'/fostering'}>
                     <div className={`d-flex`}>
                         <div className={`${style.widthImg} me-2`}>
                             <img src={fosteringImg} alt={'Fostering'}/>
@@ -45,7 +45,7 @@ const DropMenu = () => {
                         <span>Fostering</span>
                     </div>
                 </NavLink>
-                <NavLink className={`${style.navBtn} d-flex mb-2`} to={'/main/vethelp'}>
+                <NavLink className={`${style.navBtn} d-flex mb-2`} to={'/vethelp'}>
                     <div className={`d-flex`}>
                         <div className={`${style.widthImg} me-2`}>
                             <img src={vetHelpImg} alt={'VetHelp'}/>

@@ -1,7 +1,7 @@
 import React from 'react';
 import paw from '../../../assets/png/paw.png';
 import style from '../../../css_moduls/registration_css/registration.footer.module.css';
-import {Link, useHistory} from "react-router-dom";
+import {useHistory} from "react-router-dom";
 import {useDispatch, useSelector} from "react-redux";
 import {createUserWithEmailAndPassword, getAuth} from "firebase/auth";
 
@@ -23,15 +23,17 @@ const FooterUpBtn = () => {
                         token: user.accessToken
                     }
                 })
-                push('/main/home')
+                push('/home')
+                dispatch({type: 'SET_MODAL', payload: false})
             })
             .catch(() => alert('Invalid user!'))
     }
 
     return (
         <div className={'col-6 d-flex justify-content-evenly'}>
-            <Link className={`${style.btnCancel} d-flex mb-2 align-items-center justify-content-center`}
-                  to='/'>Cancel</Link>
+            <button className={`${style.btnCancel} d-flex mb-2 align-items-center justify-content-center`}
+                    onClick={() => dispatch({type: 'SET_MODAL', payload: false})}>Cancel
+            </button>
             <button className={`${style.btnSubmit}`} onClick={() => Registration(register.email, register.password)}>
                 <img className={` ${style.paw}`} src={paw} alt={paw}/>
                 <span className={'m-auto'}>Submit</span>
