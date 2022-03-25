@@ -32,8 +32,8 @@ const NavHome = () => {
             }).catch((error) => {
             console.log(error.message)
         });
-    }
 
+    };
     return (
         <div className={`${style.mainGreenBack} col-2 mt-3`}>
             <nav className={'d-flex flex-column'}>
