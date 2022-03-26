@@ -1,17 +1,4 @@
-import {useSelector} from "react-redux";
 import {useEffect, useState} from "react";
-
-
-export function useAuth() {
-    const {email, token, id} = useSelector(state => state.user)
-
-    return{
-        isAuth: !!email,
-        email,
-        token,
-        id,
-    }
-}
 
 const useValidation = (value, validations) => {
     const [isEmpty, setEmpty] = useState(true)
