@@ -5,7 +5,7 @@ import {useHistory} from "react-router-dom";
 import {useDispatch, useSelector} from "react-redux";
 import {createUserWithEmailAndPassword, getAuth} from "firebase/auth";
 
-const FooterUpBtn = () => {
+const FooterUpBtn = (props) => {
 
     const register = useSelector(state => state.registration)
     const dispatch = useDispatch();
@@ -34,7 +34,11 @@ const FooterUpBtn = () => {
             <button className={`${style.btnCancel} d-flex mb-2 align-items-center justify-content-center`}
                     onClick={() => dispatch({type: 'SET_MODAL', payload: false})}>Cancel
             </button>
-            <button className={`${style.btnSubmit}`} onClick={() => Registration(register.email, register.password)}>
+            <button disabled={!props.nameValid.inputValid || !props.emailValid.inputValid ||
+            !props.passwordFirstValid.inputValid || !props.passwordSecondValid.inputValid}
+                    className={`${style.btnSubmit} ${(!props.nameValid.inputValid || !props.emailValid.inputValid ||
+                        !props.passwordFirstValid.inputValid || !props.passwordSecondValid.inputValid) ? `${style.btnSubmitUnavailable}` : ''}`}
+                    onClick={() => Registration(register.email, register.password)}>
                 <img className={` ${style.paw}`} src={paw} alt={paw}/>
                 <span className={'m-auto'}>Submit</span>
             </button>
