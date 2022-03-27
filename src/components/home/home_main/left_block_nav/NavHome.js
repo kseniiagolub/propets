@@ -35,26 +35,30 @@ const NavHome = () => {
 
     };
     return (
-        <div className={`${style.mainGreenBack} col-2 mt-3`}>
-            <nav className={'d-flex flex-column'}>
-                <NavLink className={`${style.navBtn} d-flex mb-2 align-items-center`} to='/home'><ElementList img={homeImg} name='Home'/></NavLink>
-                <NavLink className={`${style.navBtn} d-flex mb-2 align-items-center`} to='/lost'><ElementList img={lostImg} name='Lost'/></NavLink>
-                <NavLink className={`${style.navBtn} d-flex mb-2 align-items-center`} to='/found'><ElementList img={foundImg} name='Found'/></NavLink>
+        <div className={`${style.mainGreenBack} col-3 pt-3`}>
+            <nav className={'d-flex flex-column col-5 m-auto mb-5'}>
+                <NavLink className={`${style.navBtn} d-flex mb-2 align-items-center ps-1`} to='/home'><ElementList img={homeImg} name='Home'/></NavLink>
+                <NavLink className={`${style.navBtn} d-flex mb-2 align-items-center ps-1`} to='/lost'><ElementList img={lostImg} name='Lost'/></NavLink>
+                <NavLink className={`${style.navBtn} d-flex mb-2 align-items-center ps-1`} to='/found'><ElementList img={foundImg} name='Found'/></NavLink>
                 <DropMenu/>
-                <NavLink className={`${style.navBtn} d-flex mb-2 align-items-center`} to={'/favorites'}><ElementList img={starImg} name='Favorites'/></NavLink>
+                <NavLink className={`${style.navBtn} d-flex mb-2 align-items-center ps-1`} to={'/favorites'}><ElementList img={starImg} name='Favorites'/></NavLink>
+                <NavLink className={`${style.navBtn} d-flex mb-2 align-items-center ps-1`} to={'/foundpet'}><ElementList img={starImg} name='Favorites'/></NavLink>
+                <NavLink className={`${style.navBtn} d-flex mb-2 align-items-center ps-1`} to={'/lostpet'}><ElementList img={starImg} name='Favorites'/></NavLink>
             </nav>
 
             <div>
-                <div className={`${style.gorizontLine} mb-3`}/>
-                <div className={`d-flex align-items-center mb-5`}>
+                <div className={`${style.gorizontLine} m-auto mb-3`}/>
+                <div className={`d-flex align-items-center col-5 m-auto mb-5`}>
                     <div className={`${style.imgUser} me-2`}><img src={avatar} alt={'avatar'}/></div>
                     <div className={`d-flex flex-wrap w-25`}>
                         <a className={`${style.aColor} m-0`}>Anton Golub</a>
                     </div>
                 </div>
-                <a className={`${style.btnLogout} col-4 mb-3`} onClick={() => logOut()}>
-                    <img className={`${style.iconBtn}`} src={logout} alt={'logout'}/>Logout</a>
-                <div className={`${style.gorizontLine}`}/>
+                <div className={`col-5 m-auto mb-3`}>
+                    <a className={`${style.btnLogout} mb-3`} onClick={() => logOut()}>
+                        <img className={`${style.iconBtn}`} src={logout} alt={'logout'}/>Logout</a>
+                </div>
+                <div className={`${style.gorizontLine} m-auto`}/>
             </div>
         </div>
     );

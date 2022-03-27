@@ -14,14 +14,14 @@ const DropMenu = () => {
 
     return (
         <>
-            <button className={`${style.navBtn} d-flex mb-2 p-0`} onClick={() => setDropdown(!dropdown)}>
+            <button className={`${style.navBtn} d-flex mb-2 p-0 ps-1`} onClick={() => setDropdown(!dropdown)}>
                 <div>
                     <img className={`${style.iconBtn} me-2`} src={megafonImg} alt={'Services'}/>
                     <span>Services</span>
                 </div>
             </button>
             <div className={`${style.dropdownContainer} ${disp} d-flex flex-column`}>
-                <NavLink className={`${style.navBtn} d-flex mb-2`} to='/hotels'>
+                <NavLink className={`${style.navBtn} d-flex mb-2 ps-1`} to='/hotels'>
                         <div className={`d-flex`}>
                             <div className={`${style.widthImg} me-2`}>
                                 <img src={hotelsImg} alt={'Hotels'}/>
@@ -29,7 +29,7 @@ const DropMenu = () => {
                             <span>Hotels</span>
                         </div>
                 </NavLink>
-                <NavLink className={`${style.navBtn} d-flex mb-2`} to='/walking'>
+                <NavLink className={`${style.navBtn} d-flex mb-2 ps-1`} to='/walking'>
                         <div className={`d-flex`}>
                             <div className={`${style.widthImg} me-2`}>
                                 <img src={walkingImg} alt={'Walking'}/>
@@ -37,7 +37,7 @@ const DropMenu = () => {
                             <span>Walking</span>
                         </div>
                 </NavLink>
-                <NavLink className={`${style.navBtn} d-flex mb-2`} to={'/fostering'}>
+                <NavLink className={`${style.navBtn} d-flex mb-2 ps-1`} to={'/fostering'}>
                     <div className={`d-flex`}>
                         <div className={`${style.widthImg} me-2`}>
                             <img src={fosteringImg} alt={'Fostering'}/>
@@ -45,7 +45,7 @@ const DropMenu = () => {
                         <span>Fostering</span>
                     </div>
                 </NavLink>
-                <NavLink className={`${style.navBtn} d-flex mb-2`} to={'/vethelp'}>
+                <NavLink className={`${style.navBtn} d-flex mb-2 ps-1`} to={'/vethelp'}>
                     <div className={`d-flex`}>
                         <div className={`${style.widthImg} me-2`}>
                             <img src={vetHelpImg} alt={'VetHelp'}/>

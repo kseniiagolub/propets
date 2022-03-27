@@ -11,12 +11,14 @@ import Walking from "../content_walking/Walking"
 import Favorites from "../content_favorites/Favorites";
 import Fostering from "../content_fostering/Fostering";
 import VetHelp from "../content_vethelp/VetHelp";
+import FoundPet from "../../../../Ankets/FoundPet";
+import LostPet from "../../../../Ankets/LostPet";
 
 const MainHome = () => {
     return (
-        <main className={'container-fluid'}>
-            <div className={`${style.mainGreenBack} row justify-content-center align-items-center`}>
-                <div className={`${style.heightMain} col-10 d-flex`}>
+        <main className={`container-fluid`}>
+            <div className={`row justify-content-center align-items-center`}>
+                <div className={`${style.heightMain} d-flex`}>
                     <NavHome/>
                     <Switch>
                         <Route exact path={'/home'} component={NewsWallHome}/>
@@ -27,6 +29,8 @@ const MainHome = () => {
                         <Route exact path={'/fostering'} component={Fostering}/>
                         <Route exact path={'/vethelp'} component={VetHelp}/>
                         <Route exact path={'/favorites'} component={Favorites}/>
+                        <Route exact path={'/foundpet'} component={FoundPet}/>
+                        <Route exact path={'/lostpet'} component={LostPet}/>
                     </Switch>
                     <PromoHome/>
                 </div>

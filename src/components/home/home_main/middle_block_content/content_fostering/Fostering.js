@@ -11,7 +11,7 @@ const Fostering = () => {
     })
 
     return (
-        <div className={`${style.mainWhiteBack} d-flex flex-column col-7 align-items-center overflow-auto`}>
+        <div className={`${style.mainWhiteBack} d-flex flex-column col-6 align-items-center overflow-auto`}>
             <h1>Fostering</h1>
         </div>
     );

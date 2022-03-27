@@ -52,7 +52,6 @@ nav a {
 .navBtn {
     background-color: transparent;
     border: none;
-    width: 140px;
     height: 24px;
     font-size: 16px;
     color: var(--bs-white);
@@ -61,7 +60,7 @@ nav a {
 .gorizontLine {
     border: 1px var(--bs-white) solid;
     opacity: 0.3;
-    width: 90%;
+    width: 80%;
 }
 
 .dropdownContainer {
@@ -87,9 +86,6 @@ nav a {
 }
 
 .btnLogout {
-    display: inline-block;
-    width: 50%;
-    padding: 8px;
     color: #fff;
     text-align: center;
     outline: none;
