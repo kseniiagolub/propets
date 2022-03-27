@@ -23,7 +23,8 @@ const SectionHeaderEnterFacebook = () => {
                         token: user.accessToken
                     }
                 })
-                push('/main/home')
+                push('/home')
+                dispatch({type: 'SET_MODAL', payload: false})
             })
             .catch((error) => {
                 console.log(error.message)

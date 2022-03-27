@@ -1,7 +1,15 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import style from "../../../../../css_moduls/home_css/home.module.css";
+import {useDispatch} from "react-redux";
 
 const Favorites = () => {
+
+    const dispatch = useDispatch()
+
+    useEffect(() => {
+        dispatch({type: "SET_MAP_ACTIVE", payload: false})
+    })
+
     return (
         <div className={`${style.mainWhiteBack} d-flex flex-column col-7 align-items-center overflow-auto`}>
             <h1>Favorites</h1>
