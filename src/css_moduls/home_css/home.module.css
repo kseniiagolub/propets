@@ -67,7 +67,6 @@ nav a {
     display: none;
     background-color: var(--bs-dark-green);
     border-radius: 0 20px 20px 0;
-
 }
 
 .widthImg {
@@ -122,11 +121,15 @@ nav a {
 }
 
 .smallerTextBlack {
-    width: 470px;
     font-size: 12px;
     font-weight: 500;
     color: var(--bs-black);
 }
+
+.smallerTextBlackWidth{
+    width: 470px;
+}
+
 .postCard {
     height: 361px;
     box-shadow: 0px 3px 6px var(--bs-grey);
@@ -166,4 +169,48 @@ nav a {
     min-height: 70px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
+}
+
+.lostFoundForm {
+    height: 503px;
+    box-shadow: 0px 3px 6px var(--bs-grey);
+    margin: 2%;
+    padding: 1%;
+}
+
+.select {
+    width: 77px;
+    height: 18px;
+    border: none;
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--bs-black);
+}
+
+.anketImg{
+    height: 183px;
+    width: 192px;
+}
+
+textarea {
+    width: 206px;
+    border: 1px solid var(--bs-light-green);
+    resize: none;
+}
+.smallTextarea {
+    height: 46px;
+}
+
+.middleTextarea {
+    height: 52px;
+}
+
+.bigTextarea {
+    height: 118px;
+}
+
+.littleGreenText {
+    font-size: 10px;
+    font-weight: 500;
+    color: var(--bs-green);
 }
