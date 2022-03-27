@@ -65,6 +65,9 @@ nav a {
 
 .dropdownContainer {
     display: none;
+    background-color: var(--bs-dark-green);
+    border-radius: 0 20px 20px 0;
+
 }
 
 .widthImg {
