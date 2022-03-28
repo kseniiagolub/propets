@@ -20,7 +20,7 @@ const DropMenu = () => {
                     <span>Services</span>
                 </div>
             </button>
-            <div className={`${style.dropdownContainer} ${disp} d-flex flex-column`}>
+            <div className={`${style.dropdownContainer} ${disp} d-flex flex-column mb-2`}>
                 <NavLink className={`${style.navBtn} d-flex mb-2 ps-1`} to='/hotels'>
                         <div className={`d-flex`}>
                             <div className={`${style.widthImg} me-2`}>

@@ -42,9 +42,8 @@ const NavHome = (props) => {
                 <NavLink className={`${style.navBtn} d-flex mb-2 align-items-center ps-1`} to='/lost'><ElementList img={lostImg} name='Lost'/></NavLink>
                 <NavLink className={`${style.navBtn} d-flex mb-2 align-items-center ps-1`} to='/found'><ElementList img={foundImg} name='Found'/></NavLink>
                 <DropMenu/>
-                <NavLink className={`${style.navBtn} d-flex mb-2 mt-2 align-items-center ps-1`} to={'/favorites'}><ElementList img={starImg} name='Favorites'/></NavLink>
+                <NavLink className={`${style.navBtn} d-flex mb-5 align-items-center ps-1`} to={'/favorites'}><ElementList img={starImg} name='Favorites'/></NavLink>
                </nav>
-
             <div>
                 <div className={`${style.gorizontLine} m-auto mb-3`}/>
                 <div className={`d-flex align-items-center col-5 m-auto mb-5`}>
