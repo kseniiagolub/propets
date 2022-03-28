@@ -15,7 +15,6 @@ const FooterInBtn = (props) => {
     const Authorization = (email, password) => {
         signInWithEmailAndPassword(auth, email, password)
             .then(({user}) => {
-                console.log(user)
                 dispatch({
                     type: 'SET_USER', payload: {
                         email: user.email,

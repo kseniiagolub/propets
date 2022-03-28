@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import style from '../../../../css_moduls/home_css/home.module.css';
 import homeImg from '../../../../assets/png/home.png';
 import lostImg from '../../../../assets/png/lost_black.png';
@@ -12,13 +12,13 @@ import {NavLink, useHistory} from "react-router-dom";
 import {useDispatch} from "react-redux";
 import {getAuth, signOut} from "firebase/auth";
 
-const NavHome = () => {
+const NavHome = (props) => {
 
     const dispatch = useDispatch()
     const {push} = useHistory()
+    const auth = getAuth()
 
     const logOut = () => {
-        const auth = getAuth();
         signOut(auth)
             .then(() => {
                 dispatch({
@@ -34,6 +34,7 @@ const NavHome = () => {
         });
 
     };
+
     return (
         <div className={`${style.mainGreenBack} col-3 pt-3`}>
             <nav className={'d-flex flex-column col-5 m-auto mb-5'}>
@@ -51,7 +52,7 @@ const NavHome = () => {
                 <div className={`d-flex align-items-center col-5 m-auto mb-5`}>
                     <div className={`${style.imgUser} me-2`}><img src={avatar} alt={'avatar'}/></div>
                     <div className={`d-flex flex-wrap w-25`}>
-                        <a className={`${style.aColor} m-0`}>Anton Golub</a>
+                        <a className={`${style.aColor} m-0`}>{props.name}</a>
                     </div>
                 </div>
                 <div className={`col-5 m-auto mb-3`}>
