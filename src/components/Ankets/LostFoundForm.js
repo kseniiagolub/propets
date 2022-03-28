@@ -1,8 +1,11 @@
 import React from 'react';
 import style from '../../css_moduls/home_css/home.module.css';
 import anketa from '../../assets/png/anketa.png';
+import arrowUp from '../../assets/png/arrow-up.png';
+import avatar from "../../assets/png/avatar.jpg";
+import paw from '../../assets/png/paw.png';
 
-const LostPetForm = () => {
+const LostFoundForm = () => {
     return (
         <>
             <div className={`${style.lostFoundForm} row d-flex`}>
@@ -33,7 +36,8 @@ const LostPetForm = () => {
                             <input className={'col-7'} type="text" placeholder="Beige" name="color"/>
                         </div>
                         <div className={`mb-1`}>
-                            <label className={`${style.smallerTextBlack} col-3 text-end`} htmlFor="height">Height:</label>
+                            <label className={`${style.smallerTextBlack} col-3 text-end`}
+                                   htmlFor="height">Height:</label>
                             <select className={`${style.select} ms-2`} name={"height"}>
                                 <option defaultValue={'selected'} value={'45-70 cm'}>45-70 cm</option>
                                 <option value={'20-45 cm'}>20-45 cm</option>
@@ -45,7 +49,8 @@ const LostPetForm = () => {
                                 <label htmlFor="features">Distinktive features:</label>
                                 <p className={`${style.littleGreenText}`}>up to 60 char</p>
                             </div>
-                            <textarea className={`ms-2 ${style.smallerTextBlack} ${style.smallTextarea}`} cols={'17'} rows={'3'} name={'features'}
+                            <textarea className={`ms-2 ${style.smallerTextBlack} ${style.smallTextarea}`} cols={'17'}
+                                      rows={'3'} name={'features'}
                                       placeholder={'blue collar with stars, no left ear, damaged tail.'}/>
                         </div>
                         <div className={`d-flex mb-1`}>
@@ -53,30 +58,60 @@ const LostPetForm = () => {
                                 <label htmlFor="description">Description:</label>
                                 <p className={`${style.littleGreenText}`}>up to 150 char</p>
                             </div>
-                            <textarea className={`ms-2 ${style.smallerTextBlack} ${style.bigTextarea}`} cols={'17'} rows={'6'} name={'description'}
+                            <textarea className={`ms-2 ${style.smallerTextBlack} ${style.bigTextarea}`} cols={'17'}
+                                      rows={'6'} name={'description'}
                                       placeholder={'brown fox jumps over a lazy dog. DJs flock by when jhkjk jhgMTV ax quiz prog. Junk MTV quiz graced by fox whelps. Bawds jog, flick quartz, vex nymphs.'}/>
                         </div>
                         <div className={`d-flex mb-1`}>
-                            <label className={`${style.smallerTextBlack} col-3 text-end`} htmlFor="location">Location:</label>
-                            <textarea className={`ms-2 ${style.smallerTextBlack} ${style.middleTextarea}`} cols={'17'} rows={'2'} placeholder="Florentin Street, Tel Aviv" name="location"/>
+                            <label className={`${style.smallerTextBlack} col-3 text-end`}
+                                   htmlFor="location">Location:</label>
+                            <textarea className={`ms-2 ${style.smallerTextBlack} ${style.middleTextarea}`} cols={'17'}
+                                      rows={'2'} placeholder="Florentin Street, Tel Aviv" name="location"/>
                         </div>
                     </div>
-                    <div className={'col-6'}>
+                    <div className={'col-6 text-center'}>
                         <img className={`${style.anketImg}`} src={anketa} alt={''}/>
-                        <hr/>
-                        <div>
-                            <p>picture</p>
-                            <p>Drag and drop photos or</p>
-                            <button>Browse</button>
-                            <textarea placeholder={'img1.jpg\n img1.jpg\n img1.jpg\n'}/>
+                        <hr className={`${style.hrLine}`}/>
+                        <div className={`d-flex row mt-5`}>
+                            <div className={`col-6 text-center`}>
+                                <img className={`${style.addFileIcon}`} src={arrowUp} alt={''}/>
+                                <p className={`${style.smallerTextBlack}`}>Drag and drop photos or</p>
+                                <label className={`${style.addFileLabel}`} htmlFor={'fileInput'}>Browse</label>
+                            </div>
+                            <div className={`${style.divInput} col-6`}>
+                                <input className={`${style.addFileInput}`} type={'file'} id={'fileInput'}
+                                       name={'fileInput'} multiple accept={'image/*, image/jpeg'}/>
+                            </div>
                         </div>
                     </div>
-                    <div>contacts</div>
+                    <hr className={`${style.hrLine}`}/>
+                    <div>
+                        <div className={`mb-1 row `}>
+                            <label className={`${style.smallerTextBlack} col-2 text-end`}
+                                   htmlFor="contacts">Contacts:</label>
+                            <input className={`col-3`} type="tel" placeholder="Phone"/>
+                            <input className={`col-3`} type="email" placeholder="Email"/>
+                            <input className={`col-3`} type="text" placeholder="Facebook profile"/>
+                        </div>
+                    </div>
                 </form>
-                <div>footer with name and button</div>
+                <div className={`row d-flex align-items-center mb-1 mt-1`}>
+                    <div className={`col-1`}>
+                        <img className={`${style.avatarImg}`} src={avatar} alt={'dog'}/>
+                    </div>
+                    <div className={`col-8 ps-2`}>
+                        <h3 className={`${style.titleSemiBoldGreen}`}>Jonh Goodboi</h3>
+                    </div>
+                    <div className={`col-3`}>
+                        <button className={`${style.btnHeader}`}>
+                            <img className={`${style.iconBtnBlack}`} src={paw} alt={''}/>
+                            <span className={'m-auto'}>Publish</span>
+                        </button>
+                    </div>
+                </div>
             </div>
         </>
     );
 };
 
-export default LostPetForm;
+export default LostFoundForm;

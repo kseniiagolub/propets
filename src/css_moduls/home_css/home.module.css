@@ -126,7 +126,7 @@ nav a {
     color: var(--bs-black);
 }
 
-.smallerTextBlackWidth{
+.smallerTextBlackWidth {
     width: 470px;
 }
 
@@ -141,6 +141,7 @@ nav a {
     color: var(--bs-green);
     text-decoration: none;
 }
+
 .avatarImg {
     height: 43px;
     width: 43px;
@@ -167,7 +168,7 @@ nav a {
     background-color: var(--bs-dark-green);
     min-width: 130px;
     min-height: 70px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
     z-index: 1;
 }
 
@@ -187,7 +188,7 @@ nav a {
     color: var(--bs-black);
 }
 
-.anketImg{
+.anketImg {
     height: 183px;
     width: 192px;
 }
@@ -197,6 +198,7 @@ textarea {
     border: 1px solid var(--bs-light-green);
     resize: none;
 }
+
 .smallTextarea {
     height: 46px;
 }
@@ -212,5 +214,55 @@ textarea {
 .littleGreenText {
     font-size: 10px;
     font-weight: 500;
+    color: var(--bs-green);
+}
+
+.addFileIcon {
+    height: 30px;
+    width: 30px;
+    filter: invert(71%) sepia(10%) saturate(860%) hue-rotate(106deg) brightness(96%) contrast(86%);
+}
+
+.divInput {
+    margin: 0;
+    padding: 0;
+}
+
+.addFileInput {
+    width: 127px;
+    height: 111px;
+    border: 1px solid var(--bs-light-green);
+    margin: 0;
+}
+
+.addFileInput::-webkit-file-upload-button {
+    visibility: hidden;
+    width: 0.01%;
+    margin: 0;
+    padding: 0;
+}
+
+.addFileLabel {
+    width: 77px;
+    height: 30px;
+    border: 1px solid var(--bs-light-green);
+    border-radius: 15px;
+    opacity: 1;
+    background-color: transparent;
+    color: var(--bs-green);
+    font-size: 12px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.hrLine{
+    border: 0.5px var(--bs-ligth-grey) solid;
+    opacity: 0.3;
+    margin: 10px 0;
+}
+
+.titleSemiBoldGreen{
+    font-size: 16px;
+    font-weight: 600;
     color: var(--bs-green);
 }
