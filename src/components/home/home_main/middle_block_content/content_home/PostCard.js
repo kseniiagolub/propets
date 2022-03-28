@@ -22,7 +22,7 @@ const PostCard = () => {
                     <h3 className={`${style.titleSemiBold}`}>Jonh Goodboi</h3>
                     <p className={`${style.smallerText}`}>2 h</p>
                     <img className={'mb-2 mt-1'} src={dog} alt={'dog'}/>
-                    <p className={`${style.smallerTextBlack}`}>Fox nymphs grab quick-jived waltz. Brick quiz whangs
+                    <p className={`${style.smallerTextBlack} ${style.smallerTextBlackWidth}`}>Fox nymphs grab quick-jived waltz. Brick quiz whangs
                         jumpy veldt fox. Bright vixens jump; dozy fowl quack
                         <a className={`${style.greenLink}`} href={'#'}>…more</a></p>
                 </div>

@@ -45,7 +45,7 @@ const DropMenu = () => {
                         <span>Fostering</span>
                     </div>
                 </NavLink>
-                <NavLink className={`${style.navBtn} d-flex mb-2 ps-1`} to={'/vethelp'}>
+                <NavLink className={`${style.navBtn} d-flex ps-1`} to={'/vethelp'}>
                     <div className={`d-flex`}>
                         <div className={`${style.widthImg} me-2`}>
                             <img src={vetHelpImg} alt={'VetHelp'}/>
