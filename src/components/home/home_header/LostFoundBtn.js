@@ -11,11 +11,11 @@ const LostFoundBtn = () => {
 
     return (
         <div className={'col-4 d-flex justify-content-evenly'}>
-            <NavLink to={'/lostpet'} className={`${style.btnLost}`} onClick={() => dispatch({type: 'SET_MAP_ACTIVE', payload: false})}>
+            <NavLink to={'/lostpet'} className={`${style.btnLost}`} onClick={() => dispatch({type: 'SET_MAP_ACTIVE', payload: {map: false, header: true}})}>
                     <img className={`${style.iconBtnDark}`} src={lost_black} alt={'lost'}/>
                     <span className={'m-auto'}>I lost my pet</span>
             </NavLink>
-            <NavLink to={'/foundpet'} className={`${style.btnFound}`} onClick={() => dispatch({type: 'SET_MAP_ACTIVE', payload: false})}>
+            <NavLink to={'/foundpet'} className={`${style.btnFound}`} onClick={() => dispatch({type: 'SET_MAP_ACTIVE', payload: {map: false, header: true}})}>
                     <img className={`${style.iconBtn}`} src={found} alt={'found'}/>
                     <span className={'m-auto'}>I found a pet</span>
             </NavLink>

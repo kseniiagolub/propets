@@ -14,12 +14,12 @@ import VetHelp from "../content_vethelp/VetHelp";
 import FoundPet from "../../../../Ankets/FoundPet";
 import LostPet from "../../../../Ankets/LostPet";
 
-const MainHome = (props) => {
+const MainHome = () => {
     return (
         <main className={`container-fluid`}>
             <div className={`row justify-content-center align-items-center`}>
                 <div className={`${style.heightMain} d-flex`}>
-                    <NavHome name={props.name}/>
+                    <NavHome/>
                     <Switch>
                         <Route exact path={'/home'} component={NewsWallHome}/>
                         <Route exact path={'/lost'} component={Lost}/>

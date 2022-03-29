@@ -1,25 +1,28 @@
-.btnFound {
+.btnFound,
+.btnLost{
     width: 148px;
     height: 34px;
-    background-color: var(--bs-green);
-    border: var(--bs-light-green) 1px solid;
     border-radius: 17px;
-    color: var(--bs-white);
     font-size: 12px;
     display: flex;
-    align-items: center;
+    padding: 8px;
+    text-decoration: none;
+}
+
+.btnFound {
+    background-color: var(--bs-green);
+    border: var(--bs-light-green) 1px solid;
+    color: var(--bs-white);
 }
 
 .btnLost {
-    width: 148px;
-    height: 34px;
     background-color: var(--bs-yellow);
     border: var(--bs-ligth-yellow) 1px solid;
-    border-radius: 17px;
     color: var(--bs-black);
-    font-size: 12px;
-    display: flex;
-    align-items: center;
+}
+
+.btnLost:hover {
+    color: var(--bs-black)
 }
 
 .iconBtn {

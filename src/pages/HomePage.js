@@ -9,28 +9,50 @@ const HomePage = () => {
     const auth = getAuth()
     const name = useSelector(state => state.registration)
 
-    if (name.name !== null) {
-        updateProfile(auth.currentUser, {
-            displayName: name.name
-        })
-            .then()
-            .catch((error) => {
-                console.log(error)
-            });
-        return (
-            <>
-                <HomeHeader/>
-                <MainHome name={name.name}/>
-            </>
-        )
-    } else {
-        return (
-            <>
-                <HomeHeader/>
-                <MainHome name={auth.currentUser.displayName}/>
-            </>
-        )
+    const update = () => {
+        if (name.name !== null) {
+            updateProfile(auth.currentUser, {
+                displayName: name.name
+            })
+                .then()
+                .catch((error) => {
+                    console.log(error)
+                });
+        }
     }
-};
+
+    update()
+
+    return (
+        <>
+            <HomeHeader/>
+            <MainHome/>
+        </>
+    )
+}
 
 export default HomePage;
+
+
+// if (name.name !== null) {
+//     updateProfile(auth.currentUser, {
+//         displayName: name.name
+//     })
+//         .then()
+//         .catch((error) => {
+//             console.log(error)
+//         });
+//     return (
+//         <>
+//             <HomeHeader/>
+//             <MainHome name={name.name}/>
+//         </>
+//     )
+// } else {
+//     return (
+//         <>
+//             <HomeHeader/>
+//             <MainHome name={auth.currentUser.displayName}/>
+//         </>
+//     )
+// }

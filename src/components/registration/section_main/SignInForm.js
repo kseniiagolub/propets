@@ -24,7 +24,7 @@ const SignInForm = () => {
                         {(emailValid.isDirty && emailValid.emailError) && <div className={`${style.errorText}`}>Wrong email</div>}
 
                         <label className={'col-3 text-end'} htmlFor="email">Email:</label>
-                        <input className={'col-8'} type="email" placeholder="helenjohnson@gmail.com" name="email"
+                        <input className={'col-8'} type="email" placeholder="helenjohnson@gmail.com" name="email" autoComplete="on"
                                onChange={(e => {
                                    setEmail(e.target.value)
                                    emailValid.onChange(e)
@@ -40,7 +40,7 @@ const SignInForm = () => {
                         <div className={`${style.errorText}`}>The password must be between 8 and 14 characters long</div>}
 
                         <label className={'col-3 text-end'} htmlFor="psw">Password:</label>
-                        <input className={'col-8'} type="password" placeholder="*****************" name="psw"
+                        <input className={'col-8'} type="password" placeholder="*****************" name="psw" autoComplete="on"
                                onChange={(e => {
                                    setPassword(e.target.value)
                                    passwordValid.onChange(e)

@@ -7,7 +7,7 @@ const Found = () => {
     const dispatch = useDispatch()
 
     useEffect(() => {
-        dispatch({type: "SET_MAP_ACTIVE", payload: true})
+        dispatch({type: "SET_MAP_ACTIVE", payload: {map: true, header: false}})
     })
 
     return (

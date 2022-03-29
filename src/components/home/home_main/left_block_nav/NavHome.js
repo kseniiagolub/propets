@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React from 'react';
 import style from '../../../../css_moduls/home_css/home.module.css';
 import homeImg from '../../../../assets/png/home.png';
 import lostImg from '../../../../assets/png/lost_black.png';
@@ -12,7 +12,7 @@ import {NavLink, useHistory} from "react-router-dom";
 import {useDispatch} from "react-redux";
 import {getAuth, signOut} from "firebase/auth";
 
-const NavHome = (props) => {
+const NavHome = () => {
 
     const dispatch = useDispatch()
     const {push} = useHistory()
@@ -32,8 +32,9 @@ const NavHome = (props) => {
             }).catch((error) => {
             console.log(error.message)
         });
-
     };
+
+    console.log(auth.currentUser)
 
     return (
         <div className={`${style.mainGreenBack} col-3 pt-3`}>
@@ -49,7 +50,7 @@ const NavHome = (props) => {
                 <div className={`d-flex align-items-center col-5 m-auto mb-5`}>
                     <div className={`${style.imgUser} me-2`}><img src={avatar} alt={'avatar'}/></div>
                     <div className={`d-flex flex-wrap w-25`}>
-                        <a className={`${style.aColor} m-0`}>{props.name}</a>
+                        <a className={`${style.aColor} m-0`}>test</a>
                     </div>
                 </div>
                 <div className={`col-5 m-auto mb-3`}>

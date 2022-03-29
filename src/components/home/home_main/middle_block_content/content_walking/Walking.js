@@ -7,7 +7,7 @@ const Walking = () => {
     const dispatch = useDispatch()
 
     useEffect(() => {
-        dispatch({type: "SET_MAP_ACTIVE", payload: false})
+        dispatch({type: "SET_MAP_ACTIVE", payload: {map: false, header: false}})
     })
 
     return (

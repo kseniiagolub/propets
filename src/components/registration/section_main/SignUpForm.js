@@ -34,7 +34,7 @@ const SignUpForm = () => {
                         {(nameValid.isDirty && nameValid.isEmpty) && <div className={`${style.errorText}`}>The field cannot be empty</div>}
 
                         <label className={'col-3 text-end'} htmlFor="name">Name:</label>
-                        <input className={'col-8'} type="text" placeholder="Helen Johnson" name="name"
+                        <input className={'col-8'} type="text" placeholder="Helen Johnson" name="name" autoComplete="on"
                                onChange={(e) => {
                                    setName(e.target.value)
                                    nameValid.onChange(e)
@@ -49,7 +49,7 @@ const SignUpForm = () => {
                         {(emailValid.isDirty && emailValid.emailError) && <div className={`${style.errorText}`}>Wrong email</div>}
 
                         <label className={'col-3 text-end'} htmlFor="email">Email:</label>
-                        <input className={'col-8'} type="email" placeholder="helenjohnson@gmail.com" name="email"
+                        <input className={'col-8'} type="email" placeholder="helenjohnson@gmail.com" name="email" autoComplete="on"
                                onChange={(e) => {
                                    setEmail(e.target.value)
                                    emailValid.onChange(e)
@@ -65,7 +65,7 @@ const SignUpForm = () => {
                         <div className={`${style.errorText}`}>The password must be between 8 and 14 characters long</div>}
 
                         <label className={'col-3 text-end'} htmlFor="psw">Password:</label>
-                        <input className={'col-8'} type="password" placeholder="*****************" name="psw"
+                        <input className={'col-8'} type="password" placeholder="*****************" name="psw" autoComplete="on"
                                onChange={(e) => {
                                    setPasswordFirst(e.target.value)
                                    passwordFirstValid.onChange(e)
@@ -78,7 +78,7 @@ const SignUpForm = () => {
                         <div className={`${style.errorText}`}>The password must be between 8 and 14 characters long</div>}
 
                         <label className={'col-3 text-end'} htmlFor="psw">Password:</label>
-                        <input className={'col-8'} type="password" placeholder="*****************" name="psw"
+                        <input className={'col-8'} type="password" placeholder="*****************" name="psw" autoComplete="on"
                                onChange={(e) => {
                                    setPasswordSecond(e.target.value)
                                    passwordSecondValid.onChange(e)
