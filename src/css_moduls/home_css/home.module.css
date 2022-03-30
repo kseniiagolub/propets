@@ -106,6 +106,12 @@ nav a {
     color: var(--bs-dark-green);
 }
 
+.titleBigBold {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--bs-green);
+}
+
 .titleSemiBold {
     font-size: 16px;
     font-weight: 600;
@@ -130,7 +136,6 @@ nav a {
 }
 
 .postCard {
-    height: 361px;
     box-shadow: 0px 3px 6px var(--bs-grey);
     margin: 2%;
     padding: 1%;
@@ -264,4 +269,8 @@ textarea {
     font-size: 16px;
     font-weight: 600;
     color: var(--bs-green);
+}
+
+.imgPreview {
+    width: 100%;
 }
