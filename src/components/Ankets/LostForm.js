@@ -1,16 +1,14 @@
 import React from 'react';
 import style from '../../css_moduls/home_css/home.module.css';
 import anketa from '../../assets/png/anketa.png';
-import arrowUp from '../../assets/png/arrow-up.png';
 import avatar from "../../assets/png/avatar.jpg";
 import paw from '../../assets/png/paw.png';
-import AddImages from "../../AddImages";
+import AddImages from "./AddImages";
 
 const LostForm = () => {
     return (
         <>
             <div className={`${style.lostFoundForm} row d-flex`}>
-                <form className={`row`} name={'lostForm'} action={'#'}>
                     <div className={'col-6 d-flex flex-column'}>
                         <div className={`mb-1`}>
                             <label className={`${style.smallerTextBlack} col-3 text-end`} htmlFor="type">Type:</label>
@@ -75,20 +73,9 @@ const LostForm = () => {
                         <img className={`${style.anketImg}`} src={anketa} alt={''}/>
                         <hr className={`${style.hrLine}`}/>
                         <AddImages/>
-                        {/*<div className={`d-flex row mt-5`}>*/}
-                        {/*    <div className={`col-6 text-center`}>*/}
-                        {/*        <img className={`${style.addFileIcon}`} src={arrowUp} alt={''}/>*/}
-                        {/*        <p className={`${style.smallerTextBlack}`}>Drag and drop photos or</p>*/}
-                        {/*        <label className={`${style.addFileLabel}`} htmlFor={'fileInput'}>Browse</label>*/}
-                        {/*    </div>*/}
-                        {/*    <div className={`${style.divInput} col-6`}>*/}
-                        {/*        <input className={`${style.addFileInput}`} type={'file'} id={'fileInput'}*/}
-                        {/*               name={'fileInput'} multiple accept={'image/*, image/jpeg'}/>*/}
-                        {/*    </div>*/}
-                        {/*</div>*/}
                     </div>
                     <hr className={`${style.hrLine}`}/>
-                    <div>
+                    <div className={`mb-3`}>
                         <div className={`mb-1 row `}>
                             <label className={`${style.smallerTextBlack} col-2 text-end`}
                                    htmlFor="contacts">Contacts:</label>
@@ -97,13 +84,12 @@ const LostForm = () => {
                             <input className={`col-3`} type="text" placeholder="Facebook profile"/>
                         </div>
                     </div>
-                </form>
                 <div className={`row d-flex align-items-center mb-1 mt-1`}>
                     <div className={`col-1`}>
                         <img className={`${style.avatarImg}`} src={avatar} alt={'dog'}/>
                     </div>
                     <div className={`col-8 ps-2`}>
-                        <h3 className={`${style.titleSemiBoldGreen}`}>Jonh Goodboi</h3>
+                        <h3 className={`${style.titleSemiBoldGreen}`}>test</h3>
                     </div>
                     <div className={`col-3`}>
                         <button className={`${style.btnHeader}`}>

@@ -1,15 +1,14 @@
-import React from 'react';
-import {storage} from './firebase';
+import React, {useEffect, useState} from 'react';
+import {storage} from '../../firebase';
 import {getDownloadURL, ref, uploadBytesResumable} from "firebase/storage";
 import { v4 as uuidv4 } from 'uuid';
-import style from "./css_moduls/home_css/home.module.css";
-import arrowUp from "./assets/png/arrow-up.png";
+import style from "../../css_moduls/home_css/home.module.css";
+import arrowUp from "../../assets/png/arrow-up.png";
 import {useDispatch} from "react-redux";
 
 const AddImages = () => {
 
     const dispatch = useDispatch()
-
 
     const formHandler = (e) => {
         e.preventDefault();
@@ -43,7 +42,6 @@ const AddImages = () => {
                 <input className={`${style.addFileInput}`} onChange={formHandler} type={'file'} id={'fileInput'}
                        name={'fileInput'} multiple accept={'image/*, image/jpeg'}/>
             </div>
-            <span>Image download!</span>
         </div>
     );
 };
