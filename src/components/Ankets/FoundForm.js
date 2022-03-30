@@ -1,21 +1,33 @@
-import React from 'react';
+import React, {useState} from 'react';
 import style from '../../css_moduls/home_css/home.module.css';
 import anketa from '../../assets/png/anketa.png';
-import arrowUp from '../../assets/png/arrow-up.png';
 import avatar from "../../assets/png/avatar.jpg";
 import paw from '../../assets/png/paw.png';
-import AddImages from "../../AddImages";
+import AddImages from "./AddImages";
 
 const FoundForm = () => {
+
+    const [type, setType] = useState()
+    const [sex, setSex] = useState()
+    const [breed, setBreed] = useState()
+    const [color, setColor] = useState()
+    const [height, setHeight] = useState()
+    const [features, setFeatures] = useState()
+    const [description, setDescription] = useState()
+    const [location, setLocation] = useState()
+    const [phone, setPhone] = useState()
+    const [email, setEmail] = useState()
+    const [facebook, setFacebook] = useState()
+
     return (
         <>
             <div className={`${style.lostFoundForm} row d-flex`}>
-                <form className={`row`} name={'lostForm'} action={'#'}>
                     <div className={'col-6 d-flex flex-column'}>
                         <div className={`mb-1`}>
                             <label className={`${style.smallerTextBlack} col-3 text-end`} htmlFor="type">Type:</label>
-                            <select className={`${style.select} ms-2`} name={"type"}>
-                                <option defaultValue={'selected'} value={'Dog'}>Dog</option>
+                            <select defaultValue={'Choose'} className={`${style.select} ms-2`} name={"type"} onChange={(e) => setType(e.target.value)}>
+                                <option value={'Choose'} disabled>Choose</option>
+                                <option value={'Dog'}>Dog</option>
                                 <option value={'Cat'}>Cat</option>
                                 <option value={'Rabbit'}>Rabbit</option>
                                 <option value={'Parrot'}>Parrot</option>
@@ -23,14 +35,15 @@ const FoundForm = () => {
                         </div>
                         <div className={`mb-1`}>
                             <label className={`${style.smallerTextBlack} col-3 text-end`} htmlFor="sex">Sex:</label>
-                            <select className={`${style.select} ms-2`} name={"sex"}>
-                                <option defaultValue={'selected'} value={'Male'}>Male</option>
+                            <select defaultValue={'Choose'} className={`${style.select} ms-2`} name={"sex"} onChange={(e) => setSex(e.target.value)}>
+                                <option value={'Choose'} disabled>Choose</option>
+                                <option value={'Male'}>Male</option>
                                 <option value={'Female'}>Female</option>
                             </select>
                         </div>
                         <div className={`mb-1`}>
                             <label className={`${style.smallerTextBlack} col-3 text-end`} htmlFor="breed">Breed:</label>
-                            <input className={'col-7'} type="text" placeholder="Golden Retriever" name="breed"/>
+                            <input className={'col-7'} type="text" placeholder="Golden Retriever" name="breed" onChange={(e) => setBreed(e.target.value)}/>
                         </div>
                         <div className={`mb-1`}>
                             <label className={`${style.smallerTextBlack} col-3 text-end`} htmlFor="color">Color:</label>
@@ -74,20 +87,9 @@ const FoundForm = () => {
                         <img className={`${style.anketImg}`} src={anketa} alt={''}/>
                         <hr className={`${style.hrLine}`}/>
                         <AddImages/>
-                        {/*<div className={`d-flex row mt-5`}>*/}
-                        {/*    <div className={`col-6 text-center`}>*/}
-                        {/*        <img className={`${style.addFileIcon}`} src={arrowUp} alt={''}/>*/}
-                        {/*        <p className={`${style.smallerTextBlack}`}>Drag and drop photos or</p>*/}
-                        {/*        <label className={`${style.addFileLabel}`} htmlFor={'fileInput'}>Browse</label>*/}
-                        {/*    </div>*/}
-                        {/*    <div className={`${style.divInput} col-6`}>*/}
-                        {/*        <input className={`${style.addFileInput}`} type={'file'} id={'fileInput'}*/}
-                        {/*               name={'fileInput'} multiple accept={'image/*, image/jpeg'}/>*/}
-                        {/*    </div>*/}
-                        {/*</div>*/}
                     </div>
                     <hr className={`${style.hrLine}`}/>
-                    <div>
+                    <div className={`mb-3`}>
                         <div className={`mb-1 row `}>
                             <label className={`${style.smallerTextBlack} col-2 text-end`}
                                    htmlFor="contacts">Contacts:</label>
@@ -96,13 +98,12 @@ const FoundForm = () => {
                             <input className={`col-3`} type="text" placeholder="Facebook profile"/>
                         </div>
                     </div>
-                </form>
                 <div className={`row d-flex align-items-center mb-1 mt-1`}>
                     <div className={`col-1`}>
                         <img className={`${style.avatarImg}`} src={avatar} alt={'dog'}/>
                     </div>
                     <div className={`col-8 ps-2`}>
-                        <h3 className={`${style.titleSemiBoldGreen}`}>Jonh Goodboi</h3>
+                        <h3 className={`${style.titleSemiBoldGreen}`}>test</h3>
                     </div>
                     <div className={`col-3`}>
                         <button className={`${style.btnHeader}`}>
