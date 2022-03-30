@@ -3,7 +3,7 @@ import style from '../../../../css_moduls/home_css/home.module.css';
 import homeImg from '../../../../assets/png/home.png';
 import lostImg from '../../../../assets/png/lost_black.png';
 import foundImg from '../../../../assets/png/paw_black.png';
-import starImg from '../../../../assets/png/star.png';
+import star_full from '../../../../assets/png/star_full.png';
 import avatar from '../../../../assets/png/avatar.jpg';
 import logout from '../../../../assets/png/logout.png';
 import ElementList from "./ElementList";
@@ -43,8 +43,8 @@ const NavHome = () => {
                 <NavLink className={`${style.navBtn} d-flex mb-2 align-items-center ps-1`} to='/lost'><ElementList img={lostImg} name='Lost'/></NavLink>
                 <NavLink className={`${style.navBtn} d-flex mb-2 align-items-center ps-1`} to='/found'><ElementList img={foundImg} name='Found'/></NavLink>
                 <DropMenu/>
-                <NavLink className={`${style.navBtn} d-flex mb-5 align-items-center ps-1`} to={'/favorites'}><ElementList img={starImg} name='Favorites'/></NavLink>
-               </nav>
+                <NavLink className={`${style.navBtn} d-flex mb-5 align-items-center ps-1`} to={'/favorites'}><ElementList img={star_full} name='Favorites'/></NavLink>
+            </nav>
             <div>
                 <div className={`${style.gorizontLine} m-auto mb-3`}/>
                 <div className={`d-flex align-items-center col-5 m-auto mb-5`}>

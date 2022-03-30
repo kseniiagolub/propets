@@ -4,6 +4,7 @@ import BtnHomeHeader from "./BtnHomeHeader";
 import style from '../../../css_moduls/home_css/home.module.css';
 import {useSelector} from "react-redux";
 import LostFoundBtn from "./LostFoundBtn";
+import {NavLink} from "react-router-dom";
 
 const HomeHeader = () => {
 
@@ -23,7 +24,7 @@ const HomeHeader = () => {
         <header className={`${style.heightHeader} container-fluid`}>
             <div className={'row justify-content-center align-items-center h-100'}>
                 <div className={'col-10 d-flex justify-content-between'}>
-                    <LogoHomeHeader/>
+                    <NavLink to={'/home'}><LogoHomeHeader/></NavLink>
                     {test()}
                 </div>
             </div>
