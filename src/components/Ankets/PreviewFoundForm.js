@@ -19,7 +19,7 @@ const PreviewFoundForm = () => {
     }
 
     return (
-        <div className={`${style.mainWhiteBack} d-flex flex-column col-6 align-items-center overflow-auto mt-3`}>
+        <div className={`${style.mainWhiteBack} d-flex flex-column align-items-center col-6 overflow-auto mt-3`}>
             <h1 className={`${style.titleSemiBold} ${style.postCardTitle}`}><span className={`${style.titleBold}`}>Preview and Publish. </span>Please share the post to your FB to be more effective</h1>
             <div className={`${style.postCard} d-flex`}>
                 <div className={`col-5`}>

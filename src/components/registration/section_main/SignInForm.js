@@ -29,10 +29,7 @@ const SignInForm = () => {
                                    setEmail(e.target.value)
                                    emailValid.onChange(e)
                                })} required
-                               onBlur={e => {
-                                   dispatch({type: 'SET_USER_EMAIL_AUTH', payload: email})
-                                   emailValid.onBlur(e)
-                               }}/>
+                               onBlur={e => {emailValid.onBlur(e)}}/>
                     </div>
                     <div className={'text-center'}>
                         {(passwordValid.isDirty && passwordValid.isEmpty) && <div className={`${style.errorText}`}>The field cannot be empty</div>}
@@ -45,10 +42,7 @@ const SignInForm = () => {
                                    setPassword(e.target.value)
                                    passwordValid.onChange(e)
                                })} required
-                               onBlur={e => {
-                                   dispatch({type: 'SET_USER_PASSWORD_AUTH', payload: password})
-                                   passwordValid.onBlur(e)
-                               }}/>
+                               onBlur={e => {passwordValid.onBlur(e)}}/>
                     </div>
                 </div>
             </div>
@@ -58,7 +52,7 @@ const SignInForm = () => {
             <hr className={`m-0`}/>
             <div className={`${style.heightFooter} row align-items-center`}>
                 <AgreePersonalData/>
-                <FooterInBtn emailValid={emailValid} passwordValid={passwordValid}/>
+                <FooterInBtn emailValid={emailValid} passwordValid={passwordValid} email={email} password={password}/>
             </div>
         </>
     );
