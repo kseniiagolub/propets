@@ -4,8 +4,9 @@ import anketa from '../../assets/png/anketa.png';
 import arrowUp from '../../assets/png/arrow-up.png';
 import avatar from "../../assets/png/avatar.jpg";
 import paw from '../../assets/png/paw.png';
+import AddImages from "../../AddImages";
 
-const LostFoundForm = () => {
+const LostForm = () => {
     return (
         <>
             <div className={`${style.lostFoundForm} row d-flex`}>
@@ -72,17 +73,18 @@ const LostFoundForm = () => {
                     <div className={'col-6 text-center'}>
                         <img className={`${style.anketImg}`} src={anketa} alt={''}/>
                         <hr className={`${style.hrLine}`}/>
-                        <div className={`d-flex row mt-5`}>
-                            <div className={`col-6 text-center`}>
-                                <img className={`${style.addFileIcon}`} src={arrowUp} alt={''}/>
-                                <p className={`${style.smallerTextBlack}`}>Drag and drop photos or</p>
-                                <label className={`${style.addFileLabel}`} htmlFor={'fileInput'}>Browse</label>
-                            </div>
-                            <div className={`${style.divInput} col-6`}>
-                                <input className={`${style.addFileInput}`} type={'file'} id={'fileInput'}
-                                       name={'fileInput'} multiple accept={'image/*, image/jpeg'}/>
-                            </div>
-                        </div>
+                        <AddImages/>
+                        {/*<div className={`d-flex row mt-5`}>*/}
+                        {/*    <div className={`col-6 text-center`}>*/}
+                        {/*        <img className={`${style.addFileIcon}`} src={arrowUp} alt={''}/>*/}
+                        {/*        <p className={`${style.smallerTextBlack}`}>Drag and drop photos or</p>*/}
+                        {/*        <label className={`${style.addFileLabel}`} htmlFor={'fileInput'}>Browse</label>*/}
+                        {/*    </div>*/}
+                        {/*    <div className={`${style.divInput} col-6`}>*/}
+                        {/*        <input className={`${style.addFileInput}`} type={'file'} id={'fileInput'}*/}
+                        {/*               name={'fileInput'} multiple accept={'image/*, image/jpeg'}/>*/}
+                        {/*    </div>*/}
+                        {/*</div>*/}
                     </div>
                     <hr className={`${style.hrLine}`}/>
                     <div>
@@ -114,4 +116,4 @@ const LostFoundForm = () => {
     );
 };
 
-export default LostFoundForm;
+export default LostForm;
