@@ -118,7 +118,7 @@ const FoundForm = () => {
                     <div className={`col-1`}>
                         <img className={`${style.avatarImg}`} src={avatar} alt={'dog'}/>
                     </div>
-                    <div className={`col-8 ps-2`}>
+                    <div className={`col-8 ps-4`}>
                         <h3 className={`${style.titleSemiBoldGreen}`}>test</h3>
                     </div>
                     <div className={`col-3`}>

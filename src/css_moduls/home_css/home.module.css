@@ -153,6 +153,18 @@ nav a {
     color: var(--bs-black);
 }
 
+.smallerTextGreen {
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--bs-green);
+}
+
+.smallerTextBlack {
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--bs-black);
+}
+
 .textPost {
     width: 470px;
     height: 50px;
@@ -172,11 +184,15 @@ nav a {
     padding: 1%;
 }
 
+.postCardTitle {
+    margin: 2%;
+    padding: 1%;
+}
+
 .greenLink {
     color: var(--bs-green);
     text-decoration: none;
 }
-
 
 .starBtn {
     height: 16px;
