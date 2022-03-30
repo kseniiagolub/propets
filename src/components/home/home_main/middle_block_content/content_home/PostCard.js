@@ -1,7 +1,6 @@
 import React, {useState} from 'react';
 import style from '../../../../../css_moduls/home_css/home.module.css'
 import avatar from '../../../../../assets/png/avatar.jpg';
-import dog from '../../../../../assets/png/gold_dog.png';
 import star from '../../../../../assets/png/star.png';
 import dots from '../../../../../assets/png/dots_three.png';
 import hide from "../../../../../assets/png/hide.png";
@@ -15,15 +14,18 @@ const PostCard = () => {
     return (
         <>
             <div className={`${style.postCard} row d-flex`}>
-                <div className={`col-1`}>
-                    <img className={`${style.avatarImg}`} src={avatar} alt={'dog'}/>
+                <div className={`${style.avatarImg} col-1`}>
+                    <img src={avatar} alt={''}/>
                 </div>
                 <div className={`col-10`}>
                     <h3 className={`${style.titleSemiBold}`}>Jonh Goodboi</h3>
                     <p className={`${style.smallerText}`}>2 h</p>
-                    <img className={'mb-2 mt-1'} src={dog} alt={'dog'}/>
-                    <p className={`${style.smallerTextBlack} ${style.smallerTextBlackWidth}`}>Fox nymphs grab quick-jived waltz. Brick quiz whangs
-                        jumpy veldt fox. Bright vixens jump; dozy fowl quack
+                    <div className={`${style.picturePost} mb-2 mt-1 text-center`}><img src={avatar} alt={''}/></div>
+                    <p className={`${style.smallerTextBlack} ${style.textPost}`}>Fox nymphs grab
+                        quick-jived waltz. Brick quiz whangs jumpy veldt fox. Bright vixens jump; dozy fowl quack
+                        Lorem ipsum dolor sit amet, consectetur
+                        adipisicing elit. Asperiores beatae cupiditate, dicta eius exercitationem facilis ipsum magni
+                        modi, natus necessitatibus, nemo nobis numquam obcaecati officia quam quibusdam ullam ut velit.
                         <a className={`${style.greenLink}`} href={'#'}>…more</a></p>
                 </div>
                 <div className={`col-1 d-flex flex-column justify-content-between pb-3`}>
