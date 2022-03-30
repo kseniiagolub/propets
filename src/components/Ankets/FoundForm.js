@@ -22,7 +22,9 @@ const FoundForm = () => {
     const dispatch = useDispatch()
 
     return (
-        <>
+        <div className={`${style.mainWhiteBack} d-flex flex-column col-6 align-items-center overflow-auto mt-3`}>
+            <h1 className={`${style.titleSemiBold}`}><span className={`${style.titleBold}`}>Found a pet?</span> Please
+                complete the form to help.</h1>
             <div className={`${style.lostFoundForm} row d-flex`}>
                 <div className={'col-6 d-flex flex-column'}>
                     <div className={`mb-1`}>
@@ -138,7 +140,7 @@ const FoundForm = () => {
                     </div>
                 </div>
             </div>
-        </>
+        </div>
     );
 };
 

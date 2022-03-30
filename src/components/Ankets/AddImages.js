@@ -4,11 +4,17 @@ import {getDownloadURL, ref, uploadBytesResumable} from "firebase/storage";
 import { v4 as uuidv4 } from 'uuid';
 import style from "../../css_moduls/home_css/home.module.css";
 import arrowUp from "../../assets/png/arrow-up.png";
-import {useDispatch} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
 
 const AddImages = () => {
 
     const dispatch = useDispatch()
+    const selector = useSelector(state => state.anketa)
+    const [download, setDownload] = useState(false)
+
+    useEffect(() => {
+        setDownload(selector.images.length)
+    }, [selector.images])
 
     const formHandler = (e) => {
         e.preventDefault();
@@ -42,6 +48,7 @@ const AddImages = () => {
                 <input className={`${style.addFileInput}`} onChange={formHandler} type={'file'} id={'fileInput'}
                        name={'fileInput'} multiple accept={'image/*, image/jpeg'}/>
             </div>
+            <span>{download} images download</span>
         </div>
     );
 };
