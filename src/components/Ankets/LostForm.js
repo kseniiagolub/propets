@@ -14,8 +14,9 @@ const LostForm = () => {
                     <div className={'col-6 d-flex flex-column'}>
                         <div className={`mb-1`}>
                             <label className={`${style.smallerTextBlack} col-3 text-end`} htmlFor="type">Type:</label>
-                            <select className={`${style.select} ms-2`} name={"type"}>
-                                <option defaultValue={'selected'} value={'Dog'}>Dog</option>
+                            <select defaultValue={'choose'} className={`${style.select} ms-2`} name={"type"}>
+                                <option value={'choose'} disabled >Choose</option>
+                                <option value={'Dog'}>Dog</option>
                                 <option value={'Cat'}>Cat</option>
                                 <option value={'Rabbit'}>Rabbit</option>
                                 <option value={'Parrot'}>Parrot</option>
