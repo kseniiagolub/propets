@@ -75,6 +75,16 @@ nav a {
 .imgUser {
     width: 35px;
     height: 35px;
+}
+
+.avatarImg {
+    height: 43px;
+    width: 43px;
+    padding: 0;
+}
+
+.imgUser,
+.avatarImg {
     overflow: hidden;
     border: 1px var(--bs-white) solid;
     border-radius: 50%;
@@ -84,6 +94,18 @@ nav a {
     display: block;
     width: 100%;
     border-radius: 50%;
+}
+
+.avatarImg img {
+    display: block;
+    width: 100%;
+    border-radius: 50%;
+}
+
+.picturePost {
+    overflow: hidden;
+    width: 472px;
+    height: 236px;
 }
 
 .btnLogout {
@@ -131,8 +153,17 @@ nav a {
     color: var(--bs-black);
 }
 
-.smallerTextBlackWidth {
+.textPost {
     width: 470px;
+    height: 50px;
+    white-space: normal;
+    overflow: hidden;
+    text-overflow: clip;
+}
+
+.textPost:hover{
+    overflow: visible;
+
 }
 
 .postCard {
@@ -146,12 +177,6 @@ nav a {
     text-decoration: none;
 }
 
-.avatarImg {
-    height: 43px;
-    width: 43px;
-    border: 1px var(--bs-white) solid;
-    border-radius: 50%;
-}
 
 .starBtn {
     height: 16px;
@@ -259,13 +284,13 @@ textarea {
     cursor: pointer;
 }
 
-.hrLine{
+.hrLine {
     border: 0.5px var(--bs-ligth-grey) solid;
     opacity: 0.3;
     margin: 10px 0;
 }
 
-.titleSemiBoldGreen{
+.titleSemiBoldGreen {
     font-size: 16px;
     font-weight: 600;
     color: var(--bs-green);
