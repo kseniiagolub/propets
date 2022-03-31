@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import paw from '../../../assets/png/paw.png';
 import style from '../../../css_moduls/registration_css/registration.footer.module.css';
 import {Link, useHistory} from "react-router-dom";
@@ -7,10 +7,13 @@ import {getAuth, signInWithEmailAndPassword} from "firebase/auth";
 
 const FooterInBtn = (props) => {
 
-    const authorization = useSelector(state => state.authorization)
     const dispatch = useDispatch();
     const {push} = useHistory()
     const auth = getAuth();
+
+    useEffect(() => {
+
+    })
 
     const Authorization = (email, password) => {
         signInWithEmailAndPassword(auth, email, password)
@@ -35,7 +38,7 @@ const FooterInBtn = (props) => {
             </button>
             <button disabled={!props.emailValid.inputValid || !props.passwordValid.inputValid}
                     className={`${style.btnSubmit} ${(!props.emailValid.inputValid || !props.passwordValid.inputValid) ? `${style.btnSubmitUnavailable}` : ''}`}
-                    onClick={() => Authorization(authorization.email, authorization.password)}>
+                    onClick={() => Authorization(props.email, props.password)}>
                 <img className={` ${style.paw}`} src={paw} alt={paw}/>
                 <span className={'m-auto'}>Submit</span>
             </button>
