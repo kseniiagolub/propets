@@ -3,6 +3,7 @@ import registration from "./registration"
 import modal from "./modal";
 import map from "./map"
 import anketa from "./anketa";
+import favorites from "./favorites";
 
 export default {
     user,
@@ -10,4 +11,5 @@ export default {
     modal,
     map,
     anketa,
+    favorites,
 }

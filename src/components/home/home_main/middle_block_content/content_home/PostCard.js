@@ -7,12 +7,23 @@ import star_full from '../../../../../assets/png/star_full.png';
 import dots from '../../../../../assets/png/dots_three.png';
 import hide from "../../../../../assets/png/hide.png";
 import close from "../../../../../assets/png/close.png";
+import {useDispatch} from "react-redux";
+import {getAuth} from "firebase/auth";
 
 const PostCard = () => {
 
     const [dropdown, setDropdown] = useState(false)
     let disp = dropdown ? 'd-block' : 'd-none'
     const [isOpen, setOpen] = useState(false)
+
+    const [isFavorite, setFavorite] = useState(true)
+    const dispatch = useDispatch()
+    const auth = getAuth()
+
+    const changeFavorites = () => {
+        setFavorite(!isFavorite)
+        dispatch({type: 'SET_FAVORITE', payload: {isFavorite: isFavorite, userID: auth.currentUser.uid}})
+    }
 
     return (
         <div className={`${style.postCard} row d-flex`}>
@@ -46,7 +57,8 @@ const PostCard = () => {
                     </button>
                 </div>
 
-                <img className={`${style.starBtn} mb-1`} src={star_empty} alt={'star'}/>
+                <img onClick={changeFavorites} className={`${style.starBtn} mb-1`}
+                     src={isFavorite ? star_empty : star_full} alt={'star'}/>
             </div>
         </div>
     );
