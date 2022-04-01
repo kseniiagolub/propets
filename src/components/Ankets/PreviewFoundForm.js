@@ -40,6 +40,19 @@ const PreviewFoundForm = () => {
         }
     }
 
+    const addBaseCoordinates = () => {
+        dispatch({type: 'SET_ANKET', payload: {finish: false, edit: false}})
+        dispatch({type: 'SET_ANKET_NULL', payload: null})
+        try {
+            const docRef = addDoc(collection(db, "coordinates"), {
+                Coordinates: anket.coordinates
+            });
+            console.log("Document written with ID: ", docRef.id);
+        } catch (e) {
+            console.error("Error adding document: ", e);
+        }
+    }
+
     const timePost = () => {
         const date = new Date();
         const options = {
@@ -113,7 +126,10 @@ const PreviewFoundForm = () => {
                         <span className={'m-auto'}>Edit</span>
                     </button>
                     <NavLink to='/found' className={`${style.btnHeader}`}
-                            onClick={() => addBase()}>
+                            onClick={() => {
+                                addBase();
+                                addBaseCoordinates()
+                            }}>
                         <img className={`${style.iconBtnBlack}`} src={paw} alt={''}/>
                         <span className={'m-auto'}>Publish</span>
                     </NavLink>

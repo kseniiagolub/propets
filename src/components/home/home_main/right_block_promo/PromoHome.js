@@ -1,4 +1,4 @@
-import React, {useCallback, useEffect, useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import style from '../../../../css_moduls/home_css/home.module.css';
 import img_dental_care from '../../../../assets/png/dental_care.png';
 import img_pet_hotel from '../../../../assets/png/pet_hotel.png';
@@ -8,21 +8,29 @@ import {defaultCenter, getBrowserLocation} from "../../../../geolocation";
 import {useJsApiLoader} from "@react-google-maps/api";
 import {googleConfig} from "../../../../google";
 import Map from "../../../../Map";
+import {collection, getDocs} from "firebase/firestore";
+import {db} from "../../../../firebase";
 const libraries = ['places']
 
 const PromoHome = () => {
 
     const [center, setCenter] = useState(defaultCenter)
+    const [coordinates, setCoordinates] = useState([])
+    const baseCollectionCoordinates = collection(db, "coordinates")
+
+    useEffect(() => {
+        const getBase = async () => {
+            const data = await getDocs(baseCollectionCoordinates)
+            setCoordinates(data.docs.map(doc => ({...doc.data()})));
+        }
+        getBase()
+    }, [])
 
     const {isLoaded} = useJsApiLoader({
         id: 'google-Map-script',
         googleMapsApiKey: googleConfig,
         libraries
     })
-
-    const onPlaceSelect = useCallback((coordinates) => {
-        setCenter(coordinates)
-    }, [])
 
     useEffect(() => {
         getBrowserLocation()
