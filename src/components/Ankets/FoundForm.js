@@ -1,13 +1,24 @@
-import React, {useState} from 'react';
+import React, {useCallback, useState} from 'react';
 import style from '../../css_moduls/home_css/home.module.css';
 import anketa from '../../assets/png/anketa.png';
 import avatar from "../../assets/png/avatar.jpg";
 import paw from '../../assets/png/paw.png';
 import AddImages from "./AddImages";
-import {useDispatch} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
+import {useJsApiLoader} from "@react-google-maps/api";
+import {googleConfig} from "../../google";
+import Autocomplete from "../../assets/autocomplete";
 
 const FoundForm = () => {
 
+    const libraries = ['places']
+    const {isLoaded} = useJsApiLoader({
+        id: 'google-Map-script',
+        googleMapsApiKey: googleConfig,
+        libraries
+    })
+
+    const user = useSelector(state => state.user)
     const [type, setType] = useState()
     const [sex, setSex] = useState()
     const [breed, setBreed] = useState()
@@ -15,7 +26,6 @@ const FoundForm = () => {
     const [height, setHeight] = useState()
     const [features, setFeatures] = useState()
     const [description, setDescription] = useState()
-    const [location, setLocation] = useState()
     const [phone, setPhone] = useState()
     const [email, setEmail] = useState()
     const [facebook, setFacebook] = useState()
@@ -91,9 +101,7 @@ const FoundForm = () => {
                     <div className={`d-flex mb-1`}>
                         <label className={`${style.smallerTextBlack} col-3 text-end`}
                                htmlFor="location">Location:</label>
-                        <textarea className={`ms-2 ${style.smallerTextBlack} ${style.middleTextarea}`} cols={'17'}
-                                  rows={'2'} placeholder="Florentin Street, Tel Aviv" name="location"
-                                  onChange={e => setLocation(e.target.value)}/>
+                        <Autocomplete isLoaded={isLoaded}/>
                     </div>
                 </div>
                 <div className={'col-6 text-center'}>
@@ -119,14 +127,14 @@ const FoundForm = () => {
                         <img className={`${style.avatarImg}`} src={avatar} alt={'dog'}/>
                     </div>
                     <div className={`col-8 ps-4`}>
-                        <h3 className={`${style.titleSemiBoldGreen}`}>test</h3>
+                        <h3 className={`${style.titleSemiBoldGreen}`}>{user.name}</h3>
                     </div>
                     <div className={`col-3`}>
                         <button className={`${style.btnHeader}`} onClick={() => {
                             dispatch({
                                 type: 'SET_ANKETA_INFO', payload: {
-                                    type: type, sex: sex, breed: breed, color: color, height: height,
-                                    features: features, description: description, location: location,
+                                    name: user.name, type: type, sex: sex, breed: breed, color: color, height: height,
+                                    features: features, description: description,
                                     contacts: {phone: phone, email: email, facebook: facebook},
                                     date: Date.now(),
                                     found: true

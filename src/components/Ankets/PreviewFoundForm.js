@@ -20,7 +20,8 @@ const PreviewFoundForm = () => {
 
     return (
         <div className={`${style.mainWhiteBack} d-flex flex-column align-items-center col-6 overflow-auto mt-3`}>
-            <h1 className={`${style.titleSemiBold} ${style.postCardTitle}`}><span className={`${style.titleBold}`}>Preview and Publish. </span>Please share the post to your FB to be more effective</h1>
+            <h1 className={`${style.titleSemiBold} ${style.postCardTitle}`}><span className={`${style.titleBold}`}>Preview and Publish. </span>Please
+                share the post to your FB to be more effective</h1>
             <div className={`${style.postCard} d-flex`}>
                 <div className={`col-5`}>
                     <img className={`${style.imgPreview}`} src={anket.images[0]}/>
@@ -29,16 +30,21 @@ const PreviewFoundForm = () => {
                     <span className={`${style.titleBigBold}`}>{anket.type}, {anket.breed}</span>
                     <div className={`d-flex`}>
                         <div className={`col-6`}>
-                            <h2 className={`${style.smallerTextGreen}`}>Color: <span className={`${style.smallerTextBlack}`}>{anket.color}</span></h2>
-                            <h2 className={`${style.smallerTextGreen}`}>Sex: <span className={`${style.smallerTextBlack}`}>{anket.sex}</span></h2>
-                            <h2 className={`${style.smallerTextGreen}`}>Height: <span className={`${style.smallerTextBlack}`}>{anket.height}</span></h2>
+                            <h2 className={`${style.smallerTextGreen}`}>Color: <span
+                                className={`${style.smallerTextBlack}`}>{anket.color}</span></h2>
+                            <h2 className={`${style.smallerTextGreen}`}>Sex: <span
+                                className={`${style.smallerTextBlack}`}>{anket.sex}</span></h2>
+                            <h2 className={`${style.smallerTextGreen}`}>Height: <span
+                                className={`${style.smallerTextBlack}`}>{anket.height}</span></h2>
                         </div>
                         <div className={`col-6`}>
-                            <h2 className={`${style.smallerTextGreen}`}>Distinnctive features <span className={`${style.smallerTextBlack}`}>{anket.features}</span></h2>
+                            <h2 className={`${style.smallerTextGreen}`}>Distinnctive features <span
+                                className={`${style.smallerTextBlack}`}>{anket.features}</span></h2>
                         </div>
                     </div>
                     <div>
-                        <h2 className={`${style.smallerTextGreen}`}>Description: <span className={`${style.smallerTextBlack}`}>{anket.description}</span></h2>
+                        <h2 className={`${style.smallerTextGreen}`}>Description: <span
+                            className={`${style.smallerTextBlack}`}>{anket.description}</span></h2>
                     </div>
                     <hr className={`mt-3 mb-0`}/>
                     <div className={`mb-2`}>
@@ -50,7 +56,7 @@ const PreviewFoundForm = () => {
                         </div>
                         <div className={`d-flex flex-column col-7 ps-3`}>
                             <div>
-                                <span className={`${style.titleSemiBoldGreen}`}>test</span>
+                                <span className={`${style.titleSemiBoldGreen}`}>{anket.name}</span>
                             </div>
                             <div>
                                 <span className={`${style.smallerTextBlack}`}>{timePost()}</span>
@@ -62,6 +68,7 @@ const PreviewFoundForm = () => {
                     </div>
                 </div>
             </div>
+            <span className={`${style.titleSemiBoldGreen} ${style.postCardTitle}`}>Fingers crossed. We wish your fluffy to be found as soon as possible. Your post will expire in two weeks. To make it active again follow the instructions you’ll get in email.</span>
             <button onClick={() => dispatch({type: 'SET_ANKET', payload: {finish: false, edit: false}})}>btn</button>
         </div>
     );
