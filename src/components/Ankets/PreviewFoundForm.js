@@ -6,6 +6,8 @@ import avatar from "../../assets/png/avatar.jpg";
 import paw from "../../assets/png/paw.png";
 import edit from '../../assets/png/edit.png';
 import {NavLink} from "react-router-dom";
+import {addDoc, collection} from "firebase/firestore";
+import {db} from "../../firebase";
 
 const PreviewFoundForm = () => {
 
@@ -13,6 +15,30 @@ const PreviewFoundForm = () => {
     const anket = useSelector(state => state.anketa)
     const shareUrl = 'https://www.google.com/'
 
+    const addBase = () => {
+        dispatch({type: 'SET_ANKET', payload: {finish: false, edit: false}})
+        dispatch({type: 'SET_ANKET_NULL', payload: null})
+        try {
+            const docRef = addDoc(collection(db, "found"), {
+                Type: anket.type,
+                Sex: anket.sex,
+                Location: anket.location,
+                Height: anket.height,
+                Description: anket.description,
+                Features: anket.features,
+                Contacts: [anket.contacts.phone, anket.contacts.email, anket.contacts.facebook],
+                Breed: anket.breed,
+                Color: anket.color,
+                Name: anket.name,
+                Images: anket.images,
+                data: Date.now(),
+                found: true,
+            });
+            console.log("Document written with ID: ", docRef.id);
+        } catch (e) {
+            console.error("Error adding document: ", e);
+        }
+    }
 
     const timePost = () => {
         const date = new Date();
@@ -87,7 +113,7 @@ const PreviewFoundForm = () => {
                         <span className={'m-auto'}>Edit</span>
                     </button>
                     <NavLink to='/found' className={`${style.btnHeader}`}
-                            onClick={() => {dispatch({type: 'SET_ANKET', payload: {finish: false, edit: false}})}}>
+                            onClick={() => addBase()}>
                         <img className={`${style.iconBtnBlack}`} src={paw} alt={''}/>
                         <span className={'m-auto'}>Publish</span>
                     </NavLink>

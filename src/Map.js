@@ -10,7 +10,7 @@ const defaultOptions = {
     rotateControl: false,
     clickableIcons: false,
     keyboardShortcuts: false,
-    scrollwheel: false,
+    scrollwheel: true,
     disableDoubleClickZoom: false,
     fullscreenControl: false,
 }

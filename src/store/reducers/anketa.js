@@ -8,7 +8,11 @@ const initialState = {
     features: null,
     description: null,
     location: null,
-    contacts: [],
+    contacts: {
+        phone: null,
+        email: null,
+        facebook: null
+    },
     images: [],
     date: Date.now(),
     found: false,
@@ -43,6 +47,29 @@ export default (state = initialState, {type, payload}) => {
             return {...state, coordinates: {lat: payload.lat, lng: payload.lng}}
         case 'SET_ANKETA_IMG':
             return {...state, images: [...state.images, payload]}
+        case "SET_ANKET_NULL":
+            return {...state,
+                name: payload,
+                type: payload,
+                sex: payload,
+                breed: payload,
+                color: payload,
+                height: payload,
+                features: payload,
+                description: payload,
+                location: payload,
+                contacts: {
+                    phone: payload,
+                    email: payload,
+                    facebook: payload
+                },
+                images: [],
+                date: Date.now(),
+                found: payload,
+                coordinates: {
+                    lat: payload,
+                    lng: payload
+                }}
         default:
             return state
     }

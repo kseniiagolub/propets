@@ -8,12 +8,11 @@ import {defaultCenter, getBrowserLocation} from "../../../../geolocation";
 import {useJsApiLoader} from "@react-google-maps/api";
 import {googleConfig} from "../../../../google";
 import Map from "../../../../Map";
+const libraries = ['places']
 
 const PromoHome = () => {
 
     const [center, setCenter] = useState(defaultCenter)
-
-    const libraries = ['places']
 
     const {isLoaded} = useJsApiLoader({
         id: 'google-Map-script',
