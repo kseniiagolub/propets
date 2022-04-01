@@ -1,15 +1,15 @@
 import React from 'react';
-import {useDispatch, useSelector} from "react-redux";
-import {FacebookIcon, FacebookShareButton} from "react-share";
 import style from "../../css_moduls/home_css/home.module.css";
 import avatar from "../../assets/png/avatar.jpg";
-import paw from "../../assets/png/paw.png";
-import edit from '../../assets/png/edit.png';
+import {FacebookIcon, FacebookShareButton} from "react-share";
+import edit from "../../assets/png/edit.png";
 import {NavLink} from "react-router-dom";
+import paw from "../../assets/png/paw.png";
+import {useDispatch, useSelector} from "react-redux";
 import {addDoc, collection} from "firebase/firestore";
 import {db} from "../../firebase";
 
-const PreviewFoundForm = () => {
+const PreviewLostForm = () => {
 
     const dispatch = useDispatch()
     const anket = useSelector(state => state.anketa)
@@ -19,7 +19,7 @@ const PreviewFoundForm = () => {
         dispatch({type: 'SET_ANKET', payload: {finish: false, edit: false}})
         dispatch({type: 'SET_ANKET_NULL', payload: null})
         try {
-            const docRef = addDoc(collection(db, "found"), {
+            const docRef = addDoc(collection(db, "lost"), {
                 Type: anket.type,
                 Sex: anket.sex,
                 Location: anket.location,
@@ -32,7 +32,7 @@ const PreviewFoundForm = () => {
                 Name: anket.name,
                 Images: anket.images,
                 data: Date.now(),
-                found: true,
+                found: false,
             });
             console.log("Document written with ID: ", docRef.id);
         } catch (e) {
@@ -112,8 +112,8 @@ const PreviewFoundForm = () => {
                         <img className={`${style.editIcon}`} src={edit} alt={''}/>
                         <span className={'m-auto'}>Edit</span>
                     </button>
-                    <NavLink to='/found' className={`${style.btnHeader}`}
-                            onClick={() => addBase()}>
+                    <NavLink to='/lost' className={`${style.btnHeader}`}
+                             onClick={() => addBase()}>
                         <img className={`${style.iconBtnBlack}`} src={paw} alt={''}/>
                         <span className={'m-auto'}>Publish</span>
                     </NavLink>
@@ -124,4 +124,4 @@ const PreviewFoundForm = () => {
     );
 };
 
-export default PreviewFoundForm;
+export default PreviewLostForm;

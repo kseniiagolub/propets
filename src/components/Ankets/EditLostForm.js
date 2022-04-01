@@ -1,17 +1,17 @@
-import React, {useCallback, useState} from 'react';
-import style from '../../css_moduls/home_css/home.module.css';
-import anketa from '../../assets/png/anketa.png';
-import avatar from "../../assets/png/avatar.jpg";
-import paw from '../../assets/png/paw.png';
-import AddImages from "./AddImages";
+import React, {useState} from 'react';
 import {useDispatch, useSelector} from "react-redux";
 import {useJsApiLoader} from "@react-google-maps/api";
 import {googleConfig} from "../../google";
+import style from "../../css_moduls/home_css/home.module.css";
 import Autocomplete from "../../autocomplete";
+import anketa from "../../assets/png/anketa.png";
+import AddImages from "./AddImages";
+import avatar from "../../assets/png/avatar.jpg";
+import paw from "../../assets/png/paw.png";
 
-const FoundForm = () => {
-
+const EditLostForm = () => {
     const libraries = ['places']
+    const list = useSelector(state => state.anketa)
     const {isLoaded} = useJsApiLoader({
         id: 'google-Map-script',
         googleMapsApiKey: googleConfig,
@@ -39,7 +39,7 @@ const FoundForm = () => {
                 <div className={'col-6 d-flex flex-column'}>
                     <div className={`mb-1`}>
                         <label className={`${style.smallerTextBlack} col-3 text-end`} htmlFor="type">Type:</label>
-                        <select defaultValue={'Choose'} className={`${style.select} ms-2`} name={"type"}
+                        <select defaultValue={list.type} className={`${style.select} ms-2`} name={"type"}
                                 onChange={e => setType(e.target.value)}>
                             <option value={'Choose'} disabled>Choose</option>
                             <option value={'Dog'}>Dog</option>
@@ -50,7 +50,7 @@ const FoundForm = () => {
                     </div>
                     <div className={`mb-1`}>
                         <label className={`${style.smallerTextBlack} col-3 text-end`} htmlFor="sex">Sex:</label>
-                        <select defaultValue={'Choose'} className={`${style.select} ms-2`} name={"sex"}
+                        <select defaultValue={list.sex} className={`${style.select} ms-2`} name={"sex"}
                                 onChange={e => setSex(e.target.value)}>
                             <option value={'Choose'} disabled>Choose</option>
                             <option value={'Male'}>Male</option>
@@ -59,18 +59,18 @@ const FoundForm = () => {
                     </div>
                     <div className={`mb-1`}>
                         <label className={`${style.smallerTextBlack} col-3 text-end`} htmlFor="breed">Breed:</label>
-                        <input className={'col-7'} type="text" placeholder="Golden Retriever" name="breed"
+                        <input className={'col-7'} type="text" placeholder="Golden Retriever" name="breed" value={list.breed}
                                onChange={e => setBreed(e.target.value)}/>
                     </div>
                     <div className={`mb-1`}>
                         <label className={`${style.smallerTextBlack} col-3 text-end`} htmlFor="color">Color:</label>
-                        <input className={'col-7'} type="text" placeholder="Beige" name="color"
+                        <input className={'col-7'} type="text" placeholder="Beige" name="color" value={list.color}
                                onChange={e => setColor(e.target.value)}/>
                     </div>
                     <div className={`mb-1`}>
                         <label className={`${style.smallerTextBlack} col-3 text-end`}
                                htmlFor="height">Height:</label>
-                        <select defaultValue={'Choose'} className={`${style.select} ms-2`} name={"height"}
+                        <select defaultValue={list.height} className={`${style.select} ms-2`} name={"height"}
                                 onChange={e => setHeight(e.target.value)}>
                             <option value={'Choose'} disabled>Choose</option>
                             <option value={'45-70 cm'}>45-70 cm</option>
@@ -84,7 +84,7 @@ const FoundForm = () => {
                             <p className={`${style.littleGreenText}`}>up to 60 char</p>
                         </div>
                         <textarea className={`ms-2 ${style.smallerTextBlack} ${style.smallTextarea}`} cols={'17'}
-                                  rows={'3'} name={'features'}
+                                  rows={'3'} name={'features'} value={list.features}
                                   placeholder={'blue collar with stars, no left ear, damaged tail.'}
                                   onChange={e => setFeatures(e.target.value)}/>
                     </div>
@@ -94,8 +94,8 @@ const FoundForm = () => {
                             <p className={`${style.littleGreenText}`}>up to 150 char</p>
                         </div>
                         <textarea className={`ms-2 ${style.smallerTextBlack} ${style.bigTextarea}`} cols={'17'}
-                                  rows={'6'} name={'description'}
-                                  placeholder={'brown fox jumps over a lazy dog. DJs flock by when jhkjk jhgMTV ax quiz prog. Junk MTV quiz graced by fox whelps. Bawds jog, flick quartz, vex nymphs.'}
+                                  rows={'6'} name={'description'} value={list.description}
+                                  placeholder={'brown fox jumps over a lazy dog. DJs flock by when quiz prog. Junk MTV quiz graced by fox whelps. Bawds jog, flick quartz, vex nymphs.'}
                                   onChange={e => setDescription(e.target.value)}/>
                     </div>
                     <div className={`d-flex mb-1`}>
@@ -111,14 +111,14 @@ const FoundForm = () => {
                 </div>
                 <hr className={`${style.hrLine}`}/>
                 <div className={`mb-3`}>
-                    <div className={`mb-1 row`}>
+                    <div className={`mb-1 row `}>
                         <label className={`${style.smallerTextBlack} col-2 text-end`}
                                htmlFor="contacts">Contacts:</label>
-                        <input className={`col-3`} type="tel" placeholder="Phone"
+                        <input className={`col-3`} type="tel" placeholder="Phone" value={list.contacts.phone}
                                onChange={e => setPhone(e.target.value)}/>
-                        <input className={`col-3`} type="email" placeholder="Email"
+                        <input className={`col-3`} type="email" placeholder="Email" value={list.contacts.email}
                                onChange={e => setEmail(e.target.value)}/>
-                        <input className={`col-3`} type="text" placeholder="Facebook profile"
+                        <input className={`col-3`} type="text" placeholder="Facebook profile" value={list.contacts.facebook}
                                onChange={e => setFacebook(e.target.value)}/>
                     </div>
                 </div>
@@ -137,7 +137,7 @@ const FoundForm = () => {
                                     features: features, description: description,
                                     contacts: {phone: phone, email: email, facebook: facebook},
                                     date: Date.now(),
-                                    found: true
+                                    found: false
                                 }
                             })
                             dispatch({type: 'SET_ANKET', payload: {finish: true, edit: false}})
@@ -152,4 +152,4 @@ const FoundForm = () => {
     );
 };
 
-export default FoundForm;
+export default EditLostForm;
