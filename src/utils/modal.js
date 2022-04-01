@@ -1,5 +1,5 @@
 import React from 'react';
-import RegisterPage from "./pages/RegisterPage";
+import RegisterPage from "../pages/RegisterPage";
 import {useSelector} from "react-redux";
 
 const Modal = (props) => {

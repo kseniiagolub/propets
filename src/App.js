@@ -2,7 +2,7 @@ import './App.css';
 import StartPage from "./pages/StartPage";
 import HomePage from "./pages/HomePage";
 import {Route, Switch} from "react-router-dom";
-import Modal from "./modal";
+import Modal from "./utils/modal";
 
 function App() {
 

@@ -4,12 +4,12 @@ import img_dental_care from '../../../../assets/png/dental_care.png';
 import img_pet_hotel from '../../../../assets/png/pet_hotel.png';
 import img_pet_hotel_2 from '../../../../assets/png/pet_hotel_2.png';
 import {useSelector} from "react-redux";
-import {defaultCenter, getBrowserLocation} from "../../../../geolocation";
+import {defaultCenter, getBrowserLocation} from "../../../../utils/geolocation";
 import {useJsApiLoader} from "@react-google-maps/api";
-import {googleConfig} from "../../../../google";
-import Map from "../../../../Map";
+import {googleConfig} from "../../../../utils/google";
+import Map from "../../../../maps/Map";
 import {collection, getDocs} from "firebase/firestore";
-import {db} from "../../../../firebase";
+import {db} from "../../../../utils/firebase";
 const libraries = ['places']
 
 const PromoHome = () => {

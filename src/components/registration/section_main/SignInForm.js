@@ -3,7 +3,7 @@ import style from "../../../css_moduls/registration_css/registration.main.module
 import AgreePersonalData from "../section_footer/AgreePersonalData";
 import FooterInBtn from "../section_footer/Footer_InBtn";
 import {useDispatch} from "react-redux";
-import {useInput} from "../../../hooks";
+import {useInput} from "../../../utils/hooks";
 
 const SignInForm = () => {
 

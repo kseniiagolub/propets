@@ -1,5 +1,8 @@
-import React, {useRef} from 'react';
+import React, {useEffect, useRef, useState} from 'react';
 import {GoogleMap} from "@react-google-maps/api";
+import {collection, getDocs} from "firebase/firestore";
+import {db} from "../utils/firebase";
+import {OneMarker} from "./OneMarker";
 
 const defaultOptions = {
     panControl: true,
@@ -16,6 +19,17 @@ const defaultOptions = {
 }
 
 const Map = ({center}) => {
+
+    const [coordinates, setCoordinates] = useState([])
+    const baseCollectionCoordinates = collection(db, "coordinates");
+
+    useEffect(() => {
+        const getBase = async () => {
+            const data = await getDocs(baseCollectionCoordinates)
+            setCoordinates(data.docs.map(doc => ({...doc.data(), id: doc.id})));
+        }
+        getBase()
+    }, [])
 
     const mapRef = useRef(undefined)
 
@@ -37,7 +51,9 @@ const Map = ({center}) => {
                 onUnmount={onUnmount}
                 options={defaultOptions}
             >
-                <></>
+                {coordinates.map((pos, index) => {
+                    return <OneMarker key={index} position={pos.Coordinates}/>
+                })}
             </GoogleMap>
         </>
     );

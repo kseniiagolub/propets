@@ -6,8 +6,8 @@ import paw from '../../assets/png/paw.png';
 import AddImages from "./AddImages";
 import {useDispatch, useSelector} from "react-redux";
 import {useJsApiLoader} from "@react-google-maps/api";
-import {googleConfig} from "../../google";
-import Autocomplete from "../../autocomplete";
+import {googleConfig} from "../../utils/google";
+import Autocomplete from "../../utils/autocomplete";
 
 const FoundForm = () => {
 

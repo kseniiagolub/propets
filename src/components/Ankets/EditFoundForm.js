@@ -1,9 +1,9 @@
 import React, {useState} from 'react';
 import {useJsApiLoader} from "@react-google-maps/api";
-import {googleConfig} from "../../google";
+import {googleConfig} from "../../utils/google";
 import {useDispatch, useSelector} from "react-redux";
 import style from "../../css_moduls/home_css/home.module.css";
-import Autocomplete from "../../autocomplete";
+import Autocomplete from "../../utils/autocomplete";
 import anketa from "../../assets/png/anketa.png";
 import avatar from "../../assets/png/avatar.jpg";
 import paw from "../../assets/png/paw.png";

@@ -3,7 +3,7 @@ import style from '../../../css_moduls/registration_css/registration.main.module
 import {useDispatch} from "react-redux";
 import AgreePersonalData from "../section_footer/AgreePersonalData";
 import Footer_UpBtn from "../section_footer/Footer_UpBtn";
-import {useInput} from "../../../hooks";
+import {useInput} from "../../../utils/hooks";
 
 const SignUpForm = () => {
 

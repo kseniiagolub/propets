@@ -7,7 +7,7 @@ import {NavLink} from "react-router-dom";
 import paw from "../../assets/png/paw.png";
 import {useDispatch, useSelector} from "react-redux";
 import {addDoc, collection} from "firebase/firestore";
-import {db} from "../../firebase";
+import {db} from "../../utils/firebase";
 
 const PreviewLostForm = () => {
 

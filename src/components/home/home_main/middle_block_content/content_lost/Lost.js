@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react';
 import style from '../../../../../css_moduls/home_css/home.module.css';
 import {useDispatch} from "react-redux";
 import {collection, getDocs, query, where} from "firebase/firestore";
-import {db} from "../../../../../firebase";
+import {db} from "../../../../../utils/firebase";
 import avatar from "../../../../../assets/png/avatar.jpg";
 
 const Lost = () => {

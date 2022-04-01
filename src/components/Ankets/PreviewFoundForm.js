@@ -7,7 +7,7 @@ import paw from "../../assets/png/paw.png";
 import edit from '../../assets/png/edit.png';
 import {NavLink} from "react-router-dom";
 import {addDoc, collection} from "firebase/firestore";
-import {db} from "../../firebase";
+import {db} from "../../utils/firebase";
 
 const PreviewFoundForm = () => {
 
