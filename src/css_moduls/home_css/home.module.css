@@ -28,6 +28,8 @@ nav a {
     font-size: 12px;
     display: flex;
     align-items: center;
+    padding: 8px;
+    text-decoration: none;
 }
 
 .iconBtn {
@@ -193,6 +195,8 @@ nav a {
 .postCardTitle {
     margin: 2%;
     padding: 1%;
+    min-width: 90%;
+
 }
 
 .greenLink {
@@ -276,6 +280,13 @@ textarea {
     color: var(--bs-green);
 }
 
+.littleGreyText {
+    font-size: 10px;
+    color: var(--bs-ligth-grey);
+    font-weight: 500;
+    margin: 0;
+}
+
 .addFileIcon {
     height: 30px;
     width: 30px;
@@ -348,4 +359,72 @@ textarea {
 
 .listItem:hover{
     background: #efefef;
+}
+
+.btnEdit {
+    width: 105px;
+    height: 34px;
+    background-color: transparent;
+    border: var(--bs-light-green) 1px solid;
+    border-radius: 17px;
+    color: var(--bs-green);
+    font-size: 12px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    padding: 8px;
+}
+
+.btnEdit:hover {
+    color: var(--bs-green);
+}
+
+.editIcon{
+    height: 16px;
+    width: 18px;
+    filter: invert(71%) sepia(10%) saturate(860%) hue-rotate(106deg) brightness(96%) contrast(86%);
+}
+
+.blockBtns {
+    height: 7%;
+    width: 100%;
+}
+.blockMap {
+    background-color: var(--bs-green);
+    border-radius: 15px 0px 0px 0px;
+    height: 93%;
+    width: 100%;
+}
+
+.blockWall {
+    background-color: var(--bs-white);
+    height: 93%;
+    width: 100%;
+}
+
+.searchBtn {
+    background-color: transparent;
+    border: var(--bs-light-green) 1px solid;
+    border-radius: 15px;
+    height: 30px;
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--bs-green);
+    text-align: left;
+}
+
+.smallBtn{
+    width: 145px;
+}
+
+.middleBtn{
+    width: 226px;
+}
+
+.bigBtn{
+    width: 337px;
+}
+
+.shadow{
+    box-shadow: 0px 3px 6px var(--bs-grey);
 }

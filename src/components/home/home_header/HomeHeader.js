@@ -22,8 +22,8 @@ const HomeHeader = () => {
 
     return (
         <header className={`${style.heightHeader} container-fluid`}>
-            <div className={'row justify-content-center align-items-center h-100'}>
-                <div className={'col-10 d-flex justify-content-between'}>
+            <div className={`row justify-content-center align-items-center h-100`}>
+                <div className={`col-10 d-flex justify-content-between`}>
                     <NavLink to={'/home'}><LogoHomeHeader/></NavLink>
                     {test()}
                 </div>

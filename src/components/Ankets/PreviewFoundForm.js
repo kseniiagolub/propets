@@ -1,12 +1,18 @@
 import React from 'react';
 import {useDispatch, useSelector} from "react-redux";
+import {FacebookIcon, FacebookShareButton} from "react-share";
 import style from "../../css_moduls/home_css/home.module.css";
 import avatar from "../../assets/png/avatar.jpg";
+import paw from "../../assets/png/paw.png";
+import edit from '../../assets/png/edit.png';
+import {NavLink} from "react-router-dom";
 
 const PreviewFoundForm = () => {
 
     const dispatch = useDispatch()
     const anket = useSelector(state => state.anketa)
+    const shareUrl = 'https://www.google.com/'
+
 
     const timePost = () => {
         const date = new Date();
@@ -38,7 +44,7 @@ const PreviewFoundForm = () => {
                                 className={`${style.smallerTextBlack}`}>{anket.height}</span></h2>
                         </div>
                         <div className={`col-6`}>
-                            <h2 className={`${style.smallerTextGreen}`}>Distinnctive features <span
+                            <h2 className={`${style.smallerTextGreen}`}>Distinctive features <span
                                 className={`${style.smallerTextBlack}`}>{anket.features}</span></h2>
                         </div>
                     </div>
@@ -69,7 +75,25 @@ const PreviewFoundForm = () => {
                 </div>
             </div>
             <span className={`${style.titleSemiBoldGreen} ${style.postCardTitle}`}>Fingers crossed. We wish your fluffy to be found as soon as possible. Your post will expire in two weeks. To make it active again follow the instructions you’ll get in email.</span>
-            <button onClick={() => dispatch({type: 'SET_ANKET', payload: {finish: false, edit: false}})}>btn</button>
+            <div className={`${style.postCardTitle} d-flex justify-content-between`}>
+                <FacebookShareButton url={shareUrl} quote={'Text about pet'} hashtag={'#propets'}>
+                    <FacebookIcon round={true} size={15}/>
+                    <span className={`${style.smallerTextBlack} ps-1`}>Share to Facebook</span>
+                </FacebookShareButton>
+                <div className={'d-flex'}>
+                    <button className={`${style.btnEdit} me-2`}
+                            onClick={() => dispatch({type: 'SET_ANKET', payload: {finish: false, edit: true}})}>
+                        <img className={`${style.editIcon}`} src={edit} alt={''}/>
+                        <span className={'m-auto'}>Edit</span>
+                    </button>
+                    <NavLink to='/found' className={`${style.btnHeader}`}
+                            onClick={() => {dispatch({type: 'SET_ANKET', payload: {finish: false, edit: false}})}}>
+                        <img className={`${style.iconBtnBlack}`} src={paw} alt={''}/>
+                        <span className={'m-auto'}>Publish</span>
+                    </NavLink>
+                </div>
+            </div>
+            <span className={`${style.littleGreyText} ${style.postCardTitle} text-end`}>By clicking “Publish”, you agree to us processing your information in accordance with these terms.</span>
         </div>
     );
 };

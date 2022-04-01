@@ -47,8 +47,15 @@ const PromoHome = () => {
         );
     } else {
         return (
-            <div className={`${style.mainWhiteBack} d-flex flex-column col-3 justify-content-start pb-2 pt-2 align-items-end`}>
-                {isLoaded ? <Map center={center}/> : <h1>Loading</h1>}
+            <div className={`d-flex flex-column col-3 pb-2 pt-2`}>
+                <div className={`${style.blockBtns}`}>
+                    <button className={`${style.searchBtn} ${style.middleBtn}`}>Location</button>
+                </div>
+                <div className={`${style.blockMap} pt-3 ps-2`}>
+                    <div className={`w-100 h-100`}>
+                        {isLoaded ? <Map center={center}/> : <h1>Loading</h1>}
+                    </div>
+                </div>
             </div>
         )
     }

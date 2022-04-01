@@ -1,8 +1,8 @@
-import React, {useEffect} from 'react';
+import React from 'react';
 import paw from '../../../assets/png/paw.png';
 import style from '../../../css_moduls/registration_css/registration.footer.module.css';
-import {Link, useHistory} from "react-router-dom";
-import {useDispatch, useSelector} from "react-redux";
+import {useHistory} from "react-router-dom";
+import {useDispatch} from "react-redux";
 import {getAuth, signInWithEmailAndPassword} from "firebase/auth";
 
 const FooterInBtn = (props) => {
@@ -10,10 +10,6 @@ const FooterInBtn = (props) => {
     const dispatch = useDispatch();
     const {push} = useHistory()
     const auth = getAuth();
-
-    useEffect(() => {
-
-    })
 
     const Authorization = (email, password) => {
         signInWithEmailAndPassword(auth, email, password)

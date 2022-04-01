@@ -11,8 +11,15 @@ const Found = () => {
     })
 
     return (
-        <div className={`${style.mainWhiteBack} d-flex flex-column col-6 align-items-center overflow-auto`}>
-            <h1>Found</h1>
+        <div className={`${style.mainWhiteBack} pb-2 pt-2 d-flex flex-column col-6 align-items-center overflow-auto`}>
+            <div className={`${style.blockBtns} d-flex flex-row justify-content-evenly`}>
+                <button className={`${style.searchBtn} ${style.smallBtn}`}>Type</button>
+                <button className={`${style.searchBtn} ${style.smallBtn}`}>Breed</button>
+                <button className={`${style.searchBtn} ${style.bigBtn}`}>Additional features</button>
+            </div>
+            <div className={`${style.blockWall}`}>
+                <h1>Found</h1>
+            </div>
         </div>
     );
 };
