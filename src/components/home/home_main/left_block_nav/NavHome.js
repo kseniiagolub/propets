@@ -9,7 +9,7 @@ import logout from '../../../../assets/png/logout.png';
 import ElementList from "./ElementList";
 import DropMenu from "./DropMenu";
 import {NavLink, useHistory} from "react-router-dom";
-import {useDispatch} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
 import {getAuth, signOut} from "firebase/auth";
 
 const NavHome = () => {
@@ -17,6 +17,7 @@ const NavHome = () => {
     const dispatch = useDispatch()
     const {push} = useHistory()
     const auth = getAuth()
+    const user = useSelector(state => state.user)
 
     const logOut = () => {
         signOut(auth)
@@ -34,8 +35,6 @@ const NavHome = () => {
         });
     };
 
-    console.log(auth.currentUser)
-
     return (
         <div className={`${style.mainGreenBack} col-3 pt-3`}>
             <nav className={'d-flex flex-column col-5 m-auto mb-5'}>
@@ -50,7 +49,7 @@ const NavHome = () => {
                 <div className={`d-flex align-items-center col-5 m-auto mb-5`}>
                     <div className={`${style.imgUser} me-2`}><img src={avatar} alt={'avatar'}/></div>
                     <div className={`d-flex flex-wrap w-25`}>
-                        <a className={`${style.aColor} m-0`}>test</a>
+                        <a className={`${style.aColor} m-0`}>{user.name}</a>
                     </div>
                 </div>
                 <div className={`col-5 m-auto mb-3`}>
