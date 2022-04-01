@@ -81,7 +81,7 @@ const EditFoundForm = () => {
                     </div>
                     <div className={`d-flex mb-1`}>
                         <div className={`${style.smallerTextBlack} col-3 text-end`}>
-                            <label htmlFor="features">Distinktive features:</label>
+                            <label htmlFor="features">Distinctive features:</label>
                             <p className={`${style.littleGreenText}`}>up to 60 char</p>
                         </div>
                         <textarea className={`ms-2 ${style.smallerTextBlack} ${style.smallTextarea}`} cols={'17'}

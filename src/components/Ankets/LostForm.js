@@ -4,10 +4,21 @@ import anketa from '../../assets/png/anketa.png';
 import avatar from "../../assets/png/avatar.jpg";
 import paw from '../../assets/png/paw.png';
 import AddImages from "./AddImages";
-import {useDispatch} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
+import {useJsApiLoader} from "@react-google-maps/api";
+import {googleConfig} from "../../google";
+import Autocomplete from "../../autocomplete";
 
 const LostForm = () => {
 
+    const libraries = ['places']
+    const {isLoaded} = useJsApiLoader({
+        id: 'google-Map-script',
+        googleMapsApiKey: googleConfig,
+        libraries
+    })
+
+    const user = useSelector(state => state.user)
     const [type, setType] = useState()
     const [sex, setSex] = useState()
     const [breed, setBreed] = useState()
@@ -15,14 +26,15 @@ const LostForm = () => {
     const [height, setHeight] = useState()
     const [features, setFeatures] = useState()
     const [description, setDescription] = useState()
-    const [location, setLocation] = useState()
     const [phone, setPhone] = useState()
     const [email, setEmail] = useState()
     const [facebook, setFacebook] = useState()
     const dispatch = useDispatch()
 
     return (
-        <>
+        <div className={`${style.mainWhiteBack} d-flex flex-column col-6 align-items-center overflow-auto mt-3`}>
+            <h1 className={`${style.titleSemiBold}`}><span className={`${style.titleBold}`}>Lost your buddy?</span> Keep
+                calm and complete the form.</h1>
             <div className={`${style.lostFoundForm} row d-flex`}>
                 <div className={'col-6 d-flex flex-column'}>
                     <div className={`mb-1`}>
@@ -68,7 +80,7 @@ const LostForm = () => {
                     </div>
                     <div className={`d-flex mb-1`}>
                         <div className={`${style.smallerTextBlack} col-3 text-end`}>
-                            <label htmlFor="features">Distinktive features:</label>
+                            <label htmlFor="features">Distinctive features:</label>
                             <p className={`${style.littleGreenText}`}>up to 60 char</p>
                         </div>
                         <textarea className={`ms-2 ${style.smallerTextBlack} ${style.smallTextarea}`} cols={'17'}
@@ -89,9 +101,7 @@ const LostForm = () => {
                     <div className={`d-flex mb-1`}>
                         <label className={`${style.smallerTextBlack} col-3 text-end`}
                                htmlFor="location">Location:</label>
-                        <textarea className={`ms-2 ${style.smallerTextBlack} ${style.middleTextarea}`} cols={'17'}
-                                  rows={'2'} placeholder="Florentin Street, Tel Aviv" name="location"
-                                  onChange={e => setLocation(e.target.value)}/>
+                        <Autocomplete isLoaded={isLoaded}/>
                     </div>
                 </div>
                 <div className={'col-6 text-center'}>
@@ -101,7 +111,7 @@ const LostForm = () => {
                 </div>
                 <hr className={`${style.hrLine}`}/>
                 <div className={`mb-3`}>
-                    <div className={`mb-1 row `}>
+                    <div className={`mb-1 row`}>
                         <label className={`${style.smallerTextBlack} col-2 text-end`}
                                htmlFor="contacts">Contacts:</label>
                         <input className={`col-3`} type="tel" placeholder="Phone"
@@ -116,15 +126,15 @@ const LostForm = () => {
                     <div className={`col-1`}>
                         <img className={`${style.avatarImg}`} src={avatar} alt={'dog'}/>
                     </div>
-                    <div className={`col-8 ps-2`}>
-                        <h3 className={`${style.titleSemiBoldGreen}`}>test</h3>
+                    <div className={`col-8 ps-4`}>
+                        <h3 className={`${style.titleSemiBoldGreen}`}>{user.name}</h3>
                     </div>
                     <div className={`col-3`}>
                         <button className={`${style.btnHeader}`} onClick={() => {
                             dispatch({
                                 type: 'SET_ANKETA_INFO', payload: {
-                                    type: type, sex: sex, breed: breed, color: color, height: height,
-                                    features: features, description: description, location: location,
+                                    name: user.name, type: type, sex: sex, breed: breed, color: color, height: height,
+                                    features: features, description: description,
                                     contacts: {phone: phone, email: email, facebook: facebook},
                                     date: Date.now(),
                                     found: false
@@ -138,7 +148,7 @@ const LostForm = () => {
                     </div>
                 </div>
             </div>
-        </>
+        </div>
     );
 };
 

@@ -1,15 +1,25 @@
 import React from 'react';
-import style from "../../css_moduls/home_css/home.module.css";
 import LostForm from "./LostForm";
+import {useSelector} from "react-redux";
+import Lost from "../home/home_main/middle_block_content/content_lost/Lost";
+import PreviewLostForm from "./PreviewLostForm";
+import EditLostForm from "./EditLostForm";
 
 const LostPet = () => {
-    return (
-        <div className={`${style.mainWhiteBack} d-flex flex-column col-6 align-items-center overflow-auto mt-3`}>
-            <h1 className={`${style.titleSemiBold}`}><span className={`${style.titleBold}`}>Lost your buddy?</span> Keep
-                calm and complete the form.</h1>
-            <LostForm/>
-        </div>
-    );
+
+    const selector = useSelector(state => state.map)
+    if(selector.finish === false && selector.edit === false) {
+        return <LostForm/>
+    }
+    else if (selector.finish === true && selector.edit === false) {
+        return <PreviewLostForm/>
+    }
+    else if (selector.finish === false && selector.edit === true) {
+        return <EditLostForm/>
+    } else {
+        return <Lost/>
+    }
+
 };
 
 export default LostPet;
