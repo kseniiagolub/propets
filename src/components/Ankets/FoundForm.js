@@ -7,7 +7,7 @@ import AddImages from "./AddImages";
 import {useDispatch, useSelector} from "react-redux";
 import {useJsApiLoader} from "@react-google-maps/api";
 import {googleConfig} from "../../google";
-import Autocomplete from "../../assets/autocomplete";
+import Autocomplete from "../../autocomplete";
 
 const FoundForm = () => {
 

@@ -1,5 +1,5 @@
 import React, {useEffect} from 'react';
-import style from '../css_moduls/home_css/home.module.css'
+import style from './css_moduls/home_css/home.module.css'
 
 import usePlacesAutocomplete, {
     getGeocode,
