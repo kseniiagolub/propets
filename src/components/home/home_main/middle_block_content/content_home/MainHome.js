@@ -13,6 +13,7 @@ import Fostering from "../content_fostering/Fostering";
 import VetHelp from "../content_vethelp/VetHelp";
 import FoundPet from "../../../../Ankets/FoundPet";
 import LostPet from "../../../../Ankets/LostPet";
+import CreatePost from "../../../../Ankets/CreatePost";
 
 const MainHome = () => {
     return (
@@ -31,6 +32,7 @@ const MainHome = () => {
                         <Route exact path={'/favorites'} component={Favorites}/>
                         <Route exact path={'/foundpet'} component={FoundPet}/>
                         <Route exact path={'/lostpet'} component={LostPet}/>
+                        <Route exact path={'/newpost'} component={CreatePost}/>
                     </Switch>
                     <PromoHome/>
                 </div>

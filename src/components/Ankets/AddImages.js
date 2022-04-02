@@ -48,7 +48,7 @@ const AddImages = () => {
                 <input className={`${style.addFileInput}`} onChange={formHandler} type={'file'} id={'fileInput'}
                        name={'fileInput'} multiple accept={'image/*, image/jpeg'}/>
             </div>
-            <span>{download} images download</span>
+            <span className={`${style.smallerTextBlack} text-center`}>{download} images download</span>
         </div>
     );
 };

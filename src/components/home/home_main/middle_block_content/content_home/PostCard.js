@@ -1,7 +1,6 @@
 import React, {useState} from 'react';
 import style from '../../../../../css_moduls/home_css/home.module.css'
-import avatar from '../../../../../assets/png/avatar.jpg'
-import dog from '../../../../../assets/png/gold_dog.png'
+import avatar from '../../../../../assets/png/avatar.jpg';
 import star_empty from '../../../../../assets/png/star_empty.png';
 import star_full from '../../../../../assets/png/star_full.png';
 import dots from '../../../../../assets/png/dots_three.png';
@@ -10,11 +9,11 @@ import close from "../../../../../assets/png/close.png";
 import {useDispatch} from "react-redux";
 import {getAuth} from "firebase/auth";
 
-const PostCard = () => {
+const PostCard = (props) => {
 
     const [dropdown, setDropdown] = useState(false)
     let disp = dropdown ? 'd-block' : 'd-none'
-    const [isOpen, setOpen] = useState(false)
+    const [isOpen, setOpen] = useState(true)
 
     const [isFavorite, setFavorite] = useState(true)
     const dispatch = useDispatch()
@@ -25,21 +24,39 @@ const PostCard = () => {
         dispatch({type: 'SET_FAVORITE', payload: {isFavorite: isFavorite, userID: auth.currentUser.uid}})
     }
 
+    const getImg = (item) => {
+        if (item.length === 1) {
+            return <img src={item} alt={"user's photo"}/>
+        } else {
+            return item.map((item, index) => <img key={index} src={item} alt={"user's photo"}/>)
+        }
+    }
+
+    const getDate = (time) => {
+        const options = {
+            month: 'long',
+            day: 'numeric',
+            hour: 'numeric',
+            minute: 'numeric',
+        };
+        time = new Date(time)
+        return time.toLocaleString("en-US", options)
+    }
+
     return (
         <div className={`${style.postCard} row d-flex`}>
             <div className={`${style.avatarImg} col-1`}>
                 <img src={avatar} alt={''}/>
             </div>
             <div className={`col-10 d-flex flex-column`}>
-                <h3 className={`${style.titleSemiBold}`}>Jonh Goodboi</h3>
-                <p className={`${style.smallerText}`}>2 h</p>
-                <div className={`${style.picturePost} mb-2 mt-1 text-center`}><img src={dog} alt={''}/></div>
-                <p className={`${style.textPost} ${isOpen ? `${style.textPostOpen}` : ''}`}>Fox nymphs grab
-                    quick-jived waltz. Brick quiz whangs jumpy veldt fox. Bright vixens jump; dozy fowl quack
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores beatae cupiditate, dicta eius
-                    exercitationem facilis ipsum magni
-                    modi, natus necessitatibus, nemo nobis numquam obcaecati officia quam quibusdam ullam ut velit.
-                </p>
+                <h3 className={`${style.titleSemiBold}`}>{props.user.Name}</h3>
+                <p className={`${style.smallerText}`}>{getDate(props.user.Date)}</p>
+                <div className={`row mb-2 mt-1 text-center`}>
+                    <div className={`${style.picturePost} d-flex flex-row flex-wrap justify-content-center`}>
+                        {getImg(props.user.Images.images)}
+                    </div>
+                </div>
+                <p className={`${style.textPost} ${isOpen ? '' : `${style.textPostOpen}`}`}>{props.user.Text}</p>
                 <button onClick={() => setOpen(!isOpen)} className={`${style.greenLink} text-end`}>Show more</button>
             </div>
             <div className={`col-1 d-flex flex-column justify-content-between align-items-center me-0`}>

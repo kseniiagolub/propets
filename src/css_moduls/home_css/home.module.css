@@ -108,9 +108,12 @@ nav a {
 }
 
 .picturePost {
-    overflow: hidden;
-    width: 472px;
-    height: 236px;
+
+}
+
+.picturePost img {
+    width: 49%;
+    margin: 0.5%;
 }
 
 .btnLogout {
@@ -276,6 +279,11 @@ textarea {
     height: 118px;
 }
 
+.biggestTextarea {
+    width: 527px;
+    height: 400px;
+}
+
 .littleGreenText {
     margin: 0;
     font-size: 10px;
@@ -344,9 +352,13 @@ textarea {
     width: 100%;
 }
 
+.imgPreviewPost {
+    width: 120%;
+}
+
 .suggestions {
     background: #fff;
-    border: 2px solid rgba(32,32,32);
+    border: 2px solid rgba(32, 32, 32);
     width: 100%;
     z-index: 10;
     margin: 0;
@@ -360,7 +372,7 @@ textarea {
     cursor: pointer;
 }
 
-.listItem:hover{
+.listItem:hover {
     background: #efefef;
 }
 
@@ -382,7 +394,7 @@ textarea {
     color: var(--bs-green);
 }
 
-.editIcon{
+.editIcon {
     height: 16px;
     width: 18px;
     filter: invert(71%) sepia(10%) saturate(860%) hue-rotate(106deg) brightness(96%) contrast(86%);
@@ -392,6 +404,7 @@ textarea {
     height: 7%;
     width: 100%;
 }
+
 .blockMap {
     background-color: var(--bs-green);
     border-radius: 15px 0px 0px 0px;
@@ -416,18 +429,18 @@ textarea {
     text-align: left;
 }
 
-.smallBtn{
+.smallBtn {
     width: 145px;
 }
 
-.middleBtn{
+.middleBtn {
     width: 226px;
 }
 
-.bigBtn{
+.bigBtn {
     width: 337px;
 }
 
-.shadow{
+.shadow {
     box-shadow: 0px 3px 6px var(--bs-grey);
 }
