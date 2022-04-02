@@ -1,8 +1,7 @@
 import React, {useEffect, useRef, useState} from 'react';
-import {GoogleMap} from "@react-google-maps/api";
+import {GoogleMap, Marker} from "@react-google-maps/api";
 import {collection, getDocs} from "firebase/firestore";
 import {db} from "../utils/firebase";
-import {OneMarker} from "./OneMarker";
 
 const defaultOptions = {
     panControl: true,
@@ -52,7 +51,7 @@ const Map = ({center}) => {
                 options={defaultOptions}
             >
                 {coordinates.map((pos, index) => {
-                    return <OneMarker key={index} position={pos.Coordinates}/>
+                    return <Marker key={index} position={pos.Coordinates}/>
                 })}
             </GoogleMap>
         </>

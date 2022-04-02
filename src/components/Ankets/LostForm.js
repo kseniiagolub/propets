@@ -8,15 +8,25 @@ import {useDispatch, useSelector} from "react-redux";
 import {useJsApiLoader} from "@react-google-maps/api";
 import {googleConfig} from "../../utils/google";
 import Autocomplete from "../../utils/autocomplete";
+const libraries = ['places']
 
 const LostForm = () => {
 
-    const libraries = ['places']
     const {isLoaded} = useJsApiLoader({
         id: 'google-Map-script',
         googleMapsApiKey: googleConfig,
         libraries
     })
+
+    const timePost = () => {
+        const date = new Date();
+        const options = {
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric',
+        };
+        return date.toLocaleString("en-US", options)
+    }
 
     const user = useSelector(state => state.user)
     const [type, setType] = useState()
@@ -136,8 +146,7 @@ const LostForm = () => {
                                     name: user.name, type: type, sex: sex, breed: breed, color: color, height: height,
                                     features: features, description: description,
                                     contacts: {phone: phone, email: email, facebook: facebook},
-                                    date: Date.now(),
-                                    found: false
+                                    date: Date.now(), found: false, dateString: timePost()
                                 }
                             })
                             dispatch({type: 'SET_ANKET', payload: {finish: true, edit: false}})

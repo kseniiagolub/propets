@@ -16,8 +16,6 @@ const PreviewFoundForm = () => {
     const shareUrl = 'https://www.google.com/'
 
     const addBase = () => {
-        dispatch({type: 'SET_ANKET', payload: {finish: false, edit: false}})
-        dispatch({type: 'SET_ANKET_NULL', payload: null})
         try {
             const docRef = addDoc(collection(db, "found"), {
                 Type: anket.type,
@@ -32,9 +30,9 @@ const PreviewFoundForm = () => {
                 Name: anket.name,
                 Images: anket.images,
                 data: Date.now(),
+                dateString: timePost(),
                 found: true,
             });
-            console.log("Document written with ID: ", docRef.id);
         } catch (e) {
             console.error("Error adding document: ", e);
         }

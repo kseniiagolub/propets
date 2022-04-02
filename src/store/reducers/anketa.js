@@ -15,6 +15,7 @@ const initialState = {
     },
     images: [],
     date: Date.now(),
+    dateString: null,
     found: false,
     coordinates: {
         lat: null,
@@ -39,7 +40,8 @@ export default (state = initialState, {type, payload}) => {
                 contacts: payload.contacts,
                 date: payload.date,
                 found: payload.found,
-                name: payload.name
+                name: payload.name,
+                dateString: payload.dateString,
             }
         case 'SET_LOCATION':
             return {...state, location: payload}

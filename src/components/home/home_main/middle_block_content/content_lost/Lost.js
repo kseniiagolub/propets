@@ -80,7 +80,7 @@ const Lost = () => {
                                         <span className={`${style.titleSemiBoldGreen}`}>{user.Name}</span>
                                     </div>
                                     <div>
-                                        <span className={`${style.smallerTextBlack}`}>{timePost(user.data)}</span>
+                                        <span className={`${style.smallerTextBlack}`}>{user.dateString}</span>
                                     </div>
                                 </div>
                                 <div className={`col-4`}>
