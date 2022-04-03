@@ -121,11 +121,8 @@ const PreviewFoundForm = () => {
             </div>
             <span className={`${style.titleSemiBoldGreen} ${style.postCardTitle}`}>Fingers crossed. We wish your fluffy to be found as soon as possible. Your post will expire in two weeks. To make it active again follow the instructions you’ll get in email.</span>
             <div className={`${style.postCardTitle} d-flex justify-content-between`}>
-                <FacebookShareButton url={shareUrl} quote={`I found a pet!\n${anket.type}, ${anket.breed}\nColor: ${anket.color}\n
-                                     Sex: ${anket.sex}\nHeight: ${anket.height}\nDistinctive features: ${anket.features}\n
-                                     Description: ${anket.description}\n Location: ${anket.location}\n
-                                     My contacts: ${anket.contacts.email}, ${anket.contacts.phone}\n
-                                     ${anket.images[0]}`} hashtag={'#propets'}>
+                <FacebookShareButton url={shareUrl} quote={`I found a pet!\n${anket.type}, ${anket.breed}\nColor: ${anket.color}\nSex: ${anket.sex}\nHeight: ${anket.height}\nDistinctive features: ${anket.features}\nDescription: ${anket.description}\n Location: ${anket.location}\nMy contacts: ${anket.contacts.email}, ${anket.contacts.phone}\n`}
+                                     hashtag={'#propets'}>
                     <FacebookIcon round={true} size={15}/>
                     <span className={`${style.smallerTextBlack} ps-1`}>Share to Facebook</span>
                 </FacebookShareButton>
