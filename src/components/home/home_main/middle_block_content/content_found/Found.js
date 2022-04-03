@@ -4,6 +4,10 @@ import {useDispatch} from "react-redux";
 import {collection, getDocs, where, query} from "firebase/firestore";
 import {db} from "../../../../../utils/firebase";
 import avatar from "../../../../../assets/png/avatar.jpg";
+import map_marker from '../../../../../assets/png/map-marker.png';
+import phone from "../../../../../assets/png/phone.png";
+import fb from "../../../../../assets/png/facebook.png";
+import email from "../../../../../assets/png/email.png";
 
 const Found = () => {
 
@@ -69,6 +73,7 @@ const Found = () => {
                             </div>
                             <hr className={`mt-3 mb-0`}/>
                             <div className={`mb-2`}>
+                                <img className={`${style.mapMarker}`} src={map_marker} alt={''}/>
                                 <span className={`${style.smallerTextBlack}`}>{user.Location}</span>
                             </div>
                             <div className={`d-flex`}>
@@ -83,8 +88,10 @@ const Found = () => {
                                         <span className={`${style.smallerTextBlack}`}>{user.dateString}</span>
                                     </div>
                                 </div>
-                                <div className={`col-4`}>
-                                    <span className={`${style.smallerTextBlack}`}>icons</span>
+                                <div className={`col-4 d-flex justify-content-evenly align-items-center`}>
+                                    <img className={`${style.contactsBtn}`} src={phone} alt={''}/>
+                                    <img className={`${style.contactsBtnFb}`} src={fb} alt={''}/>
+                                    <img className={`${style.contactsBtn} mt-1`} src={email} alt={''}/>
                                 </div>
                             </div>
                         </div>

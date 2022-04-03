@@ -445,3 +445,21 @@ textarea {
 .shadow {
     box-shadow: 0px 3px 6px var(--bs-grey);
 }
+
+.mapMarker {
+    width: 13px;
+    height: 13px;
+    filter: invert(69%) sepia(26%) saturate(324%) hue-rotate(106deg) brightness(94%) contrast(91%);
+    margin-right: 3px;
+}
+
+.contactsBtn {
+    width: 18px;
+    height: 18px;
+    filter: invert(82%) sepia(0%) saturate(1114%) hue-rotate(162deg) brightness(92%) contrast(91%);
+}
+.contactsBtnFb {
+    width: 20px;
+    height: 20px;
+    filter: invert(82%) sepia(0%) saturate(1114%) hue-rotate(162deg) brightness(92%) contrast(91%);
+}
