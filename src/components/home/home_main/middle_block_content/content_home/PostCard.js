@@ -8,6 +8,8 @@ import hide from "../../../../../assets/png/hide.png";
 import close from "../../../../../assets/png/close.png";
 import {useDispatch} from "react-redux";
 import {getAuth} from "firebase/auth";
+import {addDoc, collection} from "firebase/firestore";
+import {db} from "../../../../../utils/firebase";
 
 const PostCard = (props) => {
 
@@ -29,6 +31,16 @@ const PostCard = (props) => {
             return <img src={item} alt={"user's photo"}/>
         } else {
             return item.map((item, index) => <img key={index} src={item} alt={"user's photo"}/>)
+        }
+    }
+
+    const addPostFavorites = () => {
+        try {
+            const docRef = addDoc(collection(db, auth.currentUser.uid), {
+                posts: props.user.id
+            });
+        } catch (e) {
+            console.error("Error adding document: ", e);
         }
     }
 
@@ -74,7 +86,7 @@ const PostCard = (props) => {
                     </button>
                 </div>
 
-                <img onClick={changeFavorites} className={`${style.starBtn} mb-1`}
+                <img onClick={addPostFavorites} className={`${style.starBtn} mb-1`}
                      src={isFavorite ? star_empty : star_full} alt={'star'}/>
             </div>
         </div>
