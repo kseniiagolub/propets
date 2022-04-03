@@ -28,8 +28,8 @@ const Found = () => {
         getBase()
     }, [])
 
-    const timePost = () => {
-        const date = new Date();
+    const timePost = (date) => {
+        date = new Date(1648899124791);
         const options = {
             year: 'numeric',
             month: 'long',

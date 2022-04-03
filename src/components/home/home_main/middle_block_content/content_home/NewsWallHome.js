@@ -29,9 +29,6 @@ const NewsWallHome = () => {
             {base.map((user, index) => {
                 return <PostCard user={user} key={index}/>
             })}
-
-
-
         </div>
     );
 };
