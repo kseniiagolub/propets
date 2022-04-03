@@ -14,12 +14,12 @@ const DropMenu = () => {
 
     return (
         <>
-            <button className={`${style.navBtn} d-flex mb-2 p-0 ps-1`} onClick={() => setDropdown(!dropdown)}>
+            <NavLink to={'/hotels'} className={`${style.navBtn} d-flex mb-2 p-0 ps-1`} onClick={() => setDropdown(!dropdown)}>
                 <div>
                     <img className={`${style.iconBtn} me-2`} src={megafonImg} alt={'Services'}/>
                     <span>Services</span>
                 </div>
-            </button>
+            </NavLink>
             <div className={`${style.dropdownContainer} ${disp} d-flex flex-column mb-2`}>
                 <NavLink className={`${style.navBtn} d-flex mb-2 ps-1`} to='/hotels'>
                         <div className={`d-flex`}>

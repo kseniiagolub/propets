@@ -174,7 +174,6 @@ nav a {
 }
 
 .textPost {
-    width: 470px;
     height: 50px;
     white-space: pre-wrap;
     overflow: hidden;
@@ -182,6 +181,8 @@ nav a {
     font-size: 12px;
     font-weight: 500;
     color: var(--bs-black);
+    text-align: justify;
+    text-indent: 1.5em;
 }
 
 .textPostOpen {

@@ -12,7 +12,10 @@ const Hotels = () => {
 
     return (
         <div className={`${style.mainWhiteBack} d-flex flex-column col-6 align-items-center overflow-auto`}>
-            <h1>Hotels</h1>
+            <p className={`${style.titleSemiBold}`}>
+                <span className={`${style.titleBold}`}>Hotels. </span>
+                Go to vacations — we’ll take care of your pet!
+            </p>
         </div>
     );
 };
