@@ -19,14 +19,19 @@ const HomePage = () => {
                 .catch((error) => {
                     console.log(error)
                 });
+            onAuthStateChanged(auth, (user) => {
+                console.log(user)
+                dispatch({type: 'SET_INFO_USER', payload: {name: name.name, id: user.uid}})
+            })
+        } else {
+            onAuthStateChanged(auth, (user) => {
+                dispatch({type: 'SET_INFO_USER', payload: {name: user.displayName, id: user.uid}})
+            })
         }
     }
 
     useEffect(() => {
         update()
-        onAuthStateChanged(auth, (user) => {
-            dispatch({type: 'SET_INFO_USER', payload: {name: user.displayName, id: user.uid}})
-        })
     }, [])
 
     return (
