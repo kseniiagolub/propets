@@ -8,6 +8,9 @@ import edit from '../../assets/png/edit.png';
 import {NavLink} from "react-router-dom";
 import {addDoc, collection} from "firebase/firestore";
 import {db} from "../../utils/firebase";
+import phone from "../../assets/png/phone.png";
+import fb from "../../assets/png/facebook.png";
+import email from "../../assets/png/email.png";
 
 const PreviewFoundForm = () => {
 
@@ -105,15 +108,24 @@ const PreviewFoundForm = () => {
                                 <span className={`${style.smallerTextBlack}`}>{timePost()}</span>
                             </div>
                         </div>
-                        <div className={`col-4`}>
-                            <span className={`${style.smallerTextBlack}`}>icons</span>
+                        <div className={`col-4 d-flex justify-content-evenly align-items-center`}>
+                            <a href={`tel: ${anket.contacts.phone}`}><img className={`${style.contactsBtn}`} src={phone}
+                                                                          alt={''}/></a>
+                            <a href={`https://${anket.contacts.facebook}`} target={'_blank'}><img
+                                className={`${style.contactsBtnFb}`} src={fb} alt={''}/></a>
+                            <a href={`mailto: ${anket.contacts.email}`}><img className={`${style.contactsBtn} mt-1`}
+                                                                             src={email} alt={''}/></a>
                         </div>
                     </div>
                 </div>
             </div>
             <span className={`${style.titleSemiBoldGreen} ${style.postCardTitle}`}>Fingers crossed. We wish your fluffy to be found as soon as possible. Your post will expire in two weeks. To make it active again follow the instructions you’ll get in email.</span>
             <div className={`${style.postCardTitle} d-flex justify-content-between`}>
-                <FacebookShareButton url={shareUrl} quote={'Text about pet'} hashtag={'#propets'}>
+                <FacebookShareButton url={shareUrl} quote={`I found a pet!\n${anket.type}, ${anket.breed}\nColor: ${anket.color}\n
+                                     Sex: ${anket.sex}\nHeight: ${anket.height}\nDistinctive features: ${anket.features}\n
+                                     Description: ${anket.description}\n Location: ${anket.location}\n
+                                     My contacts: ${anket.contacts.email}, ${anket.contacts.phone}\n
+                                     ${anket.images[0]}`} hashtag={'#propets'}>
                     <FacebookIcon round={true} size={15}/>
                     <span className={`${style.smallerTextBlack} ps-1`}>Share to Facebook</span>
                 </FacebookShareButton>
@@ -124,10 +136,10 @@ const PreviewFoundForm = () => {
                         <span className={'m-auto'}>Edit</span>
                     </button>
                     <NavLink to='/found' className={`${style.btnHeader}`}
-                            onClick={() => {
-                                addBase();
-                                addBaseCoordinates()
-                            }}>
+                             onClick={() => {
+                                 addBase();
+                                 addBaseCoordinates()
+                             }}>
                         <img className={`${style.iconBtnBlack}`} src={paw} alt={''}/>
                         <span className={'m-auto'}>Publish</span>
                     </NavLink>
