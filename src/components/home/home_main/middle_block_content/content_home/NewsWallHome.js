@@ -19,7 +19,7 @@ const NewsWallHome = () => {
         dispatch({type: "SET_MAP_ACTIVE", payload: {map: false, header: false}})
         const getBase = async () => {
             const data = await getDocs(baseCollectionRefTree)
-            setBase(data.docs.map(doc => ({...doc.data(), id: doc.id})).sort(sortObject('data')));
+            setBase(data.docs.map(doc => ({...doc.data(), id: doc.id})).sort(sortObject('Date')));
         }
         getBase()
     }, [])
