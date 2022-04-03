@@ -89,9 +89,9 @@ const Found = () => {
                                     </div>
                                 </div>
                                 <div className={`col-4 d-flex justify-content-evenly align-items-center`}>
-                                    <img className={`${style.contactsBtn}`} src={phone} alt={''}/>
-                                    <img className={`${style.contactsBtnFb}`} src={fb} alt={''}/>
-                                    <img className={`${style.contactsBtn} mt-1`} src={email} alt={''}/>
+                                    <a href={`tel: ${user.Contacts[0]}`}><img className={`${style.contactsBtn}`} src={phone} alt={''}/></a>
+                                    <a href={`https://${user.Contacts[2]}`} target={'_blank'}><img className={`${style.contactsBtnFb}`} src={fb} alt={''}/></a>
+                                    <a href={`mailto: ${user.Contacts[1]}`}><img className={`${style.contactsBtn} mt-1`} src={email} alt={''}/></a>
                                 </div>
                             </div>
                         </div>
