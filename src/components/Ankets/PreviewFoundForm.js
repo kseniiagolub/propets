@@ -33,6 +33,7 @@ const PreviewFoundForm = () => {
                 dateString: timePost(),
                 found: true,
             });
+            docRef.then(response => console.log(response.id))
         } catch (e) {
             console.error("Error adding document: ", e);
         }
@@ -45,7 +46,6 @@ const PreviewFoundForm = () => {
             const docRef = addDoc(collection(db, "coordinates"), {
                 Coordinates: anket.coordinates
             });
-            console.log("Document written with ID: ", docRef.id);
         } catch (e) {
             console.error("Error adding document: ", e);
         }

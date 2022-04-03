@@ -29,7 +29,7 @@ const Found = () => {
     }, [])
 
     const timePost = (date) => {
-        date = new Date(1648899124791);
+        date = new Date();
         const options = {
             year: 'numeric',
             month: 'long',

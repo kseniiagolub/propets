@@ -52,7 +52,6 @@ const CreatePost = () => {
                 Date: Date.now(),
                 Images: images,
             });
-            console.log("Document written with ID: ", docRef.id);
         } catch (e) {
             console.error("Error adding document: ", e);
         }
