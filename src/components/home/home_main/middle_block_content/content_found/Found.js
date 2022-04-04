@@ -19,12 +19,13 @@ const Found = () => {
         return (a, b) => a[field] < b[field] ? 1 : -1;
     }
 
+    const getBase = async () => {
+        const data = await getDocs(baseCollectionRefTree)
+        setBase(data.docs.map(doc => ({...doc.data(), id: doc.id})).sort(sortObject('data')));
+    }
+
     useEffect(() => {
         dispatch({type: "SET_MAP_ACTIVE", payload: {map: true, header: false}})
-        const getBase = async () => {
-            const data = await getDocs(baseCollectionRefTree)
-            setBase(data.docs.map(doc => ({...doc.data(), id: doc.id})).sort(sortObject('data')));
-        }
         getBase()
     }, [])
 
