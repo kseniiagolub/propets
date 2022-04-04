@@ -38,15 +38,24 @@ const NavHome = () => {
     return (
         <div className={`${style.mainGreenBack} col-3 pt-3`}>
             <nav className={'d-flex flex-column col-5 m-auto mb-5'}>
-                <NavLink className={`${style.navBtn} d-flex mb-2 align-items-center ps-1`} to='/home'><ElementList img={homeImg} name='Home'/></NavLink>
-                <NavLink className={`${style.navBtn} d-flex mb-2 align-items-center ps-1`} to='/lost'><ElementList img={lostImg} name='Lost'/></NavLink>
-                <NavLink className={`${style.navBtn} d-flex mb-2 align-items-center ps-1`} to='/found'><ElementList img={foundImg} name='Found'/></NavLink>
+                <NavLink className={`${style.navBtn} d-flex mb-2 align-items-center ps-1`} to='/home'
+                         onClick={() => dispatch({type: 'SET_DROPDOWN', payload: {dropdown: false}})}><ElementList
+                    img={homeImg} name='Home'/></NavLink>
+                <NavLink className={`${style.navBtn} d-flex mb-2 align-items-center ps-1`} to='/lost'
+                         onClick={() => dispatch({type: 'SET_DROPDOWN', payload: {dropdown: false}})}><ElementList
+                    img={lostImg} name='Lost'/></NavLink>
+                <NavLink className={`${style.navBtn} d-flex mb-2 align-items-center ps-1`} to='/found'
+                         onClick={() => dispatch({type: 'SET_DROPDOWN', payload: {dropdown: false}})}><ElementList
+                    img={foundImg} name='Found'/></NavLink>
                 <DropMenu/>
-                <NavLink className={`${style.navBtn} d-flex mb-5 align-items-center ps-1`} to={'/favorites'}><ElementList img={star_full} name='Favorites'/></NavLink>
+                <NavLink className={`${style.navBtn} d-flex mb-5 align-items-center ps-1`} to={'/favorites'}
+                         onClick={() => dispatch({type: 'SET_DROPDOWN', payload: {dropdown: false}})}><ElementList
+                    img={star_full} name='Favorites'/></NavLink>
             </nav>
             <div>
                 <div className={`${style.gorizontLine} m-auto mb-3`}/>
-                <div className={`d-flex align-items-center col-5 m-auto mb-5`}>
+                <div className={`d-flex align-items-center col-5 m-auto mb-5`}
+                     onClick={() => dispatch({type: 'SET_DROPDOWN', payload: {dropdown: false}})}>
                     <div className={`${style.imgUser} me-2`}><img src={avatar} alt={'avatar'}/></div>
                     <div className={`d-flex flex-wrap w-25`}>
                         <a className={`${style.aColor} m-0`}>{user.name}</a>

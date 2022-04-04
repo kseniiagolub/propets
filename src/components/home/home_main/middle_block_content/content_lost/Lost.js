@@ -8,16 +8,13 @@ import map_marker from "../../../../../assets/png/map-marker.png";
 import phone from '../../../../../assets/png/phone.png';
 import fb from '../../../../../assets/png/facebook.png';
 import email from '../../../../../assets/png/email.png';
+import {sortObject} from "../../../../../utils/utils";
 
 const Lost = () => {
 
     const dispatch = useDispatch()
     const [base, setBase] = useState([])
     const baseCollectionRefTree = query(collection(db, "lost"), where("found", "==", false));
-
-    function sortObject(field) {
-        return (a, b) => a[field] < b[field] ? 1 : -1;
-    }
 
     const getBase = async () => {
         const data = await getDocs(baseCollectionRefTree)

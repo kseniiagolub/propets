@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import style from "../../../../css_moduls/home_css/home.module.css";
 import megafonImg from "../../../../assets/png/megafon.png";
 import hotelsImg from "../../../../assets/png/hotels.png";
@@ -6,15 +6,18 @@ import walkingImg from "../../../../assets/png/walking.png";
 import fosteringImg from "../../../../assets/png/fostering.png";
 import vetHelpImg from "../../../../assets/png/vetHelp.png";
 import {NavLink} from "react-router-dom";
+import {useDispatch, useSelector} from "react-redux";
 
 const DropMenu = () => {
 
-    const [dropdown, setDropdown] = useState(false)
-    let disp = dropdown ? 'd-block' : 'd-none'
+    const drop = useSelector(state => state.map.dropdown)
+    const dispatch = useDispatch()
+    let disp = drop ? 'd-block' : 'd-none'
 
     return (
         <>
-            <NavLink to={'/hotels'} className={`${style.navBtn} d-flex mb-2 p-0 ps-1`} onClick={() => setDropdown(!dropdown)}>
+            <NavLink to={'/hotels'} className={`${style.navBtn} d-flex mb-2 p-0 ps-1`}
+                     onClick={() => dispatch({type:'SET_DROPDOWN', payload: {dropdown: true}})}>
                 <div>
                     <img className={`${style.iconBtn} me-2`} src={megafonImg} alt={'Services'}/>
                     <span>Services</span>
