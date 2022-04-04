@@ -3,6 +3,7 @@ const initialState = {
     header: false,
     finish: false,
     edit: false,
+    dropdown: false,
 }
 
 export default (state = initialState, {type, payload}) => {
@@ -11,6 +12,8 @@ export default (state = initialState, {type, payload}) => {
             return {...state, map: payload.map, header: payload.header}
         case 'SET_ANKET':
             return {...state, finish: payload.finish, edit: payload.edit}
+        case 'SET_DROPDOWN':
+            return {...state, dropdown: payload.dropdown}
         default:
             return state
     }
