@@ -26,17 +26,6 @@ const Lost = () => {
         getBase()
     }, [])
 
-    const timePost = () => {
-        const date = new Date();
-        const options = {
-            year: 'numeric',
-            month: 'long',
-            day: 'numeric',
-        };
-        return date.toLocaleString("en-US", options)
-    }
-
-
     return (
         <div className={`${style.mainWhiteBack} pb-2 pt-2 d-flex flex-column col-6 align-items-center overflow-auto`}>
             <div className={`${style.blockBtns} d-flex flex-row justify-content-evenly`}>

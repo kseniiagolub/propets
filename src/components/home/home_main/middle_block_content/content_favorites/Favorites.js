@@ -5,32 +5,28 @@ import {collection, getDocs, query, getDoc, doc} from "firebase/firestore";
 import {db} from "../../../../../utils/firebase";
 import {getAuth} from "firebase/auth";
 import PostCard from "../content_home/PostCard";
+import {sortObject} from "../../../../../utils/utils";
 
 const Favorites = () => {
 
     const auth = getAuth()
     const dispatch = useDispatch()
-    const [base, setBase] = useState([])
     const [posts, setPosts] = useState([])
     const baseCollectionIdRef = query(collection(db, auth.currentUser.uid));
 
     const getIdPost = async () => {
         const data = await getDocs(baseCollectionIdRef)
-        setBase(data.docs.map(doc => ({...doc.data()}).posts));
-    }
-
-    const getPosts = async () => {
+        const base = (data.docs.map(doc => ({...doc.data()}).posts));
         for (let i = 0; i < base.length; i++) {
             const getOnePostRef = doc(db, "post", base[i]);
             const docSnap = await getDoc(getOnePostRef);
-            setPosts(post => post.concat(docSnap.data()))
+            setPosts(post => post.concat(docSnap.data()).sort(sortObject('Date')))
         }
     }
 
-    useEffect(() => {
-        dispatch({type: "SET_MAP_ACTIVE", payload: {map: false, header: false}})
+    useEffect( () => {
+        dispatch({type: "SET_MAP_ACTIVE", payload: {map: false, header: false}});
         getIdPost()
-        getPosts()
     }, [])
 
     return (

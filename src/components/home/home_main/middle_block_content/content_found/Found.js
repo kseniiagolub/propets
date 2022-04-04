@@ -13,35 +13,27 @@ import {sortObject} from "../../../../../utils/utils";
 const Found = () => {
 
     const [base, setBase] = useState([])
+
     const dispatch = useDispatch()
     const baseCollectionRefTree = query(collection(db, "found"), where("found", "==", true));
 
-    const getBase = async () => {
+    const getBaseFound = async () => {
         const data = await getDocs(baseCollectionRefTree)
         setBase(data.docs.map(doc => ({...doc.data(), id: doc.id})).sort(sortObject('data')));
     }
 
     useEffect(() => {
         dispatch({type: "SET_MAP_ACTIVE", payload: {map: true, header: false}})
-        getBase()
+        getBaseFound()
     }, [])
 
-    const timePost = (date) => {
-        date = new Date();
-        const options = {
-            year: 'numeric',
-            month: 'long',
-            day: 'numeric',
-        };
-        return date.toLocaleString("en-US", options)
-    }
 
     return (
         <div className={`${style.mainWhiteBack} pb-2 pt-2 d-flex flex-column col-6 align-items-center`}>
             <div className={`${style.blockBtns} d-flex flex-row justify-content-evenly`}>
-                <button className={`${style.searchBtn} ${style.smallBtn}`}>Type</button>
-                <button className={`${style.searchBtn} ${style.smallBtn}`}>Breed</button>
-                <button className={`${style.searchBtn} ${style.bigBtn}`}>Additional features</button>
+                <input placeholder='Type' className={`${style.searchBtn} ${style.smallBtn}`}/>
+                <input placeholder='Breed' className={`${style.searchBtn} ${style.smallBtn}`}/>
+                <input placeholder='Additional features' className={`${style.searchBtn} ${style.bigBtn}`}/>
             </div>
             <div className={`${style.blockWall} overflow-auto`}>
                 {base.map((user, index) => {
@@ -87,9 +79,12 @@ const Found = () => {
                                     </div>
                                 </div>
                                 <div className={`col-4 d-flex justify-content-evenly align-items-center`}>
-                                    <a href={`tel: ${user.Contacts[0]}`}><img className={`${style.contactsBtn}`} src={phone} alt={''}/></a>
-                                    <a href={`https://${user.Contacts[2]}`} target={'_blank'}><img className={`${style.contactsBtnFb}`} src={fb} alt={''}/></a>
-                                    <a href={`mailto: ${user.Contacts[1]}`}><img className={`${style.contactsBtn} mt-1`} src={email} alt={''}/></a>
+                                    <a href={`tel: ${user.Contacts[0]}`}><img className={`${style.contactsBtn}`}
+                                                                              src={phone} alt={''}/></a>
+                                    <a href={`https://${user.Contacts[2]}`} target={'_blank'}><img
+                                        className={`${style.contactsBtnFb}`} src={fb} alt={''}/></a>
+                                    <a href={`mailto: ${user.Contacts[1]}`}><img className={`${style.contactsBtn} mt-1`}
+                                                                                 src={email} alt={''}/></a>
                                 </div>
                             </div>
                         </div>

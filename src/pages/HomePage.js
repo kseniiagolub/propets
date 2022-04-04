@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React, {useEffect, useState} from 'react';
 import HomeHeader from "../components/home/home_header/HomeHeader";
 import MainHome from "../components/home/home_main/middle_block_content/content_home/MainHome";
 import {getAuth, onAuthStateChanged, updateProfile} from "firebase/auth";
