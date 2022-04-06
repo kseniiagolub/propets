@@ -8,10 +8,10 @@ import anketa from "../../assets/png/anketa.png";
 import avatar from "../../assets/png/avatar.jpg";
 import paw from "../../assets/png/paw.png";
 import AddImages from "./AddImages";
+const libraries = ['places']
 
 const EditFoundForm = () => {
 
-    const libraries = ['places']
     const list = useSelector(state => state.anketa)
     const {isLoaded} = useJsApiLoader({
         id: 'google-Map-script',
@@ -20,16 +20,16 @@ const EditFoundForm = () => {
     })
 
     const user = useSelector(state => state.user)
-    const [type, setType] = useState()
-    const [sex, setSex] = useState()
-    const [breed, setBreed] = useState()
-    const [color, setColor] = useState()
-    const [height, setHeight] = useState()
-    const [features, setFeatures] = useState()
-    const [description, setDescription] = useState()
-    const [phone, setPhone] = useState()
-    const [email, setEmail] = useState()
-    const [facebook, setFacebook] = useState()
+    const [type, setType] = useState(list.type)
+    const [sex, setSex] = useState(list.sex)
+    const [breed, setBreed] = useState(list.breed)
+    const [color, setColor] = useState(list.color)
+    const [height, setHeight] = useState(list.height)
+    const [features, setFeatures] = useState(list.features)
+    const [description, setDescription] = useState(list.description)
+    const [phone, setPhone] = useState(list.contacts.phone)
+    const [email, setEmail] = useState(list.contacts.email)
+    const [facebook, setFacebook] = useState(list.contacts.facebook)
     const dispatch = useDispatch()
 
     return (
@@ -60,12 +60,12 @@ const EditFoundForm = () => {
                     </div>
                     <div className={`mb-1`}>
                         <label className={`${style.smallerTextBlack} col-3 text-end`} htmlFor="breed">Breed:</label>
-                        <input className={'col-7'} type="text" placeholder="Golden Retriever" name="breed" value={list.breed}
+                        <input className={'col-7'} type="text" placeholder="Golden Retriever" name="breed" value={breed}
                                onChange={e => setBreed(e.target.value)}/>
                     </div>
                     <div className={`mb-1`}>
                         <label className={`${style.smallerTextBlack} col-3 text-end`} htmlFor="color">Color:</label>
-                        <input className={'col-7'} type="text" placeholder="Beige" name="color" value={list.color}
+                        <input className={'col-7'} type="text" placeholder="Beige" name="color" value={color}
                                onChange={e => setColor(e.target.value)}/>
                     </div>
                     <div className={`mb-1`}>
@@ -85,7 +85,7 @@ const EditFoundForm = () => {
                             <p className={`${style.littleGreenText}`}>up to 60 char</p>
                         </div>
                         <textarea className={`ms-2 ${style.smallerTextBlack} ${style.smallTextarea}`} cols={'17'}
-                                  rows={'3'} name={'features'} value={list.features}
+                                  rows={'3'} name={'features'} value={features}
                                   placeholder={'blue collar with stars, no left ear, damaged tail.'}
                                   onChange={e => setFeatures(e.target.value)}/>
                     </div>
@@ -95,7 +95,7 @@ const EditFoundForm = () => {
                             <p className={`${style.littleGreenText}`}>up to 150 char</p>
                         </div>
                         <textarea className={`ms-2 ${style.smallerTextBlack} ${style.bigTextarea}`} cols={'17'}
-                                  rows={'6'} name={'description'} value={list.description}
+                                  rows={'6'} name={'description'} value={description}
                                   placeholder={'brown fox jumps over a lazy dog. DJs flock by when quiz prog. Junk MTV quiz graced by fox whelps. Bawds jog, flick quartz, vex nymphs.'}
                                   onChange={e => setDescription(e.target.value)}/>
                     </div>
@@ -115,11 +115,11 @@ const EditFoundForm = () => {
                     <div className={`mb-1 row `}>
                         <label className={`${style.smallerTextBlack} col-2 text-end`}
                                htmlFor="contacts">Contacts:</label>
-                        <input className={`col-3`} type="tel" placeholder="Phone" value={list.contacts.phone}
+                        <input className={`col-3`} type="tel" placeholder="Phone" value={phone}
                                onChange={e => setPhone(e.target.value)}/>
-                        <input className={`col-3`} type="email" placeholder="Email" value={list.contacts.email}
+                        <input className={`col-3`} type="email" placeholder="Email" value={email}
                                onChange={e => setEmail(e.target.value)}/>
-                        <input className={`col-3`} type="text" placeholder="Facebook profile" value={list.contacts.facebook}
+                        <input className={`col-3`} type="text" placeholder="Facebook profile" value={facebook}
                                onChange={e => setFacebook(e.target.value)}/>
                     </div>
                 </div>

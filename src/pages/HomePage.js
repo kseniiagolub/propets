@@ -22,10 +22,6 @@ const HomePage = () => {
             onAuthStateChanged(auth, (user) => {
                 dispatch({type: 'SET_INFO_USER', payload: {name: user.name, id: user.uid}})
             })
-        } else {
-            onAuthStateChanged(auth, (user) => {
-                dispatch({type: 'SET_INFO_USER', payload: {name: user.displayName, id: user.uid}})
-            })
         }
     }
 
