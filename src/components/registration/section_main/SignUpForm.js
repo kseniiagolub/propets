@@ -20,7 +20,7 @@ const SignUpForm = () => {
 
 
     const compare = (passwordFirst, passwordSecond) => {
-        if(passwordFirst !== passwordSecond) {
+        if (passwordFirst !== passwordSecond) {
             alert("Passwords doesn't match")
         }
         dispatch({type: 'SET_USER_PASSWORD', payload: passwordSecond})

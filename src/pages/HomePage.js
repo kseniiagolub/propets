@@ -8,19 +8,19 @@ const HomePage = () => {
 
     const auth = getAuth();
     const dispatch = useDispatch()
-    const name = useSelector(state => state.registration)
+    const user = useSelector(state => state.registration)
 
     const update = () => {
-        if (name.name !== null) {
+        if (user.name !== null) {
             updateProfile(auth.currentUser, {
-                displayName: name.name
+                displayName: user.name
             })
                 .then()
                 .catch((error) => {
                     console.log(error)
                 });
             onAuthStateChanged(auth, (user) => {
-                dispatch({type: 'SET_INFO_USER', payload: {name: name.name, id: user.uid}})
+                dispatch({type: 'SET_INFO_USER', payload: {name: user.name, id: user.uid}})
             })
         } else {
             onAuthStateChanged(auth, (user) => {
