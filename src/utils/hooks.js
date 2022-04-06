@@ -20,7 +20,7 @@ const useValidation = (value, validations) => {
                     value ? setEmpty(false) : setEmpty(true)
                     break;
                 case 'isEmail':
-                    const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+                    const re =/[^\s,]+@[a-z0-9]+\.(co\.il|[a-z]+)/
                     re.test(String(value).toLowerCase()) ? setEmailError(false) : setEmailError(true)
                     break;
                 default:
