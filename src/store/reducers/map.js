@@ -15,7 +15,7 @@ export default (state = initialState, {type, payload}) => {
             return {...state, finish: payload.finish, edit: payload.edit}
         case 'SET_DROPDOWN':
             return {...state, dropdown: payload.dropdown}
-        case 'SET_LOCATION':
+        case 'SET_FILTER_LOCATION':
             return {...state, location: payload}
         default:
             return state

@@ -3,16 +3,16 @@ import style from "../../../../../css_moduls/home_css/home.module.css";
 import {useDispatch} from "react-redux";
 import {collection, getDocs, query, getDoc, doc} from "firebase/firestore";
 import {db} from "../../../../../utils/firebase";
-import {getAuth} from "firebase/auth";
 import PostCard from "../content_home/PostCard";
 import {sortObject} from "../../../../../utils/utils";
 
 const Favorites = () => {
 
-    const auth = getAuth()
     const dispatch = useDispatch()
     const [posts, setPosts] = useState([])
-    const baseCollectionIdRef = query(collection(db, auth.currentUser.uid));
+    let user = localStorage.getItem('user')
+    let initial = JSON.parse(user)
+    const baseCollectionIdRef = query(collection(db, initial.uid));
 
     const getIdPost = async () => {
         const data = await getDocs(baseCollectionIdRef)
@@ -26,6 +26,7 @@ const Favorites = () => {
 
     useEffect( () => {
         dispatch({type: "SET_MAP_ACTIVE", payload: {map: false, header: false}});
+        user = localStorage.getItem('user')
         getIdPost()
     }, [])
 

@@ -17,7 +17,8 @@ const NavHome = () => {
     const dispatch = useDispatch()
     const {push} = useHistory()
     const auth = getAuth()
-    const user = useSelector(state => state.user)
+    let user = localStorage.getItem('user')
+    let initial = JSON.parse(user)
 
     const logOut = () => {
         signOut(auth)
@@ -58,7 +59,7 @@ const NavHome = () => {
                      onClick={() => dispatch({type: 'SET_DROPDOWN', payload: {dropdown: false}})}>
                     <div className={`${style.imgUser} me-2`}><img src={avatar} alt={'avatar'}/></div>
                     <div className={`d-flex flex-wrap w-25`}>
-                        <a className={`${style.aColor} m-0`}>{user.name}</a>
+                        <a className={`${style.aColor} m-0`}>{initial.displayName}</a>
                     </div>
                 </div>
                 <div className={`col-5 m-auto mb-3`}>

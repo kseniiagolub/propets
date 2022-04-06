@@ -1,10 +1,22 @@
 import './App.css';
 import StartPage from "./pages/StartPage";
 import HomePage from "./pages/HomePage";
-import {Route, Switch} from "react-router-dom";
+import {Route, Switch, useHistory} from "react-router-dom";
 import Modal from "./utils/modal";
+import {getAuth, onAuthStateChanged} from "firebase/auth";
+import {useDispatch} from "react-redux";
 
 function App() {
+
+    const {push} = useHistory()
+    const auth = getAuth()
+
+    onAuthStateChanged(auth,(user) => {
+        if (user) {
+            localStorage.setItem('user', JSON.stringify(user))
+            push('/home')
+        }
+    })
 
     return (
         <>

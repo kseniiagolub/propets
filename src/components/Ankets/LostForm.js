@@ -29,16 +29,16 @@ const LostForm = () => {
     }
 
     const user = useSelector(state => state.user)
-    const [type, setType] = useState()
-    const [sex, setSex] = useState()
-    const [breed, setBreed] = useState()
-    const [color, setColor] = useState()
-    const [height, setHeight] = useState()
-    const [features, setFeatures] = useState()
-    const [description, setDescription] = useState()
-    const [phone, setPhone] = useState()
-    const [email, setEmail] = useState()
-    const [facebook, setFacebook] = useState()
+    const [type, setType] = useState('')
+    const [sex, setSex] = useState('')
+    const [breed, setBreed] = useState('')
+    const [color, setColor] = useState('')
+    const [height, setHeight] = useState('')
+    const [features, setFeatures] = useState('')
+    const [description, setDescription] = useState('')
+    const [phone, setPhone] = useState('')
+    const [email, setEmail] = useState('')
+    const [facebook, setFacebook] = useState('')
     const dispatch = useDispatch()
 
     return (

@@ -58,7 +58,7 @@ const PromoHome = () => {
             <div className={`d-flex flex-column col-3 pb-2 pt-2`}>
                 <div className={`${style.blockBtns}`}>
                     <input placeholder='Location' className={`${style.searchBtn} ${style.smallBtn}`}
-                           onChange={e => dispatch({type: 'SET_LOCATION', payload: e.target.value})}/>
+                           onChange={e => dispatch({type: 'SET_FILTER_LOCATION', payload: e.target.value})}/>
                 </div>
                 <div className={`${style.blockMap} pt-3 ps-2`}>
                     <div className={`w-100 h-100`}>
