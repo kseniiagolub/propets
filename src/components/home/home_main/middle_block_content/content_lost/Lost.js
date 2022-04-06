@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import style from '../../../../../css_moduls/home_css/home.module.css';
-import {useDispatch} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
 import {collection, getDocs, query, where} from "firebase/firestore";
 import {db} from "../../../../../utils/firebase";
 import avatar from "../../../../../assets/png/avatar.jpg";
@@ -12,29 +12,48 @@ import {sortObject} from "../../../../../utils/utils";
 
 const Lost = () => {
 
+    const location = useSelector(state => state.map.location)
     const dispatch = useDispatch()
-    const [base, setBase] = useState([])
+
+    const [filter, setFilter] = useState([])
+    const [type, setType] = useState('')
+    const [breed, setBreed] = useState('')
+    const [features, setFeatures] = useState('')
     const baseCollectionRefTree = query(collection(db, "lost"), where("found", "==", false));
 
     const getBase = async () => {
         const data = await getDocs(baseCollectionRefTree)
-        setBase(data.docs.map(doc => ({...doc.data(), id: doc.id})).sort(sortObject('data')));
+        const base = data.docs.map(doc => ({...doc.data(), id: doc.id})).sort(sortObject('data'));
+        if (type !== '') {
+            setFilter(base.filter(item => item.Type.includes(type)))
+        } else if (breed !== '') {
+            setFilter(base.filter(item => item.Breed.includes(breed)))
+        } else if (features !== '') {
+            setFilter(base.filter(item => item.Features.includes(features)))
+        } else if (location !== '') {
+            setFilter(base.filter(item => item.Location.includes(location)))
+        } else {
+            setFilter(base)
+        }
     }
 
     useEffect(() => {
         dispatch({type: "SET_MAP_ACTIVE", payload: {map: true, header: false}})
         getBase()
-    }, [])
+    }, [type, breed, features, location])
 
     return (
         <div className={`${style.mainWhiteBack} pb-2 pt-2 d-flex flex-column col-6 align-items-center overflow-auto`}>
             <div className={`${style.blockBtns} d-flex flex-row justify-content-evenly`}>
-                <button className={`${style.searchBtn} ${style.smallBtn}`}>Type</button>
-                <button className={`${style.searchBtn} ${style.smallBtn}`}>Breed</button>
-                <button className={`${style.searchBtn} ${style.bigBtn}`}>Additional features</button>
+                <input placeholder='Type' className={`${style.searchBtn} ${style.smallBtn}`}
+                       onChange={e => setType(e.target.value)}/>
+                <input placeholder='Breed' className={`${style.searchBtn} ${style.smallBtn}`}
+                       onChange={e => setBreed(e.target.value)}/>
+                <input placeholder='Features' className={`${style.searchBtn} ${style.bigBtn}`}
+                       onChange={e => setFeatures(e.target.value)}/>
             </div>
             <div className={`${style.blockWall} overflow-auto`}>
-                {base.map((user, index) => {
+                {filter.map((user, index) => {
                     return <div className={`${style.postCard} d-flex`} key={index}>
                         <div className={`col-5`}>
                             <img className={`${style.imgPreview}`} src={user.Images[0]} alt={user.Type}/>
@@ -77,9 +96,12 @@ const Lost = () => {
                                     </div>
                                 </div>
                                 <div className={`col-4 d-flex justify-content-evenly align-items-center`}>
-                                    <a href={`tel: ${user.Contacts[0]}`}><img className={`${style.contactsBtn}`} src={phone} alt={''}/></a>
-                                    <a href={`https://${user.Contacts[2]}`} target={'_blank'}><img className={`${style.contactsBtnFb}`} src={fb} alt={''}/></a>
-                                    <a href={`mailto: ${user.Contacts[1]}`}><img className={`${style.contactsBtn} mt-1`} src={email} alt={''}/></a>
+                                    <a href={`tel: ${user.Contacts[0]}`}><img className={`${style.contactsBtn}`}
+                                                                              src={phone} alt={''}/></a>
+                                    <a href={`https://${user.Contacts[2]}`} target={'_blank'}><img
+                                        className={`${style.contactsBtnFb}`} src={fb} alt={''}/></a>
+                                    <a href={`mailto: ${user.Contacts[1]}`}><img className={`${style.contactsBtn} mt-1`}
+                                                                                 src={email} alt={''}/></a>
                                 </div>
                             </div>
                         </div>

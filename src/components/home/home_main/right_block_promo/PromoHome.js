@@ -3,7 +3,7 @@ import style from '../../../../css_moduls/home_css/home.module.css';
 import img_dental_care from '../../../../assets/png/dental_care.png';
 import img_pet_hotel from '../../../../assets/png/pet_hotel.png';
 import img_pet_hotel_2 from '../../../../assets/png/pet_hotel_2.png';
-import {useSelector} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
 import {defaultCenter, getBrowserLocation} from "../../../../utils/geolocation";
 import {useJsApiLoader} from "@react-google-maps/api";
 import {googleConfig} from "../../../../utils/google";
@@ -17,6 +17,7 @@ const PromoHome = () => {
     const [center, setCenter] = useState(defaultCenter)
     const [coordinates, setCoordinates] = useState([])
     const baseCollectionCoordinates = collection(db, "coordinates")
+    const dispatch = useDispatch()
 
     useEffect(() => {
         const getBase = async () => {
@@ -56,7 +57,8 @@ const PromoHome = () => {
         return (
             <div className={`d-flex flex-column col-3 pb-2 pt-2`}>
                 <div className={`${style.blockBtns}`}>
-                    <button className={`${style.searchBtn} ${style.middleBtn}`}>Location</button>
+                    <input placeholder='Location' className={`${style.searchBtn} ${style.smallBtn}`}
+                           onChange={e => dispatch({type: 'SET_LOCATION', payload: e.target.value})}/>
                 </div>
                 <div className={`${style.blockMap} pt-3 ps-2`}>
                     <div className={`w-100 h-100`}>

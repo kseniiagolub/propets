@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import style from "../../../../../css_moduls/home_css/home.module.css";
-import {useDispatch} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
 import {collection, getDocs, where, query} from "firebase/firestore";
 import {db} from "../../../../../utils/firebase";
 import avatar from "../../../../../assets/png/avatar.jpg";
@@ -12,49 +12,35 @@ import {sortObject} from "../../../../../utils/utils";
 
 const Found = () => {
 
-    const [base, setBase] = useState([])
+    const [filter, setFilter] = useState([])
     const [type, setType] = useState('')
     const [breed, setBreed] = useState('')
-    const [sex, setSex] = useState('')
+    const [features, setFeatures] = useState('')
 
+    const location = useSelector(state => state.map.location)
     const dispatch = useDispatch()
     const baseCollectionRefTree = query(collection(db, "found"), where("found", "==", true));
-    const baseCollectionTypeRef = query(collection(db, "found"), where("Type", "==", type));
-    const baseCollectionBreedRef = query(collection(db, "found"), where("Breed", "==", breed));
-    const baseCollectionFeaturesRef = query(collection(db, "found"), where("Sex", "==", sex));
 
     const getBaseFound = async () => {
         const data = await getDocs(baseCollectionRefTree)
-        setBase(data.docs.map(doc => ({...doc.data(), id: doc.id})).sort(sortObject('data')));
-    }
-
-    const getBaseType = async () => {
-        const data = await getDocs(baseCollectionTypeRef)
-        setBase(data.docs.map(doc => ({...doc.data(), id: doc.id})).sort(sortObject('data')));
-    }
-
-    const getBaseBreed = async () => {
-        const data = await getDocs(baseCollectionBreedRef)
-        setBase(data.docs.map(doc => ({...doc.data(), id: doc.id})).sort(sortObject('data')));
-    }
-
-    const getBaseFeatures = async () => {
-        const data = await getDocs(baseCollectionFeaturesRef)
-        setBase(data.docs.map(doc => ({...doc.data(), id: doc.id})).sort(sortObject('data')));
+        const base = data.docs.map(doc => ({...doc.data(), id: doc.id})).sort(sortObject('data'));
+        if (type !== '') {
+            setFilter(base.filter(item => item.Type.includes(type)))
+        } else if (breed !== '') {
+            setFilter(base.filter(item => item.Breed.includes(breed)))
+        } else if (features !== '') {
+            setFilter(base.filter(item => item.Features.includes(features)))
+        } else if (location !== '') {
+            setFilter(base.filter(item => item.Location.includes(location)))
+        } else {
+            setFilter(base)
+        }
     }
 
     useEffect(() => {
         dispatch({type: "SET_MAP_ACTIVE", payload: {map: true, header: false}})
-        if (type !== '') {
-            getBaseType()
-        } else if (breed !== '') {
-            getBaseBreed()
-        } else if (sex !== '') {
-            getBaseFeatures()
-        } else {
-            getBaseFound()
-        }
-    }, [type, breed, sex])
+        getBaseFound()
+    }, [type, breed, features, location])
 
 
     return (
@@ -64,11 +50,11 @@ const Found = () => {
                        onChange={e => setType(e.target.value)}/>
                 <input placeholder='Breed' className={`${style.searchBtn} ${style.smallBtn}`}
                        onChange={e => setBreed(e.target.value)}/>
-                <input placeholder='Sex' className={`${style.searchBtn} ${style.bigBtn}`}
-                       onChange={e => setSex(e.target.value)}/>
+                <input placeholder='Features' className={`${style.searchBtn} ${style.bigBtn}`}
+                       onChange={e => setFeatures(e.target.value)}/>
             </div>
             <div className={`${style.blockWall} overflow-auto`}>
-                {base.map((user, index) => {
+                {filter.map((user, index) => {
                     return <div className={`${style.postCard} d-flex`} key={index}>
                         <div className={`col-5`}>
                             <img className={`${style.imgPreview}`} src={user.Images[0]} alt={user.Type}/>
