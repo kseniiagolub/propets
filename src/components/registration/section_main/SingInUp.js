@@ -16,13 +16,11 @@ const SingInUp = () => {
     }
 
     return (
-        <>
-            <div className={`${style.buttonsStyle} mb-4`}>
-                <button className={state ? `${style.active}` : ``} onClick={() => setState(true)}>Sign up</button>
-                <button className={state ? `` : `${style.active}`} onClick={() => setState(false)}>Sign in</button>
-                {signInUp(state)}
-            </div>
-        </>
+        <div className={`${style.buttonsStyle} mb-4`}>
+            <button className={state ? `${style.active}` : ``} onClick={() => setState(true)}>Sign up</button>
+            <button className={state ? `` : `${style.active}`} onClick={() => setState(false)}>Sign in</button>
+            {signInUp(state)}
+        </div>
     );
 };
 

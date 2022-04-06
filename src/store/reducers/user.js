@@ -13,6 +13,8 @@ export default (state = initialState, {type, payload}) => {
             return {...state, name: payload.name, id: payload.id}
         case 'REMOVE_USER':
             return {...state, email: null, token: null, id: null, name: null}
+        case 'CHANGE_NAME':
+            return {...state, name: payload.name}
         default:
             return state
     }

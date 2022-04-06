@@ -454,8 +454,58 @@ textarea {
     height: 18px;
     filter: invert(82%) sepia(0%) saturate(1114%) hue-rotate(162deg) brightness(92%) contrast(91%);
 }
+
 .contactsBtnFb {
     width: 20px;
     height: 20px;
     filter: invert(82%) sepia(0%) saturate(1114%) hue-rotate(162deg) brightness(92%) contrast(91%);
+}
+.buttonsStyle {
+    min-width: 96%;
+}
+.buttonsStyle > button {
+    height: 34px;
+    background-color: var(--bs-green);
+    color: var(--bs-white);
+    opacity: 0.28;
+    border: 1px solid var(--bs-green);
+}
+
+.active {
+    background-color: var(--bs-green) !important;
+    opacity: 1 !important;
+}
+
+.iconEditName {
+    width: 14px;
+    height: 14px;
+    filter: invert(82%) sepia(0%) saturate(1114%) hue-rotate(162deg) brightness(92%) contrast(91%);
+}
+
+.inputEditName {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--bs-dark-green);
+    margin: 0;
+    border: none;
+    width: 200px;
+}
+
+.cameraDiv{
+    background-color: var(--bs-white);
+    width: 18px;
+    height: 18px;
+    border-radius: 18px;
+    box-shadow: 0px 3px 6px var(--bs-grey);
+    left: 35px;
+    top: 25px;
+    padding: 0;
+    text-align: center;
+}
+
+.cameraImg {
+    width: 10px;
+    height: 10px;
+    margin-bottom: 6px;
+    filter: invert(81%) sepia(12%) saturate(707%) hue-rotate(106deg) brightness(84%) contrast(84%);
 }
