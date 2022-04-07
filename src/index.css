@@ -17,7 +17,8 @@ code {
   border-radius: 0 50px 50px 0;
   color: var(--bs-green) !important;
 }
-.active img {
+
+nav .active img {
   filter: invert(68%) sepia(31%) saturate(280%) hue-rotate(106deg) brightness(95%) contrast(89%);
 }
 

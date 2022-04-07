@@ -68,6 +68,10 @@ nav a {
     width: 80%;
 }
 
+.aColor {
+    color: var(--bs-white);
+}
+
 .dropdownContainer {
     background-color: var(--bs-dark-green);
     border-radius: 0 20px 20px 0;
@@ -116,12 +120,6 @@ nav a {
     color: #fff;
     text-align: center;
     outline: none;
-    text-decoration: none;
-    cursor: pointer;
-}
-
-.aColor {
-    color: var(--bs-white);
     text-decoration: none;
     cursor: pointer;
 }
