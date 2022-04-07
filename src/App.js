@@ -4,7 +4,6 @@ import HomePage from "./pages/HomePage";
 import {Route, Switch, useHistory} from "react-router-dom";
 import Modal from "./utils/modal";
 import {getAuth, onAuthStateChanged} from "firebase/auth";
-import {useDispatch} from "react-redux";
 
 function App() {
 

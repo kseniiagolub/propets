@@ -5,20 +5,24 @@ import save from '../../../../../assets/png/save.png';
 import pencil from '../../../../../assets/png/pencil.png';
 import camera from '../../../../../assets/png/camera.png';
 import {NavLink} from "react-router-dom";
-import {useDispatch, useSelector} from "react-redux";
+import {useDispatch} from "react-redux";
 
 const PersonalArea = () => {
 
+    let user = localStorage.getItem('user')
+    let initial = JSON.parse(user)
     const [state, setState] = useState(true)
-    const user = useSelector(state => state.user)
-    const [userName, setUserName] = useState(user.name)
+    const [userName, setUserName] = useState(initial.displayName)
     const dispatch = useDispatch()
+
+    console.log(initial)
 
     useEffect(() => {
         dispatch({type: "SET_MAP_ACTIVE", payload: {map: false, header: false}});
         dispatch({type: 'CHANGE_NAME', payload: {name: userName}})
     }, [userName])
 
+    console.log(user)
 
     return (
         <div className={`${style.mainWhiteBack} d-flex flex-column col-6 align-items-center overflow-auto mt-3`}>
@@ -44,7 +48,7 @@ const PersonalArea = () => {
                             </div>
                             <div className={`col-10 d-flex flex-row`}>
                                 <input className={`${style.inputEditName} me-2`} type={'text'} name={'userName'}
-                                       value={user.name || ''}
+                                       value={initial.displayName || ''}
                                        onChange={e => setUserName(e.target.value)}/>
                                 <img className={`${style.iconEditName}`} src={pencil} alt={''}/>
                             </div>
