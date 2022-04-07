@@ -16,15 +16,7 @@ const PostCard = (props) => {
     const [dropdown, setDropdown] = useState(false)
     let disp = dropdown ? 'd-block' : 'd-none'
     const [isOpen, setOpen] = useState(true)
-
-    const [isFavorite, setFavorite] = useState(true)
-    const dispatch = useDispatch()
     const auth = getAuth()
-
-    const changeFavorites = () => {
-        setFavorite(!isFavorite)
-        dispatch({type: 'SET_FAVORITE', payload: {isFavorite: isFavorite, userID: auth.currentUser.uid}})
-    }
 
     const getImg = (item) => {
         if (item.length === 1) {
@@ -87,7 +79,7 @@ const PostCard = (props) => {
                 </div>
 
                 <img onClick={addPostFavorites} className={`${style.starBtn} mb-1`}
-                     src={isFavorite ? star_empty : star_full} alt={'star'}/>
+                     src={star_empty} alt={'star'}/>
             </div>
         </div>
     );
