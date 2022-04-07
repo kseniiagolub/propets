@@ -15,6 +15,7 @@ const PersonalArea = () => {
     const dispatch = useDispatch()
 
     useEffect(() => {
+        dispatch({type: "SET_MAP_ACTIVE", payload: {map: false, header: false}});
         dispatch({type: 'CHANGE_NAME', payload: {name: userName}})
     }, [userName])
 

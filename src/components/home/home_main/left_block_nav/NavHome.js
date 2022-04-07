@@ -9,7 +9,7 @@ import logout from '../../../../assets/png/logout.png';
 import ElementList from "./ElementList";
 import DropMenu from "./DropMenu";
 import {Link, NavLink, useHistory} from "react-router-dom";
-import {useDispatch, useSelector} from "react-redux";
+import {useDispatch} from "react-redux";
 import {getAuth, signOut} from "firebase/auth";
 
 const NavHome = () => {
