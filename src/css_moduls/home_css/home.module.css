@@ -458,9 +458,11 @@ textarea {
     height: 20px;
     filter: invert(82%) sepia(0%) saturate(1114%) hue-rotate(162deg) brightness(92%) contrast(91%);
 }
+
 .buttonsStyle {
     min-width: 96%;
 }
+
 .buttonsStyle > button {
     height: 34px;
     background-color: var(--bs-green);
@@ -489,7 +491,7 @@ textarea {
     width: 200px;
 }
 
-.cameraDiv{
+.cameraDiv {
     background-color: var(--bs-white);
     width: 18px;
     height: 18px;
@@ -506,4 +508,11 @@ textarea {
     height: 10px;
     margin-bottom: 6px;
     filter: invert(81%) sepia(12%) saturate(707%) hue-rotate(106deg) brightness(84%) contrast(84%);
+}
+
+.photoInput {
+    visibility: hidden;
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
 }

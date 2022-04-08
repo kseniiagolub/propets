@@ -76,7 +76,8 @@ const PersonalArea = () => {
     const updateStorage = () => {
         localStorage.setItem('user', JSON.stringify(auth.currentUser))
         localStorage.setItem('userInfo', JSON.stringify(obj))
-        push('/home')
+        push('/personalarea')
+        setButton(true)
     }
 
     useEffect(() => {
@@ -105,9 +106,9 @@ const PersonalArea = () => {
                                 <img className={`${style.cameraImg}`} src={camera} alt={''}/>
                             </div>
                             <div className={`${style.avatarImg} col-1 `}>
-                                <input className={`${style.addFileInput}`} onChange={formHandler} type={'file'} id={'fileInput'}
-                                       multiple accept={'image/*, image/jpeg'}/>
-                                <img src={initial.photoURL} alt={''} onClick={formHandler}/>
+                                <label htmlFor={'photoInput'}><img src={initial.photoURL} alt={''}/></label>
+                                <input className={`${style.photoInput}`} onChange={formHandler} type={'file'} id={'photoInput'}
+                                       name={'photoInput'} multiple accept={'image/*, image/jpeg'}/>
                             </div>
                             <div className={`col-10 d-flex flex-row`}>
                                 <input className={`${style.inputEditName} me-2`} type={'text'} name={'userName'}
@@ -135,8 +136,8 @@ const PersonalArea = () => {
                                    value={facebook}
                                    onChange={e => setFacebook(e.target.value)}/>
                         </div>
-                        <div className={button ? `d-block` : `d-none`}>
-                            <h1 className={`${style.smallerTextBlack} col-2 text-start`}>Загрузка изображения...</h1>
+                        <div className={button ? `d-none` : `d-block`}>
+                            <h1 className={`${style.smallerTextBlack} col-4 text-start`}>The photo is loading. Save changes...</h1>
                         </div>
                     </div>
                     <div className={`d-flex justify-content-end ${style.postCardTitle}`}>
