@@ -2,11 +2,9 @@ import React, {useState} from 'react';
 import style from '../../../../../css_moduls/home_css/home.module.css'
 import avatar from '../../../../../assets/png/avatar.jpg';
 import star_empty from '../../../../../assets/png/star_empty.png';
-import star_full from '../../../../../assets/png/star_full.png';
 import dots from '../../../../../assets/png/dots_three.png';
 import hide from "../../../../../assets/png/hide.png";
 import close from "../../../../../assets/png/close.png";
-import {useDispatch} from "react-redux";
 import {getAuth} from "firebase/auth";
 import {addDoc, collection} from "firebase/firestore";
 import {db} from "../../../../../utils/firebase";

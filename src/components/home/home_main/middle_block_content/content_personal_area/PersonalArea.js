@@ -1,28 +1,89 @@
 import React, {useEffect, useState} from 'react';
 import style from "../../../../../css_moduls/home_css/home.module.css";
-import avatar from "../../../../../assets/png/avatar.jpg";
 import save from '../../../../../assets/png/save.png';
 import pencil from '../../../../../assets/png/pencil.png';
 import camera from '../../../../../assets/png/camera.png';
-import {NavLink} from "react-router-dom";
+import {NavLink, useHistory} from "react-router-dom";
 import {useDispatch} from "react-redux";
+import {getAuth, updateProfile} from "firebase/auth";
+import {updateDoc, doc} from "firebase/firestore";
+import {db, storage} from "../../../../../utils/firebase";
+import {getDownloadURL, ref, uploadBytesResumable} from "firebase/storage";
+import {v4 as uuidv4} from "uuid";
 
 const PersonalArea = () => {
 
+    const auth = getAuth()
+    const {push} = useHistory()
     let user = localStorage.getItem('user')
     let initial = JSON.parse(user)
+    let userInfo = localStorage.getItem('userInfo')
+    let initialInfo = JSON.parse(userInfo)
+    const [button, setButton] = useState(true)
     const [state, setState] = useState(true)
     const [userName, setUserName] = useState(initial.displayName)
+    const [image, setImage] = useState(initial.photoURL)
+    const [email, setEmail] = useState(initialInfo.email)
+    const [phone, setPhone] = useState(initialInfo.phone)
+    const [facebook, setFacebook] = useState(initialInfo.facebook)
+    let obj = {email: email, phone: phone, facebook: facebook, uid: initial.uid}
     const dispatch = useDispatch()
 
-    console.log(initial)
+    const formHandler = (e) => {
+        e.preventDefault();
+        const file = e.target.files[0]
+        uploadFiles(file)
+    }
+
+    const uploadFiles = (file) => {
+            if (!file) return
+            const storageRef = ref(storage, `/avatar/${uuidv4()}`)
+            const uploadTask = uploadBytesResumable(storageRef, file)
+
+            uploadTask.on('state_changed', (snapshot) => {},
+                (err) => console.log(err),
+                () => {
+                    getDownloadURL(uploadTask.snapshot.ref)
+                        .then(url => {
+                            setImage(url)
+                            setButton(false)
+                        })
+
+                })
+    }
+
+    const addUserInfo = () => {
+        try {
+            const updateUserRef = doc(db, initial.uid, "userInfo");
+            const docRef = updateDoc(updateUserRef, {
+                email: email,
+                phone: phone,
+                facebook: facebook,
+                uid: initial.uid
+            });
+        } catch (e) {
+            console.error("Error adding document: ", e);
+        }
+    }
+
+    const updateUser = () => {
+        updateProfile(auth.currentUser, {
+            displayName: userName,
+            photoURL: image,
+        })
+    }
+
+    const updateStorage = () => {
+        localStorage.setItem('user', JSON.stringify(auth.currentUser))
+        localStorage.setItem('userInfo', JSON.stringify(obj))
+        push('/home')
+    }
 
     useEffect(() => {
         dispatch({type: "SET_MAP_ACTIVE", payload: {map: false, header: false}});
-        dispatch({type: 'CHANGE_NAME', payload: {name: userName}})
-    }, [userName])
-
-    console.log(user)
+        updateUser()
+        addUserInfo()
+    }, [userName, email, phone, facebook, image])
 
     return (
         <div className={`${style.mainWhiteBack} d-flex flex-column col-6 align-items-center overflow-auto mt-3`}>
@@ -44,44 +105,52 @@ const PersonalArea = () => {
                                 <img className={`${style.cameraImg}`} src={camera} alt={''}/>
                             </div>
                             <div className={`${style.avatarImg} col-1 `}>
-                                <img src={avatar} alt={''}/>
+                                <input className={`${style.addFileInput}`} onChange={formHandler} type={'file'} id={'fileInput'}
+                                       multiple accept={'image/*, image/jpeg'}/>
+                                <img src={initial.photoURL} alt={''} onClick={formHandler}/>
                             </div>
                             <div className={`col-10 d-flex flex-row`}>
                                 <input className={`${style.inputEditName} me-2`} type={'text'} name={'userName'}
-                                       value={initial.displayName || ''}
+                                       value={userName}
                                        onChange={e => setUserName(e.target.value)}/>
                                 <img className={`${style.iconEditName}`} src={pencil} alt={''}/>
                             </div>
                         </div>
                         <div className={`mb-1`}>
                             <label className={`${style.smallerTextBlack} col-2 text-end`} htmlFor="email">Email:</label>
-                            <input className={'col-6'} type="email" placeholder="helenjohnson@gmail.com" name="email"/>
+                            <input className={'col-6'} type="email" placeholder="helenjohnson@gmail.com" name="email"
+                                   value={email}
+                                   onChange={e => setEmail(e.target.value)}/>
                         </div>
                         <div className={`mb-1`}>
                             <label className={`${style.smallerTextBlack} col-2 text-end`} htmlFor="phone">Phone:</label>
-                            <input className={'col-6'} type="text" placeholder="000-000-00-00" name="phone"/>
+                            <input className={'col-6'} type="text" placeholder="000-000-00-00" name="phone"
+                                   value={phone}
+                                   onChange={e => setPhone(e.target.value)}/>
                         </div>
                         <div className={`mb-5`}>
                             <label className={`${style.smallerTextBlack} col-2 text-end`} htmlFor="fbLink">FB
                                 link:</label>
-                            <input className={'col-6'} type="text" placeholder="https://www.facebook.com/helenjohnson"
-                                   name="fbLink"/>
+                            <input className={'col-6'} type="text" placeholder="https://www.facebook.com/helenjohnson" name="fbLink"
+                                   value={facebook}
+                                   onChange={e => setFacebook(e.target.value)}/>
+                        </div>
+                        <div className={button ? `d-block` : `d-none`}>
+                            <h1 className={`${style.smallerTextBlack} col-2 text-start`}>Загрузка изображения...</h1>
                         </div>
                     </div>
                     <div className={`d-flex justify-content-end ${style.postCardTitle}`}>
                         <NavLink to='/home' className={`${style.btnEdit} me-2`}>
                             <span className={'m-auto'}>Cancel</span>
                         </NavLink>
-                        <NavLink to='/home' className={`${style.btnHeader}`}>
+                        <button className={`${style.btnHeader}`} onClick={updateStorage} disabled={button}>
                             <img className={`${style.iconBtn}`} src={save} alt={''}/>
                             <span className={'m-auto'}>Save changes</span>
-                        </NavLink>
+                        </button>
                     </div>
                 </>
                 :
                 <div>activities</div>}
-
-
         </div>
     );
 };

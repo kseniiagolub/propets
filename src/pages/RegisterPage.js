@@ -8,6 +8,7 @@ const RegisterPage = () => {
 
     useEffect(() => {
         localStorage.removeItem('user')
+        localStorage.removeItem('userInfo')
     }, [])
 
     return (

@@ -57,18 +57,11 @@ const NavHome = () => {
                 <div className={`${style.gorizontLine} m-auto mb-3`}/>
                 <Link to={'/personalarea'} className={`${style.aColor} d-flex align-items-center col-5 m-auto mb-5 text-decoration-none`}
                          onClick={() => dispatch({type: 'SET_DROPDOWN', payload: {dropdown: false}})}>
-                    <div className={`${style.imgUser} me-2`}><img src={avatar} alt={'avatar'}/></div>
+                    <div className={`${style.imgUser} me-2`}><img src={initial.photoURL} alt={'avatar'}/></div>
                     <div className={`d-flex flex-wrap w-25`}>
                         <span className={`m-0`}>{initial.displayName}</span>
                     </div>
                 </Link>
-                {/*<NavLink to={'/personalarea'} className={`${style.aColor} d-flex align-items-center col-5 m-auto mb-5 text-decoration-none`}*/}
-                {/*     onClick={() => dispatch({type: 'SET_DROPDOWN', payload: {dropdown: false}})}>*/}
-                {/*    <div className={`${style.imgUser} me-2`}><img src={avatar} alt={'avatar'}/></div>*/}
-                {/*    <div className={`d-flex flex-wrap w-25`}>*/}
-                {/*        <span className={`m-0`}>{initial.displayName}</span>*/}
-                {/*    </div>*/}
-                {/*</NavLink>*/}
                 <div className={`col-5 m-auto mb-3`}>
                     <a className={`${style.btnLogout} mb-3`} onClick={() => logOut()}>
                         <img className={`${style.iconBtn}`} src={logout} alt={'logout'}/>Logout</a>
