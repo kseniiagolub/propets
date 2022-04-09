@@ -19,7 +19,7 @@ const PersonalArea = () => {
     let initial = JSON.parse(user)
     let userInfo = localStorage.getItem('userInfo')
     let initialInfo = JSON.parse(userInfo)
-    const [button, setButton] = useState(true)
+    const [button, setButton] = useState(false)
     const [state, setState] = useState(true)
     const [userName, setUserName] = useState(initial.displayName)
     const [image, setImage] = useState(initial.photoURL)
@@ -31,6 +31,7 @@ const PersonalArea = () => {
 
     const formHandler = (e) => {
         e.preventDefault();
+        setButton(true)
         const file = e.target.files[0]
         uploadFiles(file)
     }
@@ -76,7 +77,6 @@ const PersonalArea = () => {
     const updateStorage = () => {
         localStorage.setItem('user', JSON.stringify(auth.currentUser))
         localStorage.setItem('userInfo', JSON.stringify(obj))
-        push('/personalarea')
         setButton(true)
     }
 
@@ -144,7 +144,7 @@ const PersonalArea = () => {
                         <NavLink to='/home' className={`${style.btnEdit} me-2`}>
                             <span className={'m-auto'}>Cancel</span>
                         </NavLink>
-                        <button className={`${style.btnHeader}`} onClick={updateStorage} disabled={button}>
+                        <button className={`${style.btnHeader}`} onClick={updateStorage}>
                             <img className={`${style.iconBtn}`} src={save} alt={''}/>
                             <span className={'m-auto'}>Save changes</span>
                         </button>

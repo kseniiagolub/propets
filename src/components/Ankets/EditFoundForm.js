@@ -19,7 +19,18 @@ const EditFoundForm = () => {
         libraries
     })
 
-    const user = useSelector(state => state.user)
+    const timePost = () => {
+        const date = new Date();
+        const options = {
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric',
+        };
+        return date.toLocaleString("en-US", options)
+    }
+
+    let userAut = localStorage.getItem('user')
+    let authUser = JSON.parse(userAut)
     const [type, setType] = useState(list.type)
     const [sex, setSex] = useState(list.sex)
     const [breed, setBreed] = useState(list.breed)
@@ -125,20 +136,19 @@ const EditFoundForm = () => {
                 </div>
                 <div className={`row d-flex align-items-center mb-1 mt-1`}>
                     <div className={`col-1`}>
-                        <img className={`${style.avatarImg}`} src={avatar} alt={'dog'}/>
+                        <img className={`${style.avatarImg}`} src={authUser.photoURL} alt={'dog'}/>
                     </div>
                     <div className={`col-8 ps-4`}>
-                        <h3 className={`${style.titleSemiBoldGreen}`}>{user.name}</h3>
+                        <h3 className={`${style.titleSemiBoldGreen}`}>{authUser.displayName}</h3>
                     </div>
                     <div className={`col-3`}>
                         <button className={`${style.btnHeader}`} onClick={() => {
                             dispatch({
                                 type: 'SET_ANKETA_INFO', payload: {
-                                    name: user.name, type: type, sex: sex, breed: breed, color: color, height: height,
+                                    name: authUser.displayName, type: type, sex: sex, breed: breed, color: color, height: height,
                                     features: features, description: description,
                                     contacts: {phone: phone, email: email, facebook: facebook},
-                                    date: Date.now(),
-                                    found: true
+                                    date: Date.now(), found: true, photoURL: authUser.photoURL, dateString: timePost()
                                 }
                             })
                             dispatch({type: 'SET_ANKET', payload: {finish: true, edit: false}})

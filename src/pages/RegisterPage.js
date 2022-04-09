@@ -6,11 +6,6 @@ import SingInUp from "../components/registration/section_main/SingInUp";
 
 const RegisterPage = () => {
 
-    useEffect(() => {
-        localStorage.removeItem('user')
-        localStorage.removeItem('userInfo')
-    }, [])
-
     return (
         <section className={`${style.box} container-fluid pt-3`}>
             <Section_header_logo/>

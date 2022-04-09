@@ -1,10 +1,9 @@
 import React, {useState} from 'react';
 import style from '../../css_moduls/home_css/home.module.css';
 import anketa from '../../assets/png/anketa.png';
-import avatar from "../../assets/png/avatar.jpg";
 import paw from '../../assets/png/paw.png';
 import AddImages from "./AddImages";
-import {useDispatch, useSelector} from "react-redux";
+import {useDispatch} from "react-redux";
 import {useJsApiLoader} from "@react-google-maps/api";
 import {googleConfig} from "../../utils/google";
 import Autocomplete from "../../utils/autocomplete";
@@ -28,7 +27,11 @@ const FoundForm = () => {
         return date.toLocaleString("en-US", options)
     }
 
-    const user = useSelector(state => state.user)
+    let userAut = localStorage.getItem('user')
+    let authUser = JSON.parse(userAut)
+    let userInfo = localStorage.getItem('userInfo')
+    let initial = JSON.parse(userInfo)
+
     const [type, setType] = useState('')
     const [sex, setSex] = useState('')
     const [breed, setBreed] = useState('')
@@ -36,9 +39,9 @@ const FoundForm = () => {
     const [height, setHeight] = useState('')
     const [features, setFeatures] = useState('')
     const [description, setDescription] = useState('')
-    const [phone, setPhone] = useState('')
-    const [email, setEmail] = useState('')
-    const [facebook, setFacebook] = useState('')
+    const [phone, setPhone] = useState(initial.phone)
+    const [email, setEmail] = useState(initial.email)
+    const [facebook, setFacebook] = useState(initial.facebook)
     const dispatch = useDispatch()
 
     return (
@@ -125,28 +128,31 @@ const FoundForm = () => {
                         <label className={`${style.smallerTextBlack} col-2 text-end`}
                                htmlFor="contacts">Contacts:</label>
                         <input className={`col-3`} type="tel" placeholder="Phone"
+                               value={phone}
                                onChange={e => setPhone(e.target.value)}/>
                         <input className={`col-3`} type="email" placeholder="Email"
+                               value={email}
                                onChange={e => setEmail(e.target.value)}/>
                         <input className={`col-3`} type="text" placeholder="Facebook profile"
+                               value={facebook}
                                onChange={e => setFacebook(e.target.value)}/>
                     </div>
                 </div>
                 <div className={`row d-flex align-items-center mb-1 mt-1`}>
                     <div className={`col-1`}>
-                        <img className={`${style.avatarImg}`} src={avatar} alt={'dog'}/>
+                        <img className={`${style.avatarImg}`} src={authUser.photoURL} alt={'dog'}/>
                     </div>
                     <div className={`col-8 ps-4`}>
-                        <h3 className={`${style.titleSemiBoldGreen}`}>{user.name}</h3>
+                        <h3 className={`${style.titleSemiBoldGreen}`}>{authUser.displayName}</h3>
                     </div>
                     <div className={`col-3`}>
                         <button className={`${style.btnHeader}`} onClick={() => {
                             dispatch({
                                 type: 'SET_ANKETA_INFO', payload: {
-                                    name: user.name, type: type, sex: sex, breed: breed, color: color, height: height,
+                                    name: authUser.displayName, type: type, sex: sex, breed: breed, color: color, height: height,
                                     features: features, description: description,
                                     contacts: {phone: phone, email: email, facebook: facebook},
-                                    date: Date.now(), found: true, dateString: timePost(),
+                                    date: Date.now(), found: true, dateString: timePost(), photoURL: authUser.photoURL
                                 }
                             })
                             dispatch({type: 'SET_ANKET', payload: {finish: true, edit: false}})

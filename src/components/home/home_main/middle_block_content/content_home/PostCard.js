@@ -48,7 +48,7 @@ const PostCard = (props) => {
     return (
         <div className={`${style.postCard} row d-flex`}>
             <div className={`${style.avatarImg} col-1`}>
-                <img src={avatar} alt={''}/>
+                <img src={props.user.PhotoURL} alt={'avatar'}/>
             </div>
             <div className={`col-10 d-flex flex-column`}>
                 <h3 className={`${style.titleSemiBold}`}>{props.user.Name}</h3>

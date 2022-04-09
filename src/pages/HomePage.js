@@ -3,12 +3,16 @@ import HomeHeader from "../components/home/home_header/HomeHeader";
 import MainHome from "../components/home/home_main/middle_block_content/content_home/MainHome";
 import {getAuth, onAuthStateChanged, updateProfile} from "firebase/auth";
 import {useDispatch, useSelector} from "react-redux";
+import {doc, getDoc, setDoc} from "firebase/firestore";
+import {db} from "../utils/firebase";
 
 const HomePage = () => {
 
     const auth = getAuth();
     const dispatch = useDispatch()
     const user = useSelector(state => state.registration)
+    let userInfo = localStorage.getItem('user')
+    let initial = JSON.parse(userInfo)
 
     const update = () => {
         if (user.name !== null) {
@@ -26,8 +30,25 @@ const HomePage = () => {
         }
     }
 
+    const getUserInfo = async () => {
+        const userInfoRef = doc(db, initial.uid, "userInfo");
+        const userInfoSnap = await getDoc(userInfoRef);
+        if(userInfoSnap.data() === undefined) {
+            const docRef = setDoc(doc(db, initial.uid, 'userInfo'), {
+                email: '',
+                phone: '',
+                facebook: '',
+                uid: initial.uid
+            });
+            localStorage.setItem('userInfo', JSON.stringify({email: '', phone: '', facebook: '', uid: initial.uid}))
+        } else {
+            localStorage.setItem('userInfo', JSON.stringify(userInfoSnap.data()))
+        }
+    }
+
     useEffect(() => {
         update()
+        getUserInfo()
     }, [])
 
     return (

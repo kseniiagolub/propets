@@ -32,6 +32,7 @@ const PreviewFoundForm = () => {
                 Color: anket.color,
                 Name: anket.name,
                 Images: anket.images,
+                photoURL: anket.photoURL,
                 data: Date.now(),
                 dateString: timePost(),
                 found: true,

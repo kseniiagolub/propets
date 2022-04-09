@@ -13,11 +13,12 @@ import OneImage from "./OneImage";
 
 const CreatePost = () => {
 
-    const user = useSelector(state => state.user)
     const images = useSelector(state => state.imgpost)
     const [text, setText] = useState()
     const [download, setDownload] = useState(false)
     const dispatch = useDispatch()
+    let userInfo = localStorage.getItem('user')
+    let initial = JSON.parse(userInfo)
 
     useEffect(() => {
         setDownload(images.images.length)
@@ -47,10 +48,11 @@ const CreatePost = () => {
     const addBase = () => {
         try {
             const docRef = addDoc(collection(db, "post"), {
-                Name: user.name,
+                Name: initial.displayName,
                 Text: text,
                 Date: Date.now(),
                 Images: images,
+                PhotoURL: initial.photoURL,
             });
         } catch (e) {
             console.error("Error adding document: ", e);
@@ -94,15 +96,15 @@ const CreatePost = () => {
                 </div>
                 <div className={`row d-flex align-items-center mb-1 mt-1`}>
                     <div className={`col-1`}>
-                        <img className={`${style.avatarImg}`} src={avatar} alt={'dog'}/>
+                        <img className={`${style.avatarImg}`} src={initial.photoURL} alt={'dog'}/>
                     </div>
                     <div className={`col-8 ps-4`}>
-                        <h3 className={`${style.titleSemiBoldGreen}`}>{user.name}</h3>
+                        <h3 className={`${style.titleSemiBoldGreen}`}>{initial.displayName}</h3>
                     </div>
                     <div className={`col-3`}>
                         <NavLink to={'/home'} className={`${style.btnHeader}`} onClick={() => {
                             addBase();
-                            dispatch({type:'SET_IMG', payload:null})
+                            dispatch({type:'REMOVE_IMG', payload: []})
                         }}>
                             <img className={`${style.iconBtnBlack}`} src={paw} alt={''}/>
                             <span className={'m-auto'}>Publish</span>

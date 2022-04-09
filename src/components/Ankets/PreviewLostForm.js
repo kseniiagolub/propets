@@ -3,7 +3,7 @@ import style from "../../css_moduls/home_css/home.module.css";
 import avatar from "../../assets/png/avatar.jpg";
 import {FacebookIcon, FacebookShareButton} from "react-share";
 import edit from "../../assets/png/edit.png";
-import {NavLink, useHistory} from "react-router-dom";
+import {NavLink} from "react-router-dom";
 import paw from "../../assets/png/paw.png";
 import {useDispatch, useSelector} from "react-redux";
 import {addDoc, collection} from "firebase/firestore";
@@ -32,6 +32,7 @@ const PreviewLostForm = () => {
                 Color: anket.color,
                 Name: anket.name,
                 Images: anket.images,
+                photoURL: anket.photoURL,
                 data: Date.now(),
                 dateString: timePost(),
                 found: false,

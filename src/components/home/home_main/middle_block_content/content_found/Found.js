@@ -3,7 +3,6 @@ import style from "../../../../../css_moduls/home_css/home.module.css";
 import {useDispatch, useSelector} from "react-redux";
 import {collection, getDocs, where, query} from "firebase/firestore";
 import {db} from "../../../../../utils/firebase";
-import avatar from "../../../../../assets/png/avatar.jpg";
 import map_marker from '../../../../../assets/png/map-marker.png';
 import phone from "../../../../../assets/png/phone.png";
 import fb from "../../../../../assets/png/facebook.png";
@@ -86,7 +85,7 @@ const Found = () => {
                             </div>
                             <div className={`d-flex`}>
                                 <div className={`${style.avatarImg} col-1`}>
-                                    <img src={avatar} alt={''}/>
+                                    <img src={user.photoURL} alt={'avatar'}/>
                                 </div>
                                 <div className={`d-flex flex-column col-7 ps-3`}>
                                     <div>

@@ -17,6 +17,7 @@ const initialState = {
     date: Date.now(),
     dateString: null,
     found: false,
+    photoURL: null,
     coordinates: {
         lat: null,
         lng: null
@@ -40,6 +41,7 @@ export default (state = initialState, {type, payload}) => {
                 contacts: payload.contacts,
                 date: payload.date,
                 found: payload.found,
+                photoURL: payload.photoURL,
                 name: payload.name,
                 dateString: payload.dateString,
             }
