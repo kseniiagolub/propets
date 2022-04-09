@@ -6,7 +6,6 @@ import style from "../../css_moduls/home_css/home.module.css";
 import Autocomplete from "../../utils/autocomplete";
 import anketa from "../../assets/png/anketa.png";
 import AddImages from "./AddImages";
-import avatar from "../../assets/png/avatar.jpg";
 import paw from "../../assets/png/paw.png";
 const libraries = ['places']
 
