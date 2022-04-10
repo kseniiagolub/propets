@@ -1,7 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import style from "../../css_moduls/home_css/home.module.css";
 import {useDispatch, useSelector} from "react-redux";
-import avatar from "../../assets/png/avatar.jpg";
 import paw from "../../assets/png/paw.png";
 import {addDoc, collection} from "firebase/firestore";
 import {db, storage} from "../../utils/firebase";
@@ -53,6 +52,7 @@ const CreatePost = () => {
                 Date: Date.now(),
                 Images: images,
                 PhotoURL: initial.photoURL,
+                uid: initial.uid,
             });
         } catch (e) {
             console.error("Error adding document: ", e);

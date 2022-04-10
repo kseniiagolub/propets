@@ -6,10 +6,12 @@ import camera from '../../../../../assets/png/camera.png';
 import {NavLink, useHistory} from "react-router-dom";
 import {useDispatch} from "react-redux";
 import {getAuth, updateProfile} from "firebase/auth";
-import {updateDoc, doc} from "firebase/firestore";
+import {updateDoc, doc, query, collection, where, getDocs} from "firebase/firestore";
 import {db, storage} from "../../../../../utils/firebase";
 import {getDownloadURL, ref, uploadBytesResumable} from "firebase/storage";
 import {v4 as uuidv4} from "uuid";
+import PostCard from "../content_home/PostCard";
+import {sortObject} from "../../../../../utils/utils";
 
 const PersonalArea = () => {
 
@@ -28,6 +30,8 @@ const PersonalArea = () => {
     const [facebook, setFacebook] = useState(initialInfo.facebook)
     let obj = {email: email, phone: phone, facebook: facebook, uid: initial.uid}
     const dispatch = useDispatch()
+    const [base, setBase] = useState([])
+    const baseCollectionMyPosts = query(collection(db, "post"), where("uid", "==", initial.uid))
 
     const formHandler = (e) => {
         e.preventDefault();
@@ -85,6 +89,14 @@ const PersonalArea = () => {
         updateUser()
         addUserInfo()
     }, [userName, email, phone, facebook, image])
+
+    useEffect(()=> {
+        const getBase = async ()=> {
+            const data = await getDocs(baseCollectionMyPosts)
+            setBase(data.docs.map(doc => ({...doc.data(), id: doc.id})).sort(sortObject("Date")))
+        }
+        getBase()
+    }, [])
 
     return (
         <div className={`${style.mainWhiteBack} d-flex flex-column col-6 align-items-center overflow-auto mt-3`}>
@@ -151,7 +163,9 @@ const PersonalArea = () => {
                     </div>
                 </>
                 :
-                <div>activities</div>}
+                <div>
+                    {base.map((user, index) => <PostCard user={user} key={index}/>)}
+                </div>}
         </div>
     );
 };

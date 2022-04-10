@@ -2,17 +2,12 @@ import React, {useState} from 'react';
 import style from '../../../../../css_moduls/home_css/home.module.css'
 import avatar from '../../../../../assets/png/avatar.jpg';
 import star_empty from '../../../../../assets/png/star_empty.png';
-import dots from '../../../../../assets/png/dots_three.png';
-import hide from "../../../../../assets/png/hide.png";
-import close from "../../../../../assets/png/close.png";
 import {getAuth} from "firebase/auth";
 import {addDoc, collection} from "firebase/firestore";
 import {db} from "../../../../../utils/firebase";
 
 const PostCard = (props) => {
 
-    const [dropdown, setDropdown] = useState(false)
-    let disp = dropdown ? 'd-block' : 'd-none'
     const [isOpen, setOpen] = useState(true)
     const auth = getAuth()
 
@@ -61,21 +56,7 @@ const PostCard = (props) => {
                 <p className={`${style.textPost} ${isOpen ? '' : `${style.textPostOpen}`}`}>{props.user.Text}</p>
                 <button onClick={() => setOpen(!isOpen)} className={`${style.greenLink} text-end`}>Show more</button>
             </div>
-            <div className={`col-1 d-flex flex-column justify-content-between align-items-center me-0`}>
-                <img className={`${style.dotsBtn}`} src={dots} alt={'dots'}
-                     onClick={() => setDropdown(!dropdown)}/>
-
-                <div className={`${style.dropdownContentGreen} ${disp} d-flex flex-column`}>
-                    <button className={`${style.navBtn} d-flex mb-2`}>
-                        <img className={`${style.iconBtnBlack}`} src={hide} alt={'hide'}/>
-                        <span className={`${style.smallerTextBlack}`}>Hide from feed</span>
-                    </button>
-                    <button className={`${style.navBtn} d-flex mb-2`}>
-                        <img className={`${style.iconBtnBlack}`} src={close} alt={'unfollow'}/>
-                        <span className={`${style.smallerTextBlack}`}>Unfollow</span>
-                    </button>
-                </div>
-
+            <div className={`col-1 d-flex flex-column justify-content-end align-items-center me-0`}>
                 <img onClick={addPostFavorites} className={`${style.starBtn} mb-1`}
                      src={star_empty} alt={'star'}/>
             </div>
