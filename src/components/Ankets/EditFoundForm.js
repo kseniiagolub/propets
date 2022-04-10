@@ -5,7 +5,6 @@ import {useDispatch, useSelector} from "react-redux";
 import style from "../../css_moduls/home_css/home.module.css";
 import Autocomplete from "../../utils/autocomplete";
 import anketa from "../../assets/png/anketa.png";
-import avatar from "../../assets/png/avatar.jpg";
 import paw from "../../assets/png/paw.png";
 import AddImages from "./AddImages";
 const libraries = ['places']
